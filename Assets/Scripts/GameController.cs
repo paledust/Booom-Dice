@@ -11,9 +11,12 @@ public class GameController : MonoBehaviour
     Vector3 pointerPos;
 
     void Update(){
-        _hand.UpdateInput(pointerPos);
+        _hand.Hand_Update(pointerPos);
     }
     void OnPointer(InputValue value){
         pointerPos = value.Get<Vector2>();
+    }
+    void OnInteract(InputValue value){
+        _hand.Hand_Interact(value.isPressed);
     }
 }

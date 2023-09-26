@@ -5,9 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class HandController : MonoBehaviour
 {
+[Header("Hand Move")]
     [SerializeField] private Transform handTarget;
     [SerializeField] private float movementSpeed = 1;
     [SerializeField] private float lerpSpeed = 10;
+[Header("Hand Interact")]
+    [SerializeField] private PointClick_InteractableHandler pointClick_InteractableHandler;
 
     private float depth;
     private Camera mainCam;
@@ -16,8 +19,14 @@ public class HandController : MonoBehaviour
         mainCam = Camera.main;
         depth = mainCam.WorldToScreenPoint(handTarget.position).z;
     }
-
-    public void UpdateInput(Vector3 pointer)
+    public void Hand_Update(Vector3 pointer){
+        UpdateHandPos(pointer);
+        pointClick_InteractableHandler.DetectInteractable();
+    }
+    public void Hand_Interact(bool isPressed){
+        pointClick_InteractableHandler.InteractWithInteractable(isPressed);
+    }
+    void UpdateHandPos(Vector3 pointer)
     {
         pointer.z = depth;
         Vector3 targetPosition = mainCam.ScreenToWorldPoint(pointer);
