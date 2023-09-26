@@ -39,7 +39,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
         if(isPressed){
             if(hoveringInteractable==null) return;
             if(holdingInteractable!=null) return;
-
+    
             hoveringInteractable.OnClick(this);
         }
         else{
