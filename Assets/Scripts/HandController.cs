@@ -7,7 +7,6 @@ public class HandController : MonoBehaviour
 {
 [Header("Hand Move")]
     [SerializeField] private Transform handTarget;
-    [SerializeField] private float movementSpeed = 1;
     [SerializeField] private float lerpSpeed = 10;
 [Header("Hand Interact")]
     [SerializeField] private PointClick_InteractableHandler pointClick_InteractableHandler;
@@ -16,6 +15,7 @@ public class HandController : MonoBehaviour
     private Camera mainCam;
 
     void Start(){
+        Cursor.lockState = CursorLockMode.Confined;
         mainCam = Camera.main;
         depth = mainCam.WorldToScreenPoint(handTarget.position).z;
     }
