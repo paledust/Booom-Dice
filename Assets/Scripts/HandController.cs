@@ -10,6 +10,8 @@ public class HandController : MonoBehaviour
     [SerializeField] private float lerpSpeed = 10;
 [Header("Hand Interact")]
     [SerializeField] private PointClick_InteractableHandler pointClick_InteractableHandler;
+[Header("Pick Cards")]
+    [SerializeField] private Transform pickCardTrans;
 
     private float depth;
     private Camera mainCam;
@@ -25,6 +27,12 @@ public class HandController : MonoBehaviour
     }
     public void Hand_Interact(bool isPressed){
         pointClick_InteractableHandler.InteractWithInteractable(isPressed);
+    }
+    public void Pick_Card(Transform cardTrans){
+        bool isRotate = cardTrans.localRotation.eulerAngles.y != 0;
+        cardTrans.parent = pickCardTrans;
+        cardTrans.localPosition = Vector3.zero;
+        cardTrans.localRotation = Quaternion.Euler(0,(isRotate?180:0),0);
     }
     void UpdateHandPos(Vector3 pointer)
     {

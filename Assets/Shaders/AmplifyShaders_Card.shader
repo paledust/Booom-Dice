@@ -74,11 +74,13 @@ Node;AmplifyShaderEditor.LerpOp;6;-1373.718,-587.2462;Inherit;False;3;0;COLOR;0,
 Node;AmplifyShaderEditor.VertexColorNode;4;-1624.718,-342.2464;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;11;-1139.49,-287.5394;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.RangedFloatNode;12;-1310.49,-152.5394;Inherit;False;Property;_Emit;Emit;6;0;Create;True;0;0;0;False;0;False;0;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.TextureCoordinatesNode;13;-2006.639,-95.54193;Inherit;False;0;9;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 WireConnection;0;0;6;0
 WireConnection;0;1;9;0
 WireConnection;0;2;11;0
 WireConnection;0;3;8;0
 WireConnection;0;4;7;0
+WireConnection;9;1;13;0
 WireConnection;9;5;10;0
 WireConnection;1;0;2;0
 WireConnection;5;0;3;0
@@ -88,4 +90,4 @@ WireConnection;6;2;4;1
 WireConnection;11;0;6;0
 WireConnection;11;1;12;0
 ASEEND*/
-//CHKSM=6B83B57C4948FF3368A3575921C8B5B1504FE67D
+//CHKSM=560622BFE386E5ADB212141BFA938CC617C7F59F

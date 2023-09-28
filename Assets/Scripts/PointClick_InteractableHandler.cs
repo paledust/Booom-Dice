@@ -5,6 +5,7 @@ using UnityEngine;
 public class PointClick_InteractableHandler : MonoBehaviour
 {
     [SerializeField] private Transform handTipTrans;
+    [SerializeField] private HandController handController;
 
     private BasicPointAndClickInteractable hoveringInteractable;
     private BasicPointAndClickInteractable holdingInteractable;
@@ -24,7 +25,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
                 if(hoveringInteractable != hit_Interactable) {
                     if(hoveringInteractable!=null) hoveringInteractable.OnExitHover();
                     hoveringInteractable = hit_Interactable;
-                    hoveringInteractable.OnHover(this);
+                    hoveringInteractable.OnHover(handController);
                 }
             }
             else{
@@ -40,11 +41,11 @@ public class PointClick_InteractableHandler : MonoBehaviour
             if(hoveringInteractable==null) return;
             if(holdingInteractable!=null) return;
     
-            hoveringInteractable.OnClick(this);
+            hoveringInteractable.OnClick(handController);
         }
         else{
             if(holdingInteractable!=null){
-                holdingInteractable.OnRelease(this);
+                holdingInteractable.OnRelease(handController);
                 holdingInteractable = null;
             }
         }
