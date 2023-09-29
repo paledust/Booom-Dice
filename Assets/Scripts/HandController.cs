@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
 public class HandController : MonoBehaviour
 {
-    [SerializeField] private HandState handState = HandState.Default;
+    [SerializeField, ShowOnly] private HandState handState = HandState.Default;
 [Header("Hand Move")]
     [SerializeField] private Transform handTarget;
     [SerializeField] private float lerpSpeed = 10;
@@ -13,10 +14,14 @@ public class HandController : MonoBehaviour
     [SerializeField] private PointClick_InteractableHandler pointClick_InteractableHandler;
 [Header("Pick Cards")]
     [SerializeField] private Transform pickCardTrans;
+[Header("Pick Dice")]
+    [SerializeField] private Transform pickDiceTrans;
+    [SerializeField] private Vector3 ThrowForce;
 
-    private float depth;
+    private Interact_Dice dice;
     private Card pickedCard;
     private Camera mainCam;
+    private float depth;
 
     public PointClick_InteractableHandler m_PointClick_InteractableHandler{get{return pointClick_InteractableHandler;}}
     public bool HasCard{get{return pickedCard!=null;}}
@@ -50,6 +55,8 @@ public class HandController : MonoBehaviour
         card.transform.localRotation = Quaternion.Euler(0,(card.upsideDown?180:0),0);
 
         handState = HandState.PickCard;
+
+        EventHandler.Call_OnPlayerPickUpCard();
     }
     public void PutDown_Card(Transform cardPlaceTrans){
         pickedCard.transform.parent = cardPlaceTrans.transform;
@@ -59,6 +66,28 @@ public class HandController : MonoBehaviour
         pickedCard = null;
         
         handState = HandState.Default;
+
+        EventHandler.Call_OnPlayerPlaceCard();
+    }
+    public void Pick_Dice(Interact_Dice dice){
+        this.dice = dice;
+
+        dice.m_rigid.transform.parent = pickDiceTrans;
+        dice.m_rigid.transform.localPosition = Vector3.zero;
+        dice.m_rigid.transform.localRotation = Quaternion.identity;
+
+        handState = HandState.PickDice;
+    }
+    public void Throw_Dice(){
+        dice.m_rigid.transform.parent = null;
+        dice.AddThrowForce(ThrowForce);
+
+        this.dice = null;
+
+        handState = HandState.Default;
     }
 #endregion
+    void OnDrawGizmosSelected(){
+        DebugExtension.DrawArrow(pickDiceTrans.position,ThrowForce, Color.green);
+    }
 }

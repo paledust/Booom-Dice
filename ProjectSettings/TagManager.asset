@@ -36,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - NoneRender
   m_SortingLayers:
   - name: Default
     uniqueID: 0

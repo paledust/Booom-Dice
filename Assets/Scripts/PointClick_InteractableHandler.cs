@@ -36,17 +36,23 @@ public class PointClick_InteractableHandler : MonoBehaviour
     }
     public void InteractWithInteractable(bool isPressed, HandState handState){
         if(isPressed){
-            if(hoveringInteractable==null) return;
-            if(holdingInteractable!=null) return;
 
             switch(handState){
                 case HandState.Default:
+                    if(hoveringInteractable==null) return;
+                    if(holdingInteractable!=null) return;
                     hoveringInteractable.OnClick(handController);
                     break;
                 case HandState.PickCard:
+                    if(hoveringInteractable==null) return;
+                    if(holdingInteractable!=null) return;
                     if(hoveringInteractable.GetType()==typeof(Interact_PlaceCard)){
                         hoveringInteractable.OnClick(handController);
                     }
+                    break;
+                case HandState.PickDice:
+                    Debug.Log(">>>");
+                    handController.Throw_Dice();
                     break;
             }
         }

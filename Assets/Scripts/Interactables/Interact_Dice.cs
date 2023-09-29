@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interact_Dice : MonoBehaviour
+public class Interact_Dice : BasicPointAndClickInteractable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Rigidbody rigid;
 
-    // Update is called once per frame
-    void Update()
+    public Rigidbody m_rigid{get{return rigid;}}
+
+    public override void OnClick(HandController handController)
     {
-        
+        base.OnClick(handController);
+        rigid.isKinematic = true;
+        handController.Pick_Dice(this);
+    }
+    public void AddThrowForce(Vector3 force){
+        rigid.isKinematic = false;
+        rigid.AddForce(force, ForceMode.VelocityChange);
     }
 }
