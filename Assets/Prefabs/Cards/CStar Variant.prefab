@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2251807512456639926, guid: bfa91a517e4d7444eb34df9ebe8a3426, type: 3}
       propertyPath: m_Name
-      value: CStar
+      value: CStar Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456343236268977378, guid: bfa91a517e4d7444eb34df9ebe8a3426, type: 3}
+      propertyPath: m_cardType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa91a517e4d7444eb34df9ebe8a3426, type: 3}

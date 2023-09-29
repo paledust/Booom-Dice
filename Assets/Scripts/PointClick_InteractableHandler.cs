@@ -11,10 +11,8 @@ public class PointClick_InteractableHandler : MonoBehaviour
     private BasicPointAndClickInteractable holdingInteractable;
     private Camera mainCam;
 
-    void Start()
-    {
-        mainCam = Camera.main;
-    }
+    void Start()=>mainCam = Camera.main;
+
     public void DetectInteractable()
     {
         Ray ray = mainCam.ScreenPointToRay(mainCam.WorldToScreenPoint(handTipTrans.position));
@@ -36,12 +34,21 @@ public class PointClick_InteractableHandler : MonoBehaviour
             ClearCurrentInteractable();
         }
     }
-    public void InteractWithInteractable(bool isPressed){
+    public void InteractWithInteractable(bool isPressed, HandState handState){
         if(isPressed){
             if(hoveringInteractable==null) return;
             if(holdingInteractable!=null) return;
-    
-            hoveringInteractable.OnClick(handController);
+
+            switch(handState){
+                case HandState.Default:
+                    hoveringInteractable.OnClick(handController);
+                    break;
+                case HandState.PickCard:
+                    if(hoveringInteractable.GetType()==typeof(Interact_PlaceCard)){
+                        hoveringInteractable.OnClick(handController);
+                    }
+                    break;
+            }
         }
         else{
             if(holdingInteractable!=null){
