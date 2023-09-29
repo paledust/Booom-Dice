@@ -1028,7 +1028,7 @@ MonoBehaviour:
   pointClick_InteractableHandler: {fileID: 535873605}
   pickCardTrans: {fileID: 8452186705269043690}
   pickDiceTrans: {fileID: 8452186705269043691}
-  ThrowForce: {x: -1, y: -0.2, z: 0}
+  ThrowForce: {x: -0.5, y: -0.05, z: 0}
 --- !u!4 &596663971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 660818260878405561, guid: 6977dc6bdfa582644a635cc990e4628a, type: 3}

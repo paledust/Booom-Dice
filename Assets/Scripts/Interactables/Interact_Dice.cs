@@ -5,7 +5,7 @@ using UnityEngine;
 public class Interact_Dice : BasicPointAndClickInteractable
 {
     [SerializeField] private Rigidbody rigid;
-
+    [SerializeField] private float torqueScale = 1;
     public Rigidbody m_rigid{get{return rigid;}}
 
     public override void OnClick(HandController handController)
@@ -17,5 +17,6 @@ public class Interact_Dice : BasicPointAndClickInteractable
     public void AddThrowForce(Vector3 force){
         rigid.isKinematic = false;
         rigid.AddForce(force, ForceMode.VelocityChange);
+        rigid.AddTorque(Vector3.up*Random.Range(0.9f,1.1f)*torqueScale, ForceMode.Impulse);
     }
 }

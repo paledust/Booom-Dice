@@ -74,7 +74,7 @@ public class HandController : MonoBehaviour
 
         dice.m_rigid.transform.parent = pickDiceTrans;
         dice.m_rigid.transform.localPosition = Vector3.zero;
-        dice.m_rigid.transform.localRotation = Quaternion.identity;
+        dice.m_rigid.transform.localRotation = Quaternion.Euler(Random.Range(0, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
 
         handState = HandState.PickDice;
     }
