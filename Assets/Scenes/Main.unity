@@ -2489,7 +2489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353124530092375270, guid: 407ea4febc5be264caea459638537319, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1694
+      value: -1.1699
       objectReference: {fileID: 0}
     - target: {fileID: 353124530092375270, guid: 407ea4febc5be264caea459638537319, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2526,6 +2526,10 @@ PrefabInstance:
     - target: {fileID: 1129660576903046748, guid: 407ea4febc5be264caea459638537319, type: 3}
       propertyPath: m_Name
       value: Dice
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129660576903046748, guid: 407ea4febc5be264caea459638537319, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407ea4febc5be264caea459638537319, type: 3}

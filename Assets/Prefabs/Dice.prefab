@@ -178,3 +178,4 @@ MonoBehaviour:
   hitbox: {fileID: 4230289117939652370}
   hoverType: 2
   rigid: {fileID: 157260559902973110}
+  torqueScale: 25
