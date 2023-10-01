@@ -5,6 +5,7 @@ using UnityEngine;
 public class PointClick_InteractableHandler : MonoBehaviour
 {
     [SerializeField] private Transform handTipTrans;
+    [SerializeField] private float raycastRadius = 0.5f;
     [SerializeField] private HandController handController;
 
     private BasicPointAndClickInteractable hoveringInteractable;
@@ -16,8 +17,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     public void DetectInteractable()
     {
         Ray ray = mainCam.ScreenPointToRay(mainCam.WorldToScreenPoint(handTipTrans.position));
-        Debug.DrawRay(ray.origin, ray.direction, Color.green);
-        if(Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, Service.interactableLayer)){
+        if(Physics.SphereCast(ray.origin, raycastRadius, ray.direction, out RaycastHit hit, Mathf.Infinity, Service.interactableLayer)){
             BasicPointAndClickInteractable hit_Interactable = hit.collider.GetComponent<BasicPointAndClickInteractable>();
             if(hit_Interactable!=null){
                 if(hoveringInteractable != hit_Interactable) {
@@ -51,7 +51,6 @@ public class PointClick_InteractableHandler : MonoBehaviour
                     }
                     break;
                 case HandState.PickDice:
-                    Debug.Log(">>>");
                     handController.Throw_Dice();
                     break;
             }
@@ -70,5 +69,9 @@ public class PointClick_InteractableHandler : MonoBehaviour
             hoveringInteractable.OnExitHover();
             hoveringInteractable = null;
         }
+    }
+    void OnDrawGizmosSelected(){
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(handTipTrans.position, raycastRadius);
     }
 }

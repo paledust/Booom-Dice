@@ -14,7 +14,7 @@ public class Interact_Dice : BasicPointAndClickInteractable
         rigid.isKinematic = true;
         handController.Pick_Dice(this);
     }
-    public void AddThrowForce(Vector3 force){
+    public void ApplyThrowForce(Vector3 force){
         rigid.isKinematic = false;
         rigid.AddForce(force, ForceMode.VelocityChange);
         rigid.angularVelocity = Random.insideUnitSphere.normalized*Random.Range(0.9f,1.1f)*torqueScale;

@@ -47,6 +47,45 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 1
     value: 0
+--- !u!114 &-4133346332060291307
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a8451a73f2cf841a15890256a032da, type: 3}
+  m_Name: Vision
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blendAmount:
+    overrideState: 1
+    value: 1
+  MaskTex:
+    overrideState: 1
+    value: {fileID: 8400000, guid: 2020b1e062cf19043801e2cfa744fa7d, type: 2}
+    defaultState: 1
+  screenTex_1:
+    overrideState: 1
+    value: {fileID: 8400000, guid: c64cb11f3eee13d45b6d30075802d614, type: 2}
+    defaultState: 1
+  screenTex_2:
+    overrideState: 1
+    value: {fileID: 8400000, guid: cf5516e9cfb95b249bc055979e311e33, type: 2}
+    defaultState: 1
+  screenTex_3:
+    overrideState: 1
+    value: {fileID: 8400000, guid: 6df0d635a7af4154785b20973f1c4831, type: 2}
+    defaultState: 1
+  screenTex_4:
+    overrideState: 1
+    value: {fileID: 8400000, guid: 221dd670efb27064590359aceac24a1b, type: 2}
+    defaultState: 1
 --- !u!114 &-2114474253571281053
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1375,6 +1414,7 @@ MonoBehaviour:
   - {fileID: -7531962142243438479}
   - {fileID: 7269048097635854368}
   - {fileID: -2114474253571281053}
+  - {fileID: -4133346332060291307}
 --- !u!114 &7269048097635854368
 MonoBehaviour:
   m_ObjectHideFlags: 3

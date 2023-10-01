@@ -71,7 +71,7 @@ public class HandController : MonoBehaviour
         
         handState = HandState.Default;
 
-        hand_animator.SetTrigger("PickDice");
+        hand_animator.SetTrigger("DropCard");
 
         EventHandler.Call_OnPlayerPlaceCard();
     }
@@ -82,13 +82,17 @@ public class HandController : MonoBehaviour
         dice.m_rigid.transform.localPosition = Vector3.zero;
         dice.m_rigid.transform.localRotation = Quaternion.Euler(Random.Range(0, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
 
+        hand_animator.SetTrigger("PickDice");
+
         handState = HandState.PickDice;
     }
     public void Throw_Dice(){
         dice.m_rigid.transform.parent = null;
-        dice.AddThrowForce(ThrowForce);
+        dice.ApplyThrowForce(ThrowForce);
 
         this.dice = null;
+
+        hand_animator.SetTrigger("DropDice");
 
         handState = HandState.Default;
     }
