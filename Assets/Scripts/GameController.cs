@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour
 {
 [Header("Hand Control")]
     [SerializeField] private HandController _hand;
-
     Vector3 pointerPos;
 
     void Update(){

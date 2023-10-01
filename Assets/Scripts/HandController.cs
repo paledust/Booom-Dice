@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -17,6 +16,9 @@ public class HandController : MonoBehaviour
 [Header("Pick Dice")]
     [SerializeField] private Transform pickDiceTrans;
     [SerializeField] private Vector3 ThrowForce;
+[Space(20)]
+[Header("Animation")]
+    [SerializeField] private Animator hand_animator;
 
     private Interact_Dice dice;
     private Card pickedCard;
@@ -56,6 +58,8 @@ public class HandController : MonoBehaviour
 
         handState = HandState.PickCard;
 
+        hand_animator.SetTrigger("PickCard");
+
         EventHandler.Call_OnPlayerPickUpCard();
     }
     public void PutDown_Card(Transform cardPlaceTrans){
@@ -66,6 +70,8 @@ public class HandController : MonoBehaviour
         pickedCard = null;
         
         handState = HandState.Default;
+
+        hand_animator.SetTrigger("PickDice");
 
         EventHandler.Call_OnPlayerPlaceCard();
     }

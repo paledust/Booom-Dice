@@ -1029,6 +1029,7 @@ MonoBehaviour:
   pickCardTrans: {fileID: 8452186705269043690}
   pickDiceTrans: {fileID: 8452186705269043691}
   ThrowForce: {x: -0.5, y: -0.05, z: 0}
+  hand_animator: {fileID: 854399303}
 --- !u!4 &596663971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 660818260878405561, guid: 6977dc6bdfa582644a635cc990e4628a, type: 3}
@@ -1223,6 +1224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff09a221ca63c5d469c6796770e8e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &854399303 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1232591339822648595, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
+  m_PrefabInstance: {fileID: 8452186705269043689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &880134274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1232591341366626566, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
