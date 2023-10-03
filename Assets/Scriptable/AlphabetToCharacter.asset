@@ -1,0 +1,277 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612bde348f2d7cb479910206800f2f16, type: 3}
+  m_Name: AlphabetToCharacter
+  m_EditorClassIdentifier: 
+  characterGroups:
+  - alphabet: 97
+    lastNameCharacters:
+    - "\u827E"
+    - "\u5B89"
+    - "\u6556"
+    - "\u6602"
+    otherCharacters:
+    - "\u5CB8"
+    - "\u963F"
+    - "\u5965"
+    - "\u76CE"
+  - alphabet: 98
+    lastNameCharacters:
+    - "\u5305"
+    - "\u767D"
+    - "\u6BD5"
+    - "\u5DF4"
+    otherCharacters:
+    - "\u677F"
+    - "\u62DC"
+    - "\u5175"
+  - alphabet: 99
+    lastNameCharacters:
+    - "\u9648"
+    - "\u66F9"
+    - "\U0001F44E\u8521"
+    - "\u5D14"
+    - "\u67F4"
+    - "\u7A0B"
+    otherCharacters:
+    - "\u695A"
+    - "\u5145"
+    - "\u6A59"
+    - "\u707F"
+  - alphabet: 100
+    lastNameCharacters:
+    - "\u8463"
+    - "\u9093"
+    - "\u675C"
+    - "\u4E01"
+    otherCharacters:
+    - "\u5F85"
+    - "\u8FBE"
+    - "\u90FD"
+    - "\u5200"
+  - alphabet: 101
+    lastNameCharacters:
+    - "\u9102"
+    - "\u6069"
+    otherCharacters:
+    - "\u5A25"
+    - "\u5C14"
+  - alphabet: 102
+    lastNameCharacters:
+    - "\u51AF"
+    - "\u8303"
+    - "\u8D39"
+    - "\u5BCC"
+    otherCharacters:
+    - "\u53D1"
+    - "\u623F"
+    - "\u82AC"
+    - "\u5E06"
+  - alphabet: 103
+    lastNameCharacters:
+    - "\u90ED"
+    - "\u9AD8"
+    - "\u987E"
+    - "\u803F"
+    - "\u7518"
+    otherCharacters:
+    - "\u8D35"
+    - "\u521A"
+    - "\u8D63"
+    - "\u845B"
+  - alphabet: 104
+    lastNameCharacters:
+    - "\u97E9"
+    - "\u9EC4"
+    - "\u80E1"
+    - "\u4F55"
+    - "\u6D2A"
+    otherCharacters:
+    - "\u6D69"
+    - "\u8F89"
+    - "\u534E"
+    - "\u73AF"
+  - alphabet: 106
+    lastNameCharacters:
+    - "\u59DC"
+    - "\u8D3E"
+    - "\u7126"
+    - "\u7EAA"
+    otherCharacters:
+    - "\u9773"
+    - "\u95F4"
+    - "\u97A0"
+    - "\u7396"
+  - alphabet: 107
+    lastNameCharacters:
+    - "\u5F00"
+    - "\u5B54"
+    - "\u5EB7"
+    - "\u67EF"
+    otherCharacters:
+    - "\u5E93"
+    - "\u5321"
+    - "\u51EF"
+    - "\u9B41"
+  - alphabet: 108
+    lastNameCharacters:
+    - "\u674E"
+    - "\u5218"
+    - "\u6797"
+    - "\u7F57"
+    - "\u5415"
+    - "\u6881"
+    - "\u5362"
+    - "\u5ED6"
+    otherCharacters:
+    - "\u9C81"
+    - "\u4F26"
+    - "\u8FDE"
+    - "\u5A04"
+  - alphabet: 109
+    lastNameCharacters:
+    - "\u9A6C"
+    - "\u6728"
+    - "\u5B5F"
+    - "\u6155"
+    otherCharacters:
+    - "\u6EE1"
+    - "\u660E"
+    - "\u58A8"
+    - "\u5192"
+  - alphabet: 110
+    lastNameCharacters:
+    - "\u502A"
+    - "\u725B"
+    - "\u5E74"
+    - "\u6960"
+    otherCharacters:
+    - "\u6960"
+    - "\u8BFA"
+    - "\u5A1C"
+    - "\u5948"
+  - alphabet: 111
+    lastNameCharacters:
+    - "\u6B27"
+    otherCharacters:
+    - "\u5076"
+    - "\u8026"
+  - alphabet: 112
+    lastNameCharacters:
+    - "\u6F58"
+    - "\u5F6D"
+    - "\u5E9E"
+    - "\u88F4"
+    otherCharacters:
+    - "\u76AE"
+    - "\u5E73"
+    - "\u5761"
+    - "\u666E"
+  - alphabet: 113
+    lastNameCharacters:
+    - "\u79E6"
+    - "\u88D8"
+    - "\u4E54"
+    - "\u5C48"
+    - "\u94B1"
+    otherCharacters:
+    - "\u77BF"
+    - "\u7426"
+    - "\u5F3A"
+    - "\u90B1"
+  - alphabet: 114
+    lastNameCharacters:
+    - "\u4EFB"
+    - "\u5189"
+    - "\u962E"
+    - "\u8339"
+    otherCharacters:
+    - "\u4EC1"
+    - "\u504C"
+    - "\u9976"
+    - "\u854A"
+  - alphabet: 115
+    lastNameCharacters:
+    - "\u5B59"
+    - "\u5B8B"
+    - "\u53F8"
+    - "\u90B5"
+    - "\u8212"
+    - "\u838E"
+    otherCharacters:
+    - "\u5C71"
+    - "\u5584"
+    - "\u8BD7"
+    - "\u5347"
+  - alphabet: 116
+    lastNameCharacters:
+    - "\u8C2D"
+    - "\u7530"
+    - "\u9676"
+    - "\u7AE5"
+    otherCharacters:
+    - "\u5A77"
+    - "\u5EF7"
+    - "\u592A"
+    - "\u62D3"
+  - alphabet: 119
+    lastNameCharacters:
+    - "\u738B"
+    - "\u5434"
+    - "\u9B4F"
+    - "\u95FB"
+    otherCharacters:
+    - "\u5A49"
+    - "\u96EF"
+    - "\u4F1F"
+    - "\u671B"
+  - alphabet: 120
+    lastNameCharacters:
+    - "\u590F"
+    - "\u5148"
+    - "\u8F9B"
+    - "\u718A"
+    otherCharacters:
+    - "\u7199"
+    - "\u79C0"
+    - "\u897F"
+    - "\u96EA"
+  - alphabet: 121
+    lastNameCharacters:
+    - "\u4E25"
+    - "\u90C1"
+    - "\u6768"
+    - "\u96C5"
+    - "\u4F59"
+    otherCharacters:
+    - "\u82D1"
+    - "\u5706"
+    - "\u9633"
+    - "\u53CB"
+    - "\u52C7"
+    - "\u5B87"
+    - "\u73E7"
+  - alphabet: 122
+    lastNameCharacters:
+    - "\u90D1"
+    - "\u66FE"
+    - "\u5F20"
+    - "\u8D75"
+    - "\u795D"
+    - "\u5468"
+    otherCharacters:
+    - "\u5E84"
+    - "\u5FE0"
+    - "\u5FD7"
+    - "\u771F"
+    - "\u5146"
+    - "\u5B99"

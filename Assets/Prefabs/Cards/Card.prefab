@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2251807512456639926}
   m_LocalRotation: {x: 1.1546318e-14, y: 0.0000006705522, z: -0.000000021855698, w: 1}
   m_LocalPosition: {x: -0.17, y: -1.1655, z: -0.06}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,3 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a6833c03ae12347abe59b74a5c9fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upsideDown: 0
+  m_cardType: 0
