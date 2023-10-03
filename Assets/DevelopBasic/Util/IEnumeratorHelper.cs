@@ -1,6 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using EasingFunc;
+using TMPro;
 using UnityEngine;
+
+public static class CommonCoroutine
+{
+    public static IEnumerator CoroutineFadeText(TextMeshProUGUI text, float targetAlpha, float duration, Easing.FunctionType easeType=Easing.FunctionType.QuadEaseOut){
+        Color initColor = text.color;
+        Color targetColor = initColor;
+        targetColor.a = targetAlpha;
+
+        string outlineSoftnessName = "_OutlineSoftness";
+        float initSoftness = text.fontMaterial.GetFloat(outlineSoftnessName);
+        float targetSoftness = 1-targetAlpha;
+
+        var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
+        yield return new WaitForLoop(duration, (t)=>{
+            text.fontMaterial.SetFloat(outlineSoftnessName, Mathf.Lerp(initSoftness, targetSoftness, easeFunc(t)));
+            text.color = Color.Lerp(initColor, targetColor, easeFunc(t));
+        });
+    }    
+}
 
 public class CoroutineExcuter
 {
