@@ -18,7 +18,6 @@ MonoBehaviour:
     - "\u827E"
     - "\u5B89"
     - "\u6556"
-    - "\u6602"
     otherCharacters:
     - "\u5CB8"
     - "\u963F"
@@ -142,7 +141,8 @@ MonoBehaviour:
     - "\u9A6C"
     - "\u6728"
     - "\u5B5F"
-    - "\u6155"
+    - "\u8499"
+    - "\u6BDB"
     otherCharacters:
     - "\u6EE1"
     - "\u660E"
@@ -218,6 +218,8 @@ MonoBehaviour:
     - "\u7530"
     - "\u9676"
     - "\u7AE5"
+    - "\u5510"
+    - "\u6A80"
     otherCharacters:
     - "\u5A77"
     - "\u5EF7"
@@ -250,7 +252,6 @@ MonoBehaviour:
     - "\u4E25"
     - "\u90C1"
     - "\u6768"
-    - "\u96C5"
     - "\u4F59"
     otherCharacters:
     - "\u82D1"

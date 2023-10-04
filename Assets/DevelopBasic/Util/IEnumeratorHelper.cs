@@ -17,7 +17,7 @@ public static class CommonCoroutine
 
         var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
         yield return new WaitForLoop(duration, (t)=>{
-            text.fontMaterial.SetFloat(outlineSoftnessName, Mathf.Lerp(initSoftness, targetSoftness, easeFunc(t)));
+            text.fontMaterial.SetFloat(outlineSoftnessName, Mathf.Lerp(initSoftness, targetSoftness, easeFunc(Mathf.Clamp01(t*5))));
             text.color = Color.Lerp(initColor, targetColor, easeFunc(t));
         });
     }    
