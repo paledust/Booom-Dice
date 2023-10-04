@@ -89,7 +89,7 @@ Material:
     - _LayerIntensity: 2
     - _LayerMax: 0.87
     - _LayerMin: 0.45
-    - _Metallic: 0
+    - _Metallic: 0.2
     - _MidFactor: 0.53
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -97,28 +97,28 @@ Material:
     - _ParallaxHeight: 0.7
     - _ParallaxScale: 1
     - _ParallaxTiling: 1
-    - _Smoothness: 1
+    - _Smoothness: 0.65
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TopFactor: 0.28
-    - _TransAmbient: 1
+    - _TransAmbient: 0
     - _TransDirect: 1
-    - _TransNormalDistortion: 0
-    - _TransScattering: 3.35
-    - _TransShadow: 0
-    - _Translucency: 2.13
+    - _TransNormalDistortion: 1
+    - _TransScattering: 6.3
+    - _TransShadow: 1
+    - _Translucency: 12.2
     - _TriplanarTiling: 26.53
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
     - _ButtonColor: {r: 0, g: 0.362745, b: 1, a: 0}
-    - _Color: {r: 1, g: 0.95783496, b: 0.88113207, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MidColor: {r: 1, g: 0.24999994, b: 0, a: 0}
-    - _NumColor: {r: 5.5361323, g: 5.5361323, b: 5.5361323, a: 1}
+    - _NumColor: {r: 0, g: 0, b: 0, a: 1}
     - _TopColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Translucent: {r: 1, g: 1, b: 1, a: 0}
+    - _Translucent: {r: 1, g: 1, b: 1, a: 1}
     - _Transmission: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
