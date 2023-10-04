@@ -6,7 +6,7 @@ using UnityEngine;
 public class NameText : MonoBehaviour
 {
     public TextMeshProUGUI text;
-
+    public int order;
     private CoroutineExcuter textFader;
     void Awake(){
         textFader = new CoroutineExcuter(this);
