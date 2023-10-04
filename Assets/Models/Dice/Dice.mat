@@ -45,7 +45,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ee9bd6d9851fc794386a485d16b881cb, type: 3}
+        m_Texture: {fileID: 2800000, guid: af5ab63a69b074347be0e4c17fb9dc1b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -97,11 +97,17 @@ Material:
     - _ParallaxHeight: 0.7
     - _ParallaxScale: 1
     - _ParallaxTiling: 1
-    - _Smoothness: 0
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TopFactor: 0.28
+    - _TransAmbient: 1
+    - _TransDirect: 1
+    - _TransNormalDistortion: 0
+    - _TransScattering: 3.35
+    - _TransShadow: 0
+    - _Translucency: 2.13
     - _TriplanarTiling: 26.53
     - _UVSec: 0
     - _ZWrite: 1
@@ -113,4 +119,6 @@ Material:
     - _MidColor: {r: 1, g: 0.24999994, b: 0, a: 0}
     - _NumColor: {r: 5.5361323, g: 5.5361323, b: 5.5361323, a: 1}
     - _TopColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Translucent: {r: 1, g: 1, b: 1, a: 0}
+    - _Transmission: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

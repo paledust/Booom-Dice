@@ -17,4 +17,7 @@ public class NameText : MonoBehaviour
     public void FadeOutText(){
         textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 0, 0.5f, EasingFunc.Easing.FunctionType.CubicEaseIn));
     }
+    public void FadeOutText(float duration){
+        textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 0, duration, EasingFunc.Easing.FunctionType.CubicEaseIn));
+    }
 }

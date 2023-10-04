@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fabric
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: UI_Shadow
+  m_Shader: {fileID: 4800000, guid: ad9e17269a23e34478ac84fa230b16cb, type: 3}
   m_ValidKeywords:
-  - _METALLICGLOSSMAP
-  - _NORMALMAP
+  - _DISSOLVETYPE_TEXBASED
+  - _EDGEBLEND_ADDITIVE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 2310c3d3fee355841a0661a431e75f17, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -38,16 +38,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DissolveGuideTex:
+        m_Texture: {fileID: 2800000, guid: 5f13c857ecbf58046b7ef55c0efd7c8c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: b15cf9e7359e9c342b6920ad3f93bba1, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: e897afc6675df314692bf5a7029be2c5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -58,25 +66,57 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DissolveLength: 4
+    - _DissolveRadius: 6
+    - _DissolveSoftness: 1
+    - _DissolveType: 1
     - _DstBlend: 0
+    - _EdgeBlend: 1
+    - _EdgeSoftness: 1
+    - _EdgeValue: 0
+    - _FlipX: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseMax1: 1
+    - _NoiseMin1: -0.5
+    - _NoiseTiling1: 0.02
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PatternScale: 0.05
+    - _RadiusCenterX: 0.5
+    - _RadiusCenterY: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
+    - _UseRectUV: 0
+    - _UseUIAlphaClip: 0
     - _ZWrite: 1
+    - __dirty: 0
     m_Colors:
-    - _Color: {r: 0.26415092, g: 0.008472748, b: 0.008472748, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolvePanSpeed: {r: 0.02, g: -0.05, b: 0, a: 0}
+    - _EdgeColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FillColor: {r: 1, g: 1, b: 1, a: 1}
+    - _NoiseSpeed1: {r: 0.02, g: -0.02, b: 0, a: 0}
+    - _SpriteRect: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
