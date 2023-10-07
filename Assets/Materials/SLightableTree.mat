@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SLightable
+  m_Name: SLightableTree
   m_Shader: {fileID: 4800000, guid: fa875a87df961204db9882506feed2dc, type: 3}
   m_ValidKeywords:
   - _TEXTUREAFFECTLIGHT_ON
@@ -102,6 +102,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LightMultiplier: 10
     - _Metallic: 0
     - _Mode: 0
     - _NoiseMax1: 0.5
