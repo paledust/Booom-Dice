@@ -16,7 +16,7 @@ public class MushRoom : MonoBehaviour
     }
     public void MushRoomGrow(Transform trans){
         transform.localPosition = trans.localPosition;
-        transform.localRotation = trans.localRotation * Quaternion.Euler(0, 0, Random.Range(-10,10));
+        transform.localRotation = trans.localRotation * Quaternion.Euler(0, 0, Random.Range(-5,5));
 
         StopAllCoroutines();
         StartCoroutine(coroutineMushroomGrow(growTime, initialSize*Random.Range(0.9f,1.1f)));
