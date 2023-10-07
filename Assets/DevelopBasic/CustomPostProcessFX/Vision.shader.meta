@@ -5,6 +5,8 @@ ShaderImporter:
   defaultTextures:
   - _Screen_1: {fileID: 8400000, guid: c64cb11f3eee13d45b6d30075802d614, type: 2}
   - _MaskTex: {fileID: 8400000, guid: 2020b1e062cf19043801e2cfa744fa7d, type: 2}
+  - _Screen_2: {fileID: 8400000, guid: cf5516e9cfb95b249bc055979e311e33, type: 2}
+  - _Screen_3: {fileID: 8400000, guid: 6df0d635a7af4154785b20973f1c4831, type: 2}
   nonModifiableTextures: []
   preprocessorOverride: 0
   userData: 

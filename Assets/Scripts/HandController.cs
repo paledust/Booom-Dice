@@ -63,8 +63,8 @@ public class HandController : MonoBehaviour
         EventHandler.Call_OnPlayerPickUpCard();
     }
     public void PutDown_Card(Transform cardPlaceTrans){
-        pickedCard.transform.parent = cardPlaceTrans.transform;
-        pickedCard.transform.localPosition = Vector3.zero;
+        pickedCard.transform.parent = cardPlaceTrans.parent;
+        pickedCard.transform.localPosition = cardPlaceTrans.localPosition;   
         pickedCard.transform.localRotation = Quaternion.Euler(0, (pickedCard.upsideDown?180:0), 180);
 
         pickedCard = null;
