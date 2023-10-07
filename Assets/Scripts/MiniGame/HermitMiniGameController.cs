@@ -18,13 +18,12 @@ public class HermitMiniGameController : BasicMiniGameController
     [SerializeField] private float spawnWidth = 1;
     [SerializeField] private float spawnHeight = 0.2f;
 
+    private float depth;
     private MovingTree[] treeArray;
     private float spawnTimer;
     private int spawnIndex = 0;
 
-    void Awake(){
-        SetUp(targetCamera);
-    }
+    void Awake()=>SetUp(targetCamera); //Set Up function需要之后由玩家翻牌步骤中主动触发
     void Start(){
         treeArray = new MovingTree[poolSize];
         for(int i=0; i<poolSize; i++){
@@ -39,10 +38,7 @@ public class HermitMiniGameController : BasicMiniGameController
     public override void UpdateMiniGame(Vector3 pointerPos)
     {
     //Control Lantern
-        pointerPos.z = depth;
-        pointerPos.x *= ratio;
-        pointerPos.y *= ratio;
-        Vector3 pos = targetCamera.ScreenToWorldPoint(pointerPos);
+        Vector3 pos = GetWorldPointerPos(pointerPos, depth);
         pos.y = lightSource.position.y;
         lightSource.position = Vector3.Lerp(lightSource.position, pos, Time.deltaTime * lerpSpeed);
 

@@ -8,7 +8,6 @@ public abstract class BasicMiniGameController : MonoBehaviour
     [SerializeField] private CardType miniGameType;
     [SerializeField] protected Camera targetCamera;
 
-    protected float depth;
     protected float ratio;
     protected Camera mainCam;
 
@@ -18,7 +17,7 @@ public abstract class BasicMiniGameController : MonoBehaviour
         targetCamera = _targetCam;
     }
     public abstract void UpdateMiniGame(Vector3 pointerScreenPos);
-    protected Vector3 GetWorldPointerPos(Vector3 pointerScreenPos){
+    protected Vector3 GetWorldPointerPos(Vector3 pointerScreenPos, float depth){
         pointerScreenPos.z = depth;
         pointerScreenPos.x *= ratio;
         pointerScreenPos.y *= ratio;
