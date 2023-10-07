@@ -21,7 +21,7 @@ public class HermitMiniGameController : BasicMiniGameController
     private float depth;
     private float ratio;
     private Camera mainCam;
-    private TreeMovement[] treeArray;
+    private Tree[] treeArray;
     private float spawnTimer;
     private int spawnIndex = 0;
 
@@ -30,9 +30,9 @@ public class HermitMiniGameController : BasicMiniGameController
         ratio = (targetCam.pixelWidth+0f)/(mainCam.pixelWidth+0f);
     }
     void Start(){
-        treeArray = new TreeMovement[poolSize];
+        treeArray = new Tree[poolSize];
         for(int i=0; i<poolSize; i++){
-            treeArray[i] = GameObject.Instantiate(treePrefabs[i%treePrefabs.Length], Vector3.zero, Quaternion.identity, transform).GetComponent<TreeMovement>();
+            treeArray[i] = GameObject.Instantiate(treePrefabs[i%treePrefabs.Length], Vector3.zero, Quaternion.identity, transform).GetComponent<Tree>();
             treeArray[i].gameObject.SetActive(false);
         }
         Service.Shuffle(ref treeArray);
