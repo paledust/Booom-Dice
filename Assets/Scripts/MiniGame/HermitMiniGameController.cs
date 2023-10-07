@@ -7,7 +7,6 @@ public class HermitMiniGameController : BasicMiniGameController
 [Header("LightSource Control")]
     [SerializeField] private Transform lightSource;
     [SerializeField] private float lerpSpeed = 10;
-    [SerializeField] private Camera targetCam;
 [Header("Tree Spawn")]
     [SerializeField] private int poolSize = 25;
     [SerializeField] private float spawnRate = 1f;
@@ -19,16 +18,12 @@ public class HermitMiniGameController : BasicMiniGameController
     [SerializeField] private float spawnWidth = 1;
     [SerializeField] private float spawnHeight = 0.2f;
 
-    private float depth;
-    private float ratio;
-    private Camera mainCam;
     private MovingTree[] treeArray;
     private float spawnTimer;
     private int spawnIndex = 0;
 
     void Awake(){
-        mainCam = Camera.main;
-        ratio = (targetCam.pixelWidth+0f)/(mainCam.pixelWidth+0f);
+        SetUp(targetCamera);
     }
     void Start(){
         treeArray = new MovingTree[poolSize];
@@ -39,7 +34,7 @@ public class HermitMiniGameController : BasicMiniGameController
         Service.Shuffle(ref treeArray);
     }
     void OnEnable(){
-        depth = targetCam.WorldToScreenPoint(lightSource.position).z;
+        depth = targetCamera.WorldToScreenPoint(lightSource.position).z;
     }
     public override void UpdateMiniGame(Vector3 pointerPos)
     {
@@ -47,7 +42,7 @@ public class HermitMiniGameController : BasicMiniGameController
         pointerPos.z = depth;
         pointerPos.x *= ratio;
         pointerPos.y *= ratio;
-        Vector3 pos = targetCam.ScreenToWorldPoint(pointerPos);
+        Vector3 pos = targetCamera.ScreenToWorldPoint(pointerPos);
         pos.y = lightSource.position.y;
         lightSource.position = Vector3.Lerp(lightSource.position, pos, Time.deltaTime * lerpSpeed);
 
