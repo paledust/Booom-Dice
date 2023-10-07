@@ -8,14 +8,17 @@ public class MovingTree : MonoBehaviour
     [SerializeField] private float moveSpeed = 1;
     [SerializeField] private Transform[] mushroomGrowTrans;
     [SerializeField] private MushRoom[] mushRooms;
+    public bool m_growed{get; private set;} = false;
     void Update(){
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
     }
     public void GrowMushRoom(){
+        m_growed = true;
         Service.Shuffle(ref mushroomGrowTrans);
         StartCoroutine(coroutineMushroomGrow());
     }
     public void ResetState(){
+        m_growed = false;
         for(int i=0; i<mushRooms.Length; i++){
             mushRooms[i].gameObject.SetActive(false);
         }

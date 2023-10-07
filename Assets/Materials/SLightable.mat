@@ -127,7 +127,7 @@ Material:
     - _UseFlickering: 1
     - _UseRectUV: 0
     - _UseUIAlphaClip: 0
-    - _Y_MakeUp: 0.1
+    - _Y_MakeUp: 0.75
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:

@@ -6,6 +6,7 @@ public class HermitMiniGameController : BasicMiniGameController
 {
 [Header("LightSource Control")]
     [SerializeField] private Transform lightSource;
+    [SerializeField] private float lerpSpeed = 10;
     [SerializeField] private Camera targetCam;
 [Header("Tree Spawn")]
     [SerializeField] private int poolSize = 25;
@@ -48,7 +49,7 @@ public class HermitMiniGameController : BasicMiniGameController
         pointerPos.y *= ratio;
         Vector3 pos = targetCam.ScreenToWorldPoint(pointerPos);
         pos.y = lightSource.position.y;
-        lightSource.position = pos;
+        lightSource.position = Vector3.Lerp(lightSource.position, pos, Time.deltaTime * lerpSpeed);
 
     //Spawn Tree
         if(spawnTimer+1/spawnRate<Time.time){
@@ -68,6 +69,7 @@ public class HermitMiniGameController : BasicMiniGameController
         treeArray[index].transform.localScale = Vector3.one * spawnSizeRange.GetRndValueInVector2Range();
 
         treeArray[index].gameObject.SetActive(true);
+        treeArray[index].ResetState();
     }
     void OnDrawGizmosSelected(){
         Gizmos.color = Color.green;
