@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using AmplifyShaderEditor;
 using UnityEngine;
 
-public class Tree : MonoBehaviour
+public class MovingTree : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1;
     [SerializeField] private Transform[] mushroomGrowTrans;
