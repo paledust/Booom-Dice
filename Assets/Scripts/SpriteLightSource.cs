@@ -15,6 +15,7 @@ public class SpriteLightSource : MonoBehaviour
     private static int SpriteLightLengthID;
     private static int SpriteLightIntensityID;
     private static int SpriteLightColorID;
+    private static int TargetCameraPosID;
 
     void Awake(){
         SpriteLightPosID = Shader.PropertyToID("SpriteLightPos");
