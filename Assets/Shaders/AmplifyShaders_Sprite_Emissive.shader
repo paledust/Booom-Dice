@@ -9,6 +9,8 @@ Shader "AmplifyShaders/Sprite_Emissive"
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 		[PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
 		_EmissionScale("EmissionScale", Float) = 1
+		_Colorful("Colorful", Float) = 1
+		[Toggle(_SATURATECHANGEWITHREDCHANNEL_ON)] _SaturateChangeWithRedChannel("SaturateChangeWithRedChannel", Float) = 0
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 
 	}
@@ -39,6 +41,7 @@ Shader "AmplifyShaders/Sprite_Emissive"
 			#pragma multi_compile _ ETC1_EXTERNAL_ALPHA
 			#include "UnityCG.cginc"
 			#define ASE_NEEDS_FRAG_COLOR
+			#pragma shader_feature_local _SATURATECHANGEWITHREDCHANNEL_ON
 
 
 			struct appdata_t
@@ -66,6 +69,7 @@ Shader "AmplifyShaders/Sprite_Emissive"
 			uniform sampler2D _AlphaTex;
 			uniform float _EmissionScale;
 			uniform float4 _MainTex_ST;
+			uniform float _Colorful;
 
 			
 			v2f vert( appdata_t IN  )
@@ -107,7 +111,16 @@ Shader "AmplifyShaders/Sprite_Emissive"
 
 				float2 uv_MainTex = IN.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				float4 temp_output_5_0 = ( IN.color * tex2D( _MainTex, uv_MainTex ) );
-				float4 appendResult11 = (float4(( _EmissionScale * (temp_output_5_0).rgb ) , (temp_output_5_0).a));
+				float3 temp_output_10_0 = ( _EmissionScale * (temp_output_5_0).rgb );
+				float grayscale14 = (temp_output_10_0.r + temp_output_10_0.g + temp_output_10_0.b) / 3;
+				float3 temp_cast_0 = (grayscale14).xxx;
+				#ifdef _SATURATECHANGEWITHREDCHANNEL_ON
+				float staticSwitch17 = ( IN.color.r * _Colorful );
+				#else
+				float staticSwitch17 = _Colorful;
+				#endif
+				float3 lerpResult15 = lerp( temp_cast_0 , temp_output_10_0 , staticSwitch17);
+				float4 appendResult11 = (float4(lerpResult15 , (temp_output_5_0).a));
 				
 				fixed4 c = appendResult11;
 				c.rgb *= c.a;
@@ -130,9 +143,14 @@ Node;AmplifyShaderEditor.ComponentMaskNode;9;-345.2947,-19.45248;Inherit;False;F
 Node;AmplifyShaderEditor.ComponentMaskNode;8;-338.0946,-226.6525;Inherit;False;True;True;True;False;1;0;COLOR;0,0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.RangedFloatNode;6;-302.8305,-305.2899;Inherit;False;Property;_EmissionScale;EmissionScale;0;0;Create;True;0;0;0;False;0;False;1;1;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;10;-123.5568,-291.1856;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.DynamicAppendNode;11;76.45624,-157.0618;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
-Node;AmplifyShaderEditor.WireNode;12;26.84407,-41.71815;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;227.7712,-158.4016;Float;False;True;-1;2;ASEMaterialInspector;0;10;AmplifyShaders/Sprite_Emissive;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;False;True;3;1;False;;10;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;0;;0;0;Standard;0;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.DynamicAppendNode;11;473.7166,-86.36296;Inherit;False;FLOAT4;4;0;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT4;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;625.0314,-87.70278;Float;False;True;-1;2;ASEMaterialInspector;0;10;AmplifyShaders/Sprite_Emissive;0f8ba0101102bb14ebf021ddadce9b49;True;SubShader 0 Pass 0;0;0;SubShader 0 Pass 0;2;False;True;3;1;False;;10;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;0;;0;0;Standard;0;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.WireNode;12;181.7083,25.6141;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.LerpOp;15;325.0506,-309.7554;Inherit;False;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT;0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.TFHCGrayscale;14;51.92202,-404.9185;Inherit;False;2;1;0;FLOAT3;0,0,0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.StaticSwitch;17;-1.783001,272.4373;Inherit;False;Property;_SaturateChangeWithRedChannel;SaturateChangeWithRedChannel;2;0;Create;True;0;0;0;False;0;False;0;0;0;True;;Toggle;2;Key0;Key1;Create;True;True;All;9;1;FLOAT;0;False;0;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT;0;False;7;FLOAT;0;False;8;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;18;-190.9647,214.4281;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;16;-468.2703,264.3392;Inherit;False;Property;_Colorful;Colorful;1;0;Create;True;0;0;0;False;0;False;1;1;0;0;0;1;FLOAT;0
 WireConnection;3;0;2;0
 WireConnection;5;0;4;0
 WireConnection;5;1;3;0
@@ -140,9 +158,17 @@ WireConnection;9;0;5;0
 WireConnection;8;0;5;0
 WireConnection;10;0;6;0
 WireConnection;10;1;8;0
-WireConnection;11;0;10;0
+WireConnection;11;0;15;0
 WireConnection;11;3;12;0
-WireConnection;12;0;9;0
 WireConnection;1;0;11;0
+WireConnection;12;0;9;0
+WireConnection;15;0;14;0
+WireConnection;15;1;10;0
+WireConnection;15;2;17;0
+WireConnection;14;0;10;0
+WireConnection;17;1;16;0
+WireConnection;17;0;18;0
+WireConnection;18;0;4;1
+WireConnection;18;1;16;0
 ASEEND*/
-//CHKSM=E3B993AD6FAFBEE25E0ACE418556BE14AF48AFE3
+//CHKSM=CB8820190301E3FB8AE01B8C34473CD9CD1392B5

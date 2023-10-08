@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6fee3149c4244a4dae545fb2c8deb0d, type: 2}
+  - {fileID: 2100000, guid: a3856afe422ba8c44a43e8180c4b9828, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b9c307dd4582f4480460c9be22a6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0.2
   spriteRenderer: {fileID: 1192164248541223734}
   lookableType: 0
   fadeTime: 0.25
   conditionDetector:
-    detectionTime: 1.2
+    detectionTime: 0.75
   initColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!65 &1192164248541223732
 BoxCollider:

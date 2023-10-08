@@ -7,6 +7,7 @@ public class BalancingHand : MonoBehaviour
     [SerializeField] private Transform leftHandTrans;
     [SerializeField] private Transform rightHandTrans;
     [SerializeField, Range(-1, 1)] private float balanceValue = 0;
+    [SerializeField] private AnimationCurve easeCurve;
     [SerializeField] private float balanceToHeight = 2;
     [SerializeField] private float lerpSpeed = 5;
 [Header("Animation")]
@@ -16,10 +17,13 @@ public class BalancingHand : MonoBehaviour
     private float balanceHeight;
     private Vector3 initLeftHandPos;
     private Vector3 initRightHandPos;
+    private CoroutineExcuter weightChanger;
 
     private const string OffsetFloatName = "Offset";
 
     void Start(){
+        weightChanger = new CoroutineExcuter(this);
+
         initLeftHandPos = leftHandTrans.localPosition;
         initRightHandPos = rightHandTrans.localPosition;
 
@@ -29,16 +33,43 @@ public class BalancingHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        balanceHeight = Mathf.Lerp(balanceHeight, balanceValue*balanceToHeight, Time.deltaTime*lerpSpeed);
         leftHandTrans.localPosition = initLeftHandPos + balanceHeight*Vector3.forward;
         rightHandTrans.localPosition = initRightHandPos - balanceHeight*Vector3.forward;
     }
     public void AddToRightHand(float weight){
-        balanceValue += weight;
-        balanceValue = Mathf.Clamp(balanceValue,-1,1);
+        if(balanceValue>=1){
+            balanceValue += weight;
+            weightChanger.Excute(coroutineShakeHand(balanceValue*balanceToHeight, 1f));
+            balanceValue = Mathf.Clamp(balanceValue,-1,1);
+        }
+        else{
+            balanceValue += weight;
+            weightChanger.Excute(coroutineChangeBalanceValue(balanceValue*balanceToHeight, 1f));
+            balanceValue = Mathf.Clamp(balanceValue,-1,1);
+        }
     }
     public void AddToLeftHand(float weight){
-        balanceValue -= weight;
-        balanceValue = Mathf.Clamp(balanceValue,-1,1);
+        if(balanceValue<=-1){
+            balanceValue -= weight;
+            weightChanger.Excute(coroutineShakeHand(balanceValue*balanceToHeight, 1f));
+            balanceValue = Mathf.Clamp(balanceValue,-1,1);
+        }
+        else{
+            balanceValue -= weight;
+            balanceValue = Mathf.Clamp(balanceValue,-1,1);
+            weightChanger.Excute(coroutineChangeBalanceValue(balanceValue*balanceToHeight, 1f));
+        }
+    }
+    IEnumerator coroutineChangeBalanceValue(float targetWeight, float duration){
+        float initWeight = balanceHeight;
+        yield return new WaitForLoop(duration, (t)=>{
+            balanceHeight = Mathf.LerpUnclamped(initWeight, targetWeight, easeCurve.Evaluate(t));
+        });
+    }
+    IEnumerator coroutineShakeHand(float targetWeight, float duration){
+        float initWeight = balanceHeight;
+        yield return new WaitForLoop(duration, (t)=>{
+            balanceHeight = Mathf.LerpUnclamped(initWeight, targetWeight, EasingFunc.Easing.CosPulse(t));
+        });
     }
 }

@@ -18,10 +18,15 @@ public class JusticeMiniGameController : BasicMiniGameController
     private Lookable currentLookable;
     private const string onLookTriggerName = "OnLook";
     private const string exitLookTriggerName = "ExitLook";
+    private const string blinkTriggerName = "Blink";
 
     void Awake()=>SetUp(targetCamera);
     void OnEnable(){
         depth = targetCamera.WorldToScreenPoint(eyeCenterTrans.position).z;
+        EventHandler.E_OnSpotLookable += SpotLookableHandler;
+    }
+    void OnDisable(){
+        EventHandler.E_OnSpotLookable -= SpotLookableHandler;
     }
     public override void UpdateMiniGame(Vector3 pointerScreenPos)
     {
@@ -60,6 +65,17 @@ public class JusticeMiniGameController : BasicMiniGameController
         }
         else{
             ClearLookable();
+        }
+    }
+    public void SpotLookableHandler(LookableType lookableType){
+        eyeAnimator.SetTrigger(blinkTriggerName);
+        switch(lookableType){
+            case LookableType.Heart:
+                balancingHand.AddToLeftHand(0.3f);
+                break;
+            case LookableType.Feather:
+                balancingHand.AddToRightHand(0.3f);
+                break;
         }
     }
     void ClearLookable()

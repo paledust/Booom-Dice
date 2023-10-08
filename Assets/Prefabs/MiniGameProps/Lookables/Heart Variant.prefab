@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1192164248541223720, guid: 8a7679c114523ab448a077f0073407ec, type: 3}
       propertyPath: m_Name
-      value: Heart
+      value: Heart Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1192164248541223721, guid: 8a7679c114523ab448a077f0073407ec, type: 3}
       propertyPath: m_RootOrder
