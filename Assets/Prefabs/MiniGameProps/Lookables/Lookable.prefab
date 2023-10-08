@@ -100,8 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1192164248541223734}
   lookableType: 0
+  fadeTime: 0.25
   conditionDetector:
-    detectionTime: 0
+    detectionTime: 1.2
+  initColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!65 &1192164248541223732
 BoxCollider:
   m_ObjectHideFlags: 0

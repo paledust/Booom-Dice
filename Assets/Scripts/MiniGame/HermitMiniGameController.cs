@@ -45,8 +45,9 @@ public class HermitMiniGameController : BasicMiniGameController
     //Spawn Tree
         if(spawnTimer+1/spawnRate<Time.time){
             spawnTimer = Time.time;
-            SpawnATree(spawnIndex%poolSize);
+            SpawnATree(spawnIndex);
             spawnIndex ++;
+            if(spawnIndex>=poolSize) spawnIndex = 0;
         }
     }
     void SpawnATree(int index){
