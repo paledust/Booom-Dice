@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
 [System.Serializable]
-[PostProcess(typeof(VisionRenderer), PostProcessEvent.BeforeStack, "Custom/Vision")]
+[PostProcess(typeof(VisionRenderer), PostProcessEvent.BeforeStack, "Custom/Vision", false)]
 public class Vision : PostProcessEffectSettings
 {
     [Range(0, 1f)]

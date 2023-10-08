@@ -1,8 +1,8 @@
-// Upgrade NOTE: upgraded instancing buffer 'AmplifyShadersSpriteEmissiveDissolve' to new syntax.
+// Upgrade NOTE: upgraded instancing buffer 'AmplifyShadersUIEmissiveDissolve' to new syntax.
 
 // Made with Amplify Shader Editor v1.9.2.1
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "AmplifyShaders/Sprite EmissiveDissolve"
+Shader "AmplifyShaders/UI EmissiveDissolve"
 {
     Properties
     {
@@ -139,10 +139,10 @@ Shader "AmplifyShaders/Sprite EmissiveDissolve"
             uniform sampler2D _DissolveGuideTex;
             uniform float _EdgeValue;
             uniform float _EdgeSoftness;
-            UNITY_INSTANCING_BUFFER_START(AmplifyShadersSpriteEmissiveDissolve)
+            UNITY_INSTANCING_BUFFER_START(AmplifyShadersUIEmissiveDissolve)
             	UNITY_DEFINE_INSTANCED_PROP(float4, _SpriteRect)
-#define _SpriteRect_arr AmplifyShadersSpriteEmissiveDissolve
-            UNITY_INSTANCING_BUFFER_END(AmplifyShadersSpriteEmissiveDissolve)
+#define _SpriteRect_arr AmplifyShadersUIEmissiveDissolve
+            UNITY_INSTANCING_BUFFER_END(AmplifyShadersUIEmissiveDissolve)
 
             
             v2f vert(appdata_t v )
@@ -339,7 +339,7 @@ Node;AmplifyShaderEditor.SmoothstepOpNode;42;-813.7785,-235.7707;Inherit;False;3
 Node;AmplifyShaderEditor.SamplerNode;101;-3011.913,264.7142;Inherit;True;Property;_DissolveGuideTex;DissolveGuideTex;17;0;Create;True;0;0;0;False;0;False;-1;None;None;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.ColorNode;79;-770.9401,-679.2653;Inherit;False;Property;_FillColor;FillColor;3;1;[HDR];Create;True;0;0;0;False;0;False;0,0,0,1;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.TemplateShaderPropertyNode;163;1608.22,-549.5604;Inherit;False;0;0;_Color;Shader;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;160;1927.984,-341.6814;Float;False;True;-1;2;ASEMaterialInspector;0;3;AmplifyShaders/Sprite EmissiveDissolve;5056123faa0c79b47ab6ad7e8bf059a4;True;Default;0;0;Default;2;False;True;3;1;False;;10;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;True;True;True;True;True;0;True;_ColorMask;False;False;False;False;False;False;False;True;True;0;True;_Stencil;255;True;_StencilReadMask;255;True;_StencilWriteMask;0;True;_StencilComp;0;True;_StencilOp;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;2;False;;True;0;True;unity_GUIZTestMode;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;0;;0;0;Standard;0;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;160;1927.984,-341.6814;Float;False;True;-1;2;ASEMaterialInspector;0;3;AmplifyShaders/UI EmissiveDissolve;5056123faa0c79b47ab6ad7e8bf059a4;True;Default;0;0;Default;2;False;True;3;1;False;;10;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;;False;True;True;True;True;True;0;True;_ColorMask;False;False;False;False;False;False;False;True;True;0;True;_Stencil;255;True;_StencilReadMask;255;True;_StencilWriteMask;0;True;_StencilComp;0;True;_StencilOp;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;2;False;;True;0;True;unity_GUIZTestMode;False;True;5;Queue=Transparent=Queue=0;IgnoreProjector=True;RenderType=Transparent=RenderType;PreviewType=Plane;CanUseSpriteAtlas=True;False;False;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;0;;0;0;Standard;0;0;1;True;False;;False;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;164;1763.782,-436.2062;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT4;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.VertexColorNode;165;1558.782,-731.2062;Inherit;False;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 WireConnection;49;0;93;0
@@ -436,4 +436,4 @@ WireConnection;160;0;164;0
 WireConnection;164;0;165;0
 WireConnection;164;1;122;0
 ASEEND*/
-//CHKSM=3FAB4A7D7B580F0C1558D4C2D3447B4E6C9A9097
+//CHKSM=815D24EDF6A547F77EBE4AA2FD1DE03A52E33ECC
