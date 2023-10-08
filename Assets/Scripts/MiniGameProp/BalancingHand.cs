@@ -9,7 +9,6 @@ public class BalancingHand : MonoBehaviour
     [SerializeField, Range(-1, 1)] private float balanceValue = 0;
     [SerializeField] private AnimationCurve easeCurve;
     [SerializeField] private float balanceToHeight = 2;
-    [SerializeField] private float lerpSpeed = 5;
 [Header("Animation")]
     [SerializeField] private Animator leftHandAnime;
     [SerializeField] private Animator rightHandAnime;

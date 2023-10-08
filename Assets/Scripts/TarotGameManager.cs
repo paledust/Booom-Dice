@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class TarotGameManager : MonoBehaviour
 {
+    [SerializeField] private GameController gameController;
     [SerializeField] private Interact_PlaceCard[] cardPlacers;
-
+    
     private int placerIndex = 0;
+    private List<Card> placedCardList;
 
     void OnEnable(){
         EventHandler.E_OnPlayerPickUpCard += OnPickCardHandler;
@@ -16,12 +18,17 @@ public class TarotGameManager : MonoBehaviour
         EventHandler.E_OnPlayerPickUpCard -= OnPickCardHandler;
         EventHandler.E_OnPlayerPlaceCard  -= OnPlaceCardHandler;
     }
-    void OnPickCardHandler(){
-        if(placerIndex<cardPlacers.Length){
-            cardPlacers[placerIndex].EnableHitbox();
-            placerIndex++;
-        }
+    void Start(){
+        placedCardList = new List<Card>();
     }
-    void OnPlaceCardHandler(){
+    void OnPickCardHandler(){
+        if(placerIndex<cardPlacers.Length)
+            cardPlacers[placerIndex].EnableHitbox();
+    }
+    void OnPlaceCardHandler(Card card){
+        placedCardList.Add(card);
+        placerIndex ++;
+        if(placerIndex == 3)
+            gameController.ProceedToFlipCard(placedCardList.ToArray());
     }
 }

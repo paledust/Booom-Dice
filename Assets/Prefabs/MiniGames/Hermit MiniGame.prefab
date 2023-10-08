@@ -1006,15 +1006,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6429952189252885801}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c926806b513bac24394b3a2d722052c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   miniGameType: 3
+  targetCamera: {fileID: 0}
+  Revealed: 0
   lightSource: {fileID: 6429952189447030834}
   lerpSpeed: 10
-  targetCam: {fileID: 0}
   poolSize: 50
   spawnRate: 2
   treePrefabs:

@@ -226,7 +226,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   balanceToHeight: 0.15
-  lerpSpeed: 4
   leftHandAnime: {fileID: 6497317469530279940}
   rightHandAnime: {fileID: 2320971789057439442}
 --- !u!1 &2320971789241129678
@@ -870,13 +869,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2320971790265103811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef72bc794b1e3fb43906d2a802651ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   miniGameType: 2
   targetCamera: {fileID: 0}
+  Revealed: 0
   eyeCenterTrans: {fileID: 2320971790774621996}
   eyeTrans: {fileID: 2320971789604474476}
   eyeAnimator: {fileID: 2320971790774621997}

@@ -21,7 +21,6 @@ public class TowerMiniGameController : BasicMiniGameController
     private List<Cloud> cloudList;
     private float spawnTimer;
 
-    void Awake()=>SetUp(targetCamera);
     void Start(){
         flipExcuter = new CoroutineExcuter(this);
 

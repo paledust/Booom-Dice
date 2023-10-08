@@ -63,9 +63,11 @@ public class HandController : MonoBehaviour
         EventHandler.Call_OnPlayerPickUpCard();
     }
     public void PutDown_Card(Transform cardPlaceTrans){
+        Card card = pickedCard;
+
         pickedCard.transform.parent = cardPlaceTrans.parent;
         pickedCard.transform.localPosition = cardPlaceTrans.localPosition;   
-        pickedCard.transform.localRotation = Quaternion.Euler(0, (pickedCard.upsideDown?180:0), 180);
+        pickedCard.transform.localRotation = Quaternion.Euler(0, pickedCard.upsideDown?180:0, 180);
 
         pickedCard = null;
         
@@ -73,7 +75,7 @@ public class HandController : MonoBehaviour
 
         hand_animator.SetTrigger("DropCard");
 
-        EventHandler.Call_OnPlayerPlaceCard();
+        EventHandler.Call_OnPlayerPlaceCard(card);
     }
     public void Pick_Dice(Interact_Dice dice){
         this.dice = dice;

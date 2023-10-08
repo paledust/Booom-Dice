@@ -20,7 +20,6 @@ public class JusticeMiniGameController : BasicMiniGameController
     private const string exitLookTriggerName = "ExitLook";
     private const string blinkTriggerName = "Blink";
 
-    void Awake()=>SetUp(targetCamera);
     void OnEnable(){
         depth = targetCamera.WorldToScreenPoint(eyeCenterTrans.position).z;
         EventHandler.E_OnSpotLookable += SpotLookableHandler;

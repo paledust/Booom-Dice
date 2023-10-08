@@ -5055,13 +5055,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7366992009775657574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28a5f63ac16527844a0bb2a1fd661921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   miniGameType: 4
   targetCamera: {fileID: 0}
+  Revealed: 0
   personTrans: {fileID: 7366992008007264652}
   personRotateRoot: {fileID: 7366992009683931862}
   distanceToAngle: 500

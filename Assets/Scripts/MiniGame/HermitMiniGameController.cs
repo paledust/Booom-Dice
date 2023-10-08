@@ -23,7 +23,6 @@ public class HermitMiniGameController : BasicMiniGameController
     private float spawnTimer;
     private int spawnIndex = 0;
 
-    void Awake()=>SetUp(targetCamera); //Set Up function需要之后由玩家翻牌步骤中主动触发
     void Start(){
         treeArray = new MovingTree[poolSize];
         for(int i=0; i<poolSize; i++){
