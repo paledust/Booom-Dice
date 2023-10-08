@@ -6,4 +6,5 @@ using UnityEngine;
 public enum HoverType{None, PickCard, Point, PutDownCard}
 public enum CardType{Undefine, Star, Justice, Hermit, Tower, Magician}
 public enum HandState{Default, PickCard, PickDice}
+public enum LookableType{Heart, Feather}
 #endregion
