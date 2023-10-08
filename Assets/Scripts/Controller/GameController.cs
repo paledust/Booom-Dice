@@ -19,9 +19,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private MiniGameRT_Group[] miniGamesRT_Group;
     [SerializeField] private List<BasicMiniGameController> miniGames;
 
+    private int flipCardIndex = 0;
     private Vector3 pointerPos;
+
     private static readonly Vector3 miniGamePlacePos = new Vector3(0,0,1);
     private static readonly Vector3 miniGamePlaceRot = new Vector3(-90,0,0);
+
     void OnEnable(){
         EventHandler.E_OnFlipCard += OnFlipCardHandler;
     }
@@ -31,7 +34,7 @@ public class GameController : MonoBehaviour
     void Update(){
         _hand.Hand_Update(pointerPos);
         foreach(BasicMiniGameController miniGame in miniGames){
-            if(miniGame!=null && miniGame.Revealed){
+            if(miniGame!=null && miniGame.m_updating){
                 miniGame.UpdateMiniGame(pointerPos);
             }
         }
@@ -57,6 +60,10 @@ public class GameController : MonoBehaviour
         miniGameMaskRT_Group.SetActive(true);
     }
     public void OnFlipCardHandler(Card card){
-        
+        miniGames[flipCardIndex].gameObject.SetActive(true);
+        miniGames[flipCardIndex].StartMiniGame();
+
+        miniGamesRT_Group[flipCardIndex].miniGameRoot.gameObject.SetActive(true);
+        flipCardIndex ++;
     }
 }

@@ -21,28 +21,12 @@ public class TowerMiniGameController : BasicMiniGameController
     private List<Cloud> cloudList;
     private float spawnTimer;
 
-    void Start(){
-        flipExcuter = new CoroutineExcuter(this);
-
-        cloudList = new List<Cloud>();
-        for(int i=0; i<cloudPoolSize; i++){
-            var cloudObj = GameObject.Instantiate(cloudPrefab, transform);
-            cloudObj.SetActive(false);
-            cloudList.Add(cloudObj.GetComponent<Cloud>());
-        }
-        spawnTimer = Time.time;
-    }
     void OnEnable(){
         depth = targetCamera.WorldToScreenPoint(personTrans.position).z;
     }
-    void Update(){
-        if(Time.time-spawnTimer>1f/spawnRate){
-            spawnTimer = Time.time;
-            cloudList.Find(x=>!x.gameObject.activeSelf)?.ActiveCloud(spawnTrans.position+Vector3.right*Random.Range(-spawnWidth/2f, spawnWidth/2f));
-        }
-    }
     public override void UpdateMiniGame(Vector3 pointerScreenPos)
     {
+    //Person Position
         Vector3 pos = GetWorldPointerPos(pointerScreenPos, depth);
         float diff = pos.z - personTrans.position.z;
         pos.y = personTrans.position.y;
@@ -59,6 +43,23 @@ public class TowerMiniGameController : BasicMiniGameController
             side = 1;
             flipExcuter.Excute(coroutineFlipSize(90, 0.5f));
         }
+    
+    //Cloud Spawn
+        if(Time.time-spawnTimer>1f/spawnRate){
+            spawnTimer = Time.time;
+            cloudList.Find(x=>!x.gameObject.activeSelf)?.ActiveCloud(spawnTrans.position+Vector3.right*Random.Range(-spawnWidth/2f, spawnWidth/2f));
+        }
+    }
+    protected override void OnStart(){
+        flipExcuter = new CoroutineExcuter(this);
+
+        cloudList = new List<Cloud>();
+        for(int i=0; i<cloudPoolSize; i++){
+            var cloudObj = GameObject.Instantiate(cloudPrefab, transform);
+            cloudObj.SetActive(false);
+            cloudList.Add(cloudObj.GetComponent<Cloud>());
+        }
+        spawnTimer = Time.time;
     }
     IEnumerator coroutineFlipSize(float targetAngle, float duration){
         float currentAngle = personTrans.localEulerAngles.x;
