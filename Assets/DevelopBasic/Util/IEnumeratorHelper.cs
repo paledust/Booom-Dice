@@ -20,7 +20,15 @@ public static class CommonCoroutine
             text.fontMaterial.SetFloat(outlineSoftnessName, Mathf.Lerp(initSoftness, targetSoftness, easeFunc(Mathf.Clamp01(t*5))));
             text.color = Color.Lerp(initColor, targetColor, easeFunc(t));
         });
-    }    
+    }
+    public static IEnumerator CoroutineDissolveSprite(SpriteRenderer m_sprite, float initRadius, float targetRadius, float duration, Easing.FunctionType easeType=Easing.FunctionType.QuadEaseOut){
+        string dissolveRadiusName = "_DissolveRadius";
+
+        var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
+        yield return new WaitForLoop(duration, (t)=>{
+            m_sprite.material.SetFloat(dissolveRadiusName, Mathf.Lerp(initRadius, targetRadius, easeFunc(t)));
+        });
+    }
 }
 
 public class CoroutineExcuter

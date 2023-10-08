@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
         miniGames[flipCardIndex].StartMiniGame();
 
         miniGamesRT_Group[flipCardIndex].miniGameRoot.gameObject.SetActive(true);
+        StartCoroutine(CommonCoroutine.CoroutineDissolveSprite(miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer, 0, 0.35f, 2f));
         flipCardIndex ++;
     }
 }
