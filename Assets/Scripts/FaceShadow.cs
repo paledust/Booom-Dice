@@ -29,7 +29,7 @@ public class FaceShadow : MonoBehaviour
         imageDissolver.Excute(coroutineDissolveShadow(dissolveInTime, 0f, EasingFunc.Easing.FunctionType.QuadEaseOut));
     }
     public void DissolveOutShadow(){
-        imageDissolver.Excute(coroutineDissolveShadow(dissolveOutTime, 6f));
+        imageDissolver.Excute(coroutineDissolveShadow(dissolveOutTime, 7f));
     }
     IEnumerator coroutineDissolveShadow(float duration, float targetRadius, EasingFunc.Easing.FunctionType easeType=EasingFunc.Easing.FunctionType.Linear){
         var easeFunc = EasingFunc.Easing.GetFunctionWithTypeEnum(easeType);
