@@ -14,9 +14,9 @@ public class Vision : PostProcessEffectSettings
     public FloatParameter greenChannelOffset = new FloatParameter{value = 0.6f};
     public FloatParameter blueChannelOffset = new FloatParameter{value = 1.2f};
 [Header("maskFade")]
-    public FloatParameter redSinWeight = new FloatParameter{value = 1};
-    public FloatParameter greenSinWeight = new FloatParameter{value = 1};
-    public FloatParameter blueSinWeight = new FloatParameter{value = 1};
+    [Range(0,1)] public FloatParameter redSinWeight = new FloatParameter{value = 1};
+    [Range(0,1)] public FloatParameter greenSinWeight = new FloatParameter{value = 1};
+    [Range(0,1)] public FloatParameter blueSinWeight = new FloatParameter{value = 1};
 [Space(20), Header("Texture")]
     public TextureParameter MaskTex = new TextureParameter{value = null};
     public TextureParameter screenTex_1 = new TextureParameter{value = null};
