@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace SimpleAudioSystem{
     public class AudioManager : Singleton<AudioManager>
@@ -9,6 +10,8 @@ namespace SimpleAudioSystem{
     [Header("Audio source")]
         [SerializeField] private AudioSource ambience_loop;
         [SerializeField] private AudioSource music_loop;
+    [Header("Audio Mixer")]
+        [SerializeField] private AudioMixer main_mixer;
         string current_ambience_name = string.Empty;
         string current_music_name = string.Empty;
         private bool ambience_crossfading = false;
@@ -64,6 +67,9 @@ namespace SimpleAudioSystem{
         }
         public void FadeAudio(AudioSource m_audio, float targetVolume, float transitionTime, bool StopOnFadeOut = false){
             StartCoroutine(coroutineFadeAudio(m_audio, targetVolume, transitionTime, StopOnFadeOut));
+        }
+        public void SetMixerValue(string valueName, float value){
+            main_mixer.SetFloat(valueName, value);
         }
     #endregion
     

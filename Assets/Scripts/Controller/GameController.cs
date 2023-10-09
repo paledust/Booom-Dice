@@ -51,7 +51,6 @@ public class GameController : MonoBehaviour
     public void ProceedToFlipCard(Card[] cards){
         hintParticle.Play();
         for(int i=0; i<cards.Length; i++){
-            // cards[i].EnableHitbox();
             var miniGame = GameObject.Instantiate(cardToMiniGame.GetMiniGamePrefabFromCardType(cards[i].m_cardType)).GetComponent<BasicMiniGameController>();
             miniGame.SetUp(miniGamesRT_Group[i].miniGameRT_Cam);
             miniGame.gameObject.SetActive(false);

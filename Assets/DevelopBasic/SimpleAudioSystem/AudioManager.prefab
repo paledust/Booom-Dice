@@ -49,6 +49,7 @@ MonoBehaviour:
   audioInfo: {fileID: 11400000, guid: 631aa24ea4e64554ba244ec701ad6c0a, type: 2}
   ambience_loop: {fileID: 5275165435782480257}
   music_loop: {fileID: 5275165436332487226}
+  main_mixer: {fileID: 24100000, guid: 3e1d0a7194314b440b41badb1f52dd30, type: 2}
 --- !u!1 &5275165435782480259
 GameObject:
   m_ObjectHideFlags: 0
