@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using SimpleAudioSystem;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HermitMiniGameController : BasicMiniGameController
@@ -23,6 +22,9 @@ public class HermitMiniGameController : BasicMiniGameController
     [SerializeField] private Rigidbody lanternRigid;
     [SerializeField] private float anglularThreashold = 10;
     [SerializeField] private AudioSource riverAudio;
+    [SerializeField] private SFX_Emitter stepEmiter;
+    [SerializeField] private SFX_Emitter lanternEmiter;
+    
     [SerializeField] private AudioSource sfxAudio;
     [SerializeField] private AudioClip[] stepClips; 
     [SerializeField] private AudioClip[] lanternClips;
@@ -56,18 +58,8 @@ public class HermitMiniGameController : BasicMiniGameController
             if(spawnIndex>=poolSize) spawnIndex = 0;
         }
     //Update Audio
-        if(stepClipTimer + stepClipIntersection<Time.time){
-            stepClipTimer = Time.time;
-            AudioManager.Instance.PlaySoundEffect(sfxAudio, stepClips[stepClipIndex], 1);
-            stepClipIndex++;
-            if(stepClipIndex>=stepClips.Length) stepClipIndex = 0;
-        }
-        if(lanternClipTimer + lanternClipIntersection<Time.time && lanternRigid.angularVelocity.magnitude>=anglularThreashold){
-            lanternClipTimer = Time.time;
-            AudioManager.Instance.PlaySoundEffect(sfxAudio, lanternClips[lanternClipIndex], 1);
-            lanternClipIndex++;
-            if(lanternClipIndex>=lanternClips.Length) lanternClipIndex = 0;
-        }
+        stepEmiter.KeepEmitSound();
+        lanternEmiter.KeepEmitSound(lanternRigid.angularVelocity.magnitude>=anglularThreashold);
     }
     protected override void OnStart(){
         treeArray = new MovingTree[poolSize];

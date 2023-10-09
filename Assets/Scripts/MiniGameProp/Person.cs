@@ -12,6 +12,8 @@ public class Person : MonoBehaviour
     [SerializeField] private float floatSpeed = 2;
     [SerializeField] private float waveSpeed = 10;
     [SerializeField] private float waveAngle = 10;
+[Space(20), Header("Audio")]
+    [SerializeField] private SFX_Emitter thunderEmiter;
     private int spriteIndex = 0;
     void Start(){
         personRenderer.sprite = personSprites[spriteIndex];
@@ -23,6 +25,7 @@ public class Person : MonoBehaviour
     }
     public void SwitchPersonPost(){
         spriteIndex ++;
+        thunderEmiter.EmitSoundEffect();
         spriteIndex = spriteIndex%personSprites.Length;
         personRenderer.sprite = personSprites[spriteIndex];
     }

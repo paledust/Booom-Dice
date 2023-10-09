@@ -171,6 +171,15 @@ MonoBehaviour:
   floatSpeed: 2
   waveSpeed: 5
   waveAngle: 10
+  thunderEmiter:
+    m_audio: {fileID: 0}
+    clips:
+    - {fileID: 8300000, guid: c46ed51577e58e74f91583ef10f3828b, type: 3}
+    - {fileID: 8300000, guid: 1dd6034ded0d7f24a849dd340f3325e8, type: 3}
+    - {fileID: 8300000, guid: c32915afdd592da47babc52287b8c2e2, type: 3}
+    - {fileID: 8300000, guid: d4b61aca038639849a59d69dec5f3349, type: 3}
+    clipIntersection: 2
+    volumeScale: 0.8
 --- !u!135 &8992638821253428828
 SphereCollider:
   m_ObjectHideFlags: 0
