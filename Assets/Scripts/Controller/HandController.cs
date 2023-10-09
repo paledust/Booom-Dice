@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 [System.Serializable]
@@ -20,7 +21,9 @@ public class HandController : MonoBehaviour
     [SerializeField] private Transform pickDiceTrans;
     [SerializeField] private Vector3 ThrowForce;
 [Header("Flip Card")]
+    [SerializeField] private Transform cardParent;
     [SerializeField] private float diffToAngle = 10;
+    [SerializeField] private float flipThreashold = 1;
     [SerializeField] private Transform flipCardTrans;
     [SerializeField] private Transform rotateTrans;
     [SerializeField] private Vector3 rotateOffset;
@@ -30,17 +33,20 @@ public class HandController : MonoBehaviour
 [Header("Animation")]
     [SerializeField] private Animator hand_animator;
 
+    private float depth;
     private Interact_Dice pickedDice;
     private Card pickedCard;
+    private Card flipingCard;
     private Camera mainCam;
-    private float depth;
     private Vector3 pointerPos;
 
-    private Vector3 startFlipPose;
+    private float flipValue;
+    private Vector3 flipPointerRefPos;
     private Vector3 initHandLocalPos;
     private Quaternion initHandLocalRot;
 
-    public PointClick_InteractableHandler m_PointClick_InteractableHandler{get{return pointClick_InteractableHandler;}}
+    private Vector3 initCardPos;
+
     public bool HasCard{get{return pickedCard!=null;}}
 
     void Start(){
@@ -59,8 +65,16 @@ public class HandController : MonoBehaviour
 
         switch(handState){
             case HandState.FlipCard:
-                float diff = startFlipPose.x - targetPosition.x;
-                handRootTrans.RotateAround(rotateTrans.position, Vector3.forward, diff*diffToAngle*Time.deltaTime);
+                float diff = flipPointerRefPos.x - targetPosition.x;
+                diff = Mathf.Min(0, diff);
+                flipValue = Mathf.Lerp(flipValue, diff, Time.deltaTime*10);
+                Quaternion rot = Quaternion.Euler(0,0,flipValue*diffToAngle);
+                handRootTrans.rotation = rot * Quaternion.Euler(cardRotEuler);
+                handRootTrans.position = rotateTrans.position + rot * (cardPosOffset-rotateOffset);
+
+                if(Mathf.Abs(flipValue)>flipThreashold){
+                    EndFlipCard();
+                }
                 break;
             default:
                 handTarget.position = Vector3.Lerp(handTarget.position, targetPosition, Time.deltaTime*lerpSpeed);
@@ -128,17 +142,21 @@ public class HandController : MonoBehaviour
         handState = HandState.Default;
     }
     public void StartFlipCard(Card card){
+        flipValue = 0;
         pointerPos.z = depth;
-        startFlipPose = mainCam.ScreenToWorldPoint(pointerPos);
-        startFlipPose.y = handTarget.position.y;
+        initCardPos = card.transform.position;
+        flipPointerRefPos = mainCam.ScreenToWorldPoint(pointerPos);
+        flipPointerRefPos.y = handTarget.position.y;
 
         rotateTrans.position = card.transform.position + rotateOffset;
 
         StartCoroutine(coroutineStartFlipCard(card));
+        flipingCard = card;
         handState = HandState.FlipCard;
     }
-    public void EndFlipCard(Card card){
-        StartCoroutine(CommonCoroutine.CoroutineSetTrans(handRootTrans, initHandLocalPos, initHandLocalRot, true, 0.25f));
+    public void EndFlipCard(){
+        StartCoroutine(coroutineEndFlipCard(flipingCard));
+        flipingCard = null;
         handState = HandState.Default;
     }
 #endregion
@@ -147,6 +165,18 @@ public class HandController : MonoBehaviour
         card.transform.parent = flipCardTrans;
         card.transform.localPosition = Vector3.zero;
         card.transform.localRotation = card.upsideDown?Quaternion.Euler(0, 180, 0):Quaternion.identity;
+    }
+    IEnumerator coroutineEndFlipCard(Card card){
+        Vector3 euler = card.transform.eulerAngles;
+        euler.x = 0;
+        euler.z = 360;
+
+        StartCoroutine(CommonCoroutine.CoroutineSetTrans(card.transform, initCardPos, Quaternion.Euler(euler), false, .5f, EasingFunc.Easing.FunctionType.QuadEaseIn));
+        card.transform.parent = cardParent;
+        yield return CommonCoroutine.CoroutineSetTrans(handRootTrans, handRootTrans.position + Vector3.right*0.5f, handRootTrans.rotation, false, 0.5f);
+        yield return new WaitForSeconds(0.15f);
+        yield return CommonCoroutine.CoroutineSetTrans(handRootTrans, initHandLocalPos, initHandLocalRot, true, 0.5f);
+
     }
     void OnDrawGizmosSelected(){
         DebugExtension.DrawArrow(pickDiceTrans.position,ThrowForce, Color.green);

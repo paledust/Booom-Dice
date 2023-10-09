@@ -29,18 +29,19 @@ public static class CommonCoroutine
             m_sprite.material.SetFloat(dissolveRadiusName, Mathf.Lerp(initRadius, targetRadius, easeFunc(t)));
         });
     }
-    public static IEnumerator CoroutineSetTrans(Transform trans, Vector3 targetPos, Quaternion targetRot, bool isLocal, float duration){
+    public static IEnumerator CoroutineSetTrans(Transform trans, Vector3 targetPos, Quaternion targetRot, bool isLocal, float duration, Easing.FunctionType easeType = Easing.FunctionType.QuadEaseOut){
         Vector3 initPos = isLocal?trans.localPosition:trans.position;
         Quaternion initRot = isLocal?trans.localRotation:trans.rotation;
 
+        var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
         yield return new WaitForLoop(duration, (t)=>{
             if(isLocal){
-                trans.localPosition = Vector3.LerpUnclamped(initPos, targetPos, EasingFunc.Easing.QuadEaseOut(t));
-                trans.localRotation = Quaternion.LerpUnclamped(initRot, targetRot, EasingFunc.Easing.QuadEaseOut(t));
+                trans.localPosition = Vector3.LerpUnclamped(initPos, targetPos, easeFunc(t));
+                trans.localRotation = Quaternion.LerpUnclamped(initRot, targetRot, easeFunc(t));
             }
             else{
-                trans.position = Vector3.LerpUnclamped(initPos, targetPos, EasingFunc.Easing.QuadEaseOut(t));
-                trans.rotation = Quaternion.LerpUnclamped(initRot, targetRot, EasingFunc.Easing.QuadEaseOut(t));
+                trans.position = Vector3.LerpUnclamped(initPos, targetPos, easeFunc(t));
+                trans.rotation = Quaternion.LerpUnclamped(initRot, targetRot, easeFunc(t));
             }
         });
     }
