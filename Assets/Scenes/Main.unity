@@ -1192,12 +1192,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538420203}
   m_LocalRotation: {x: -0.000000040839204, y: -0.7071067, z: -0.7071069, w: -0.00000005968041}
-  m_LocalPosition: {x: -0.0818, y: -1.1695, z: -0.0451}
-  m_LocalScale: {x: 0.036593366, y: 0.036593363, z: 0.036593363}
+  m_LocalPosition: {x: 0, y: -0.011655491, z: 0}
+  m_LocalScale: {x: 0.85308915, y: 0.85308903, z: 0.85308903}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1070775890}
-  m_RootOrder: 1
+  m_Father: {fileID: 1502028081}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -180}
 --- !u!212 &538420205
 SpriteRenderer:
@@ -2014,8 +2014,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 341745024}
-  - {fileID: 538420204}
-  - {fileID: 1535748835}
   - {fileID: 1502028081}
   - {fileID: 1781765472}
   m_Father: {fileID: 972397487}
@@ -2555,9 +2553,10 @@ Transform:
   m_LocalPosition: {x: -0.0818, y: -1.169, z: -0.0451}
   m_LocalScale: {x: 0.042895127, y: 0.042895127, z: 0.042895127}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 538420204}
   m_Father: {fileID: 1070775890}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532625447
 GameObject:
@@ -2633,12 +2632,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535748834}
   m_LocalRotation: {x: -0.000000040839204, y: -0.7071067, z: -0.7071069, w: -0.00000005968041}
-  m_LocalPosition: {x: 0.198, y: -1.1691, z: 0.0431}
-  m_LocalScale: {x: 0.02555765, y: 0.02555765, z: 0.02555765}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2007841, y: 1.200784, z: 1.200784}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1070775890}
-  m_RootOrder: 2
+  m_Father: {fileID: 1781765472}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1535748836
 SpriteRenderer:
@@ -3072,12 +3071,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781765471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.198, y: -1.1691, z: 0.0431}
+  m_LocalPosition: {x: 0.198, y: -1.1691, z: 0.0726}
   m_LocalScale: {x: 0.021284133, y: 0.021284133, z: 0.021284133}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1535748835}
   m_Father: {fileID: 1070775890}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1781765473
 MeshRenderer:
@@ -3258,6 +3258,7 @@ MonoBehaviour:
   hintParticle: {fileID: 2000877197}
   _hand: {fileID: 535873606}
   tarotGame: {fileID: 1532625449}
+  miniGameControl: {fileID: 0}
   cardToMiniGame: {fileID: 11400000, guid: 58a12ec3e3a6d364d8555bbee564e262, type: 2}
   miniGameMaskRT_Group: {fileID: 1706026494}
   miniGamesRT_Group:
@@ -3762,7 +3763,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000877195}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 1.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -3837,8 +3838,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 3
+      scalar: 4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8884,7 +8885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353124530092375270, guid: 407ea4febc5be264caea459638537319, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.457
+      value: 0.752
       objectReference: {fileID: 0}
     - target: {fileID: 353124530092375270, guid: 407ea4febc5be264caea459638537319, type: 3}
       propertyPath: m_LocalRotation.w

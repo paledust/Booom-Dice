@@ -9,6 +9,7 @@ public class ChannelData{
     public float sinWeight;
     public string channelWeightName;
     public string mixerValueName;
+    public CoroutineExcuter channelFader;
 }
 public class MiniGameChannelController : MonoBehaviour
 {
@@ -22,10 +23,10 @@ public class MiniGameChannelController : MonoBehaviour
 [Space(20), Header("Information")]
     [SerializeField] private float[] realTimeWeight;
 
-    private CoroutineExcuter channelFader;
-
     void Start(){
-        channelFader = new CoroutineExcuter(this);
+        for(int i=0; i<channelDatas.Length; i++){
+            channelDatas[i].channelFader = new CoroutineExcuter(this);
+        }
         realTimeWeight = new float[channelWeight.Length];
     }
     void Update(){
@@ -44,23 +45,46 @@ public class MiniGameChannelController : MonoBehaviour
         StartCoroutine(coroutineFadeInChannel(targetChannel, channelFadeInTime, channelLerpToSinTime));
     }
     IEnumerator coroutineFadeInChannel(int targetChannel, float duration, float toSinDuration){
-        // yield return new WaitForLoop(duration, (t)=>{
-        //     channelWeight[targetChannel] = Mathf.Lerp(0, 1, EasingFunc.Easing.SmoothInOut(t));
-        // });
-        // channelFader.Excute()
+        switch(targetChannel){
+            case 0:
+                channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 1, duration));
+                break;
+            case 1:
+                channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 0, duration));
+                channelDatas[1].channelFader.Excute(coroutineFadeChannelWeight(1, 1, duration));
+                break;
+            case 2:
+                channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 0, duration));
+                channelDatas[1].channelFader.Excute(coroutineFadeChannelWeight(1, 0, duration));
+                channelDatas[2].channelFader.Excute(coroutineFadeChannelWeight(2, 1, duration));
+                break;
+        }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f+duration);
+
+        switch(targetChannel){
+            case 0:
+                channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 1, toSinDuration));
+                break;
+            case 1:
+                channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 1, toSinDuration));
+                channelDatas[1].channelFader.Excute(coroutineFadeChannelWeight(1, 1, toSinDuration));
+                break;
+            case 2:
+                channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 1, toSinDuration));
+                channelDatas[1].channelFader.Excute(coroutineFadeChannelWeight(1, 1, toSinDuration));
+                channelDatas[2].channelFader.Excute(coroutineFadeChannelWeight(2, 1, toSinDuration));
+                break;            
+        }
 
         yield return new WaitForLoop(toSinDuration, (t)=>{
             channelDatas[targetChannel].sinWeight = Mathf.Lerp(0, 1, t);
         });
     }
-    IEnumerator coroutineFadeChannelWeight(float[] channelweights, float duration){
-        float[] currentWeights = channelweights;
+    IEnumerator coroutineFadeChannelWeight(int targetChannel, float targetWeights, float duration){
+        float initWeight = channelWeight[targetChannel];
         yield return new WaitForLoop(duration, (t)=>{
-            for(int i=0; i<channelweights.Length; i++){
-                // channelweights[i] = Mathf.Lerp()
-            }
+            channelWeight[targetChannel] = Mathf.Lerp(initWeight, targetWeights, t);
         });
     }
 }

@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
 [Header("Tarot Game")]
     [SerializeField] private TarotGameManager tarotGame;
 [Space(20), Header("Mini Game")]
+    [SerializeField] private MiniGameChannelController miniGameControl;
     [SerializeField] private CardToMiniGame cardToMiniGame;
     [SerializeField] private GameObject miniGameMaskRT_Group;
     [SerializeField] private MiniGameRT_Group[] miniGamesRT_Group;
@@ -67,6 +68,8 @@ public class GameController : MonoBehaviour
     }
     public void OnFlipCardHandler(Card card){
         tarotGame.PrepareNextCard();
+
+        miniGameControl.FadeInChannel(flipCardIndex);
 
         miniGames[flipCardIndex].gameObject.SetActive(true);
         miniGames[flipCardIndex].StartMiniGame();
