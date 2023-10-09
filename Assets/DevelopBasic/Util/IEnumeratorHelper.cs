@@ -29,6 +29,21 @@ public static class CommonCoroutine
             m_sprite.material.SetFloat(dissolveRadiusName, Mathf.Lerp(initRadius, targetRadius, easeFunc(t)));
         });
     }
+    public static IEnumerator CoroutineSetTrans(Transform trans, Vector3 targetPos, Quaternion targetRot, bool isLocal, float duration){
+        Vector3 initPos = isLocal?trans.localPosition:trans.position;
+        Quaternion initRot = isLocal?trans.localRotation:trans.rotation;
+
+        yield return new WaitForLoop(duration, (t)=>{
+            if(isLocal){
+                trans.localPosition = Vector3.LerpUnclamped(initPos, targetPos, EasingFunc.Easing.QuadEaseOut(t));
+                trans.localRotation = Quaternion.LerpUnclamped(initRot, targetRot, EasingFunc.Easing.QuadEaseOut(t));
+            }
+            else{
+                trans.position = Vector3.LerpUnclamped(initPos, targetPos, EasingFunc.Easing.QuadEaseOut(t));
+                trans.rotation = Quaternion.LerpUnclamped(initRot, targetRot, EasingFunc.Easing.QuadEaseOut(t));
+            }
+        });
+    }
 }
 
 public class CoroutineExcuter

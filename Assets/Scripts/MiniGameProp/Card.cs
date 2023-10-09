@@ -10,8 +10,9 @@ public class Card : BasicPointAndClickInteractable
     public override void OnClick(HandController handController)
     {
         base.OnClick(handController);
-        transform.Rotate(new Vector3(0,0,180));
-        EventHandler.Call_OnFlipCard(this);
+        handController.StartFlipCard(this);
+        // transform.Rotate(new Vector3(0,0,180));
+        // EventHandler.Call_OnFlipCard(this);
         
         DisableHitbox();
     }

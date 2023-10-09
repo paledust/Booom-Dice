@@ -37,7 +37,6 @@ public class PointClick_InteractableHandler : MonoBehaviour
     }
     public void InteractWithInteractable(bool isPressed, HandState handState){
         if(isPressed){
-
             switch(handState){
                 case HandState.Default:
                     if(hoveringInteractable==null) return;
@@ -53,6 +52,8 @@ public class PointClick_InteractableHandler : MonoBehaviour
                     break;
                 case HandState.PickDice:
                     handController.Throw_Dice();
+                    break;
+                case HandState.FlipCard:
                     break;
             }
         }

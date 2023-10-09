@@ -6,6 +6,9 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
     [SerializeField, ShowOnly] private HandState handState = HandState.Default;
+[Header("Hand IK")]
+    [SerializeField] private IK_Control handIK;
+    [SerializeField] private Transform handRootTrans;
 [Header("Hand Move")]
     [SerializeField] private Transform handTarget;
     [SerializeField] private float lerpSpeed = 10;
@@ -16,14 +19,26 @@ public class HandController : MonoBehaviour
 [Header("Pick Dice")]
     [SerializeField] private Transform pickDiceTrans;
     [SerializeField] private Vector3 ThrowForce;
+[Header("Flip Card")]
+    [SerializeField] private float diffToAngle = 10;
+    [SerializeField] private Transform flipCardTrans;
+    [SerializeField] private Transform rotateTrans;
+    [SerializeField] private Vector3 rotateOffset;
+    [SerializeField] private Vector3 cardPosOffset;
+    [SerializeField] private Vector3 cardRotEuler;
 [Space(20)]
 [Header("Animation")]
     [SerializeField] private Animator hand_animator;
 
-    private Interact_Dice dice;
+    private Interact_Dice pickedDice;
     private Card pickedCard;
     private Camera mainCam;
     private float depth;
+    private Vector3 pointerPos;
+
+    private Vector3 startFlipPose;
+    private Vector3 initHandLocalPos;
+    private Quaternion initHandLocalRot;
 
     public PointClick_InteractableHandler m_PointClick_InteractableHandler{get{return pointClick_InteractableHandler;}}
     public bool HasCard{get{return pickedCard!=null;}}
@@ -32,24 +47,32 @@ public class HandController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         mainCam = Camera.main;
         depth = mainCam.WorldToScreenPoint(handTarget.position).z;
+
+        initHandLocalPos = handRootTrans.localPosition;
+        initHandLocalRot = handRootTrans.localRotation;
     }
     public void Hand_Update(Vector3 pointer){
-        UpdateHandPos(pointer);
-        pointClick_InteractableHandler.DetectInteractable();
+        pointerPos = pointer;
+        pointerPos.z = depth;
+        Vector3 targetPosition = mainCam.ScreenToWorldPoint(pointerPos);
+        targetPosition.y = handTarget.position.y;
+
+        switch(handState){
+            case HandState.FlipCard:
+                float diff = startFlipPose.x - targetPosition.x;
+                handRootTrans.RotateAround(rotateTrans.position, Vector3.forward, diff*diffToAngle*Time.deltaTime);
+                break;
+            default:
+                handTarget.position = Vector3.Lerp(handTarget.position, targetPosition, Time.deltaTime*lerpSpeed);
+                pointClick_InteractableHandler.DetectInteractable();
+                break;
+        }
     }
     public void OnHover(){
         hand_animator.SetBool("IsHovering", true);
     }
     public void OnExitHover(){
         hand_animator.SetBool("IsHovering", false);
-    }
-    void UpdateHandPos(Vector3 pointer)
-    {
-        pointer.z = depth;
-        Vector3 targetPosition = mainCam.ScreenToWorldPoint(pointer);
-        targetPosition.y = handTarget.position.y;
-
-        handTarget.position = Vector3.Lerp(handTarget.position, targetPosition, Time.deltaTime*lerpSpeed);
     }
 #region Hand Interaction
     public void Hand_Interact(bool isPressed){
@@ -84,7 +107,7 @@ public class HandController : MonoBehaviour
         EventHandler.Call_OnPlayerPlaceCard(card);
     }
     public void Pick_Dice(Interact_Dice dice){
-        this.dice = dice;
+        this.pickedDice = dice;
 
         dice.m_rigid.transform.parent = pickDiceTrans;
         dice.m_rigid.transform.localPosition = Vector3.zero;
@@ -95,16 +118,36 @@ public class HandController : MonoBehaviour
         handState = HandState.PickDice;
     }
     public void Throw_Dice(){
-        dice.m_rigid.transform.parent = null;
-        dice.ApplyThrowForce(ThrowForce);
+        pickedDice.m_rigid.transform.parent = null;
+        pickedDice.ApplyThrowForce(ThrowForce);
 
-        this.dice = null;
+        this.pickedDice = null;
 
         hand_animator.SetTrigger("DropDice");
 
         handState = HandState.Default;
     }
+    public void StartFlipCard(Card card){
+        pointerPos.z = depth;
+        startFlipPose = mainCam.ScreenToWorldPoint(pointerPos);
+        startFlipPose.y = handTarget.position.y;
+
+        rotateTrans.position = card.transform.position + rotateOffset;
+
+        StartCoroutine(coroutineStartFlipCard(card));
+        handState = HandState.FlipCard;
+    }
+    public void EndFlipCard(Card card){
+        StartCoroutine(CommonCoroutine.CoroutineSetTrans(handRootTrans, initHandLocalPos, initHandLocalRot, true, 0.25f));
+        handState = HandState.Default;
+    }
 #endregion
+    IEnumerator coroutineStartFlipCard(Card card){
+        yield return CommonCoroutine.CoroutineSetTrans(handRootTrans, card.transform.position+cardPosOffset, Quaternion.Euler(cardRotEuler), false, 0.25f);
+        card.transform.parent = flipCardTrans;
+        card.transform.localPosition = Vector3.zero;
+        card.transform.localRotation = card.upsideDown?Quaternion.Euler(0, 180, 0):Quaternion.identity;
+    }
     void OnDrawGizmosSelected(){
         DebugExtension.DrawArrow(pickDiceTrans.position,ThrowForce, Color.green);
     }

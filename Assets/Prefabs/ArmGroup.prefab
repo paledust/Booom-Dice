@@ -63,6 +63,7 @@ Transform:
   m_Children:
   - {fileID: 1232591341366626566}
   - {fileID: 3408242800544902586}
+  - {fileID: 5602898016021524109}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -132,6 +133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1626276887088743641}
+  - {fileID: 4403506317402506660}
   m_Father: {fileID: 1232591341635283854}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -293,6 +295,37 @@ Transform:
   m_Father: {fileID: 1626276887088743641}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -2.833, y: 5.899, z: 200.86}
+--- !u!1 &7271679971312208655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5602898016021524109}
+  m_Layer: 0
+  m_Name: RotateTrans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5602898016021524109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271679971312208655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1232591339822648596}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7613025834300718323
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +357,37 @@ Transform:
   m_Father: {fileID: 1626276887088743641}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -16.021, y: -0.5, z: 208.86}
+--- !u!1 &8972449630149663114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4403506317402506660}
+  m_Layer: 0
+  m_Name: FlipCardTrans
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4403506317402506660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8972449630149663114}
+  m_LocalRotation: {x: -0.062305257, y: 0.072328664, z: -0.9649705, w: -0.24437362}
+  m_LocalPosition: {x: 0.0197, y: -0.0298, z: 0.1781}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1232591340393560528}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 9.79, y: 4.942, z: -207.999}
 --- !u!1001 &1232591340301656882
 PrefabInstance:
   m_ObjectHideFlags: 0

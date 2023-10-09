@@ -1192,12 +1192,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handState: 0
+  handIK: {fileID: 1316997787}
+  handRootTrans: {fileID: 545251403}
   handTarget: {fileID: 4492210404102885501}
   lerpSpeed: 10
   pointClick_InteractableHandler: {fileID: 535873605}
   pickCardTrans: {fileID: 8452186705269043690}
   pickDiceTrans: {fileID: 8452186705269043691}
   ThrowForce: {x: -3.5, y: -0.5, z: 0}
+  diffToAngle: 10
+  flipCardTrans: {fileID: 944900556}
+  rotateTrans: {fileID: 8452186705269043692}
+  rotateOffset: {x: 0.421, y: -0.0035, z: 0.439}
+  cardPosOffset: {x: -0.0336, y: 0.284, z: -1.916767}
+  cardRotEuler: {x: 0.657, y: -8.952, z: 27.822}
   hand_animator: {fileID: 854399303}
 --- !u!1 &538420203
 GameObject:
@@ -1283,6 +1291,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &545251403 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1232591340393560528, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
+  m_PrefabInstance: {fileID: 8452186705269043689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &592215701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +1805,11 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!4 &944900556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4403506317402506660, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
+  m_PrefabInstance: {fileID: 8452186705269043689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2392,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1316997787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 692400342, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
+  m_PrefabInstance: {fileID: 8452186705269043689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5cccaea6f9a324790d1598d81bcdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1322720759
 GameObject:
   m_ObjectHideFlags: 0
@@ -10671,5 +10700,10 @@ Transform:
 --- !u!4 &8452186705269043691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5762987791981509742, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
+  m_PrefabInstance: {fileID: 8452186705269043689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8452186705269043692 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5602898016021524109, guid: 2f4cc77c4427fa043ae7c34a2af65154, type: 3}
   m_PrefabInstance: {fileID: 8452186705269043689}
   m_PrefabAsset: {fileID: 0}
