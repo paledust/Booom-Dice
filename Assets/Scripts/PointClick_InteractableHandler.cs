@@ -22,6 +22,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
             if(hit_Interactable!=null){
                 if(hoveringInteractable != hit_Interactable) {
                     if(hoveringInteractable!=null) hoveringInteractable.OnExitHover();
+                    handController.OnHover();
                     hoveringInteractable = hit_Interactable;
                     hoveringInteractable.OnHover(handController);
                 }
@@ -66,6 +67,7 @@ public class PointClick_InteractableHandler : MonoBehaviour
     void ClearCurrentInteractable()
     {
         if(hoveringInteractable != null){
+            handController.OnExitHover();
             hoveringInteractable.OnExitHover();
             hoveringInteractable = null;
         }

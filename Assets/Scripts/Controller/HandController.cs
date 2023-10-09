@@ -37,6 +37,12 @@ public class HandController : MonoBehaviour
         UpdateHandPos(pointer);
         pointClick_InteractableHandler.DetectInteractable();
     }
+    public void OnHover(){
+        hand_animator.SetBool("IsHovering", true);
+    }
+    public void OnExitHover(){
+        hand_animator.SetBool("IsHovering", false);
+    }
     void UpdateHandPos(Vector3 pointer)
     {
         pointer.z = depth;
