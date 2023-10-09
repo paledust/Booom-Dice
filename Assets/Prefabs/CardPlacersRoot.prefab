@@ -61,3 +61,5 @@ MonoBehaviour:
   hitbox: {fileID: 8975996736734692977}
   hoverType: 3
   placeParent: {fileID: 1087328811186837018}
+  sfx_audio: {fileID: 0}
+  putcardClip: {fileID: 8300000, guid: a8f7e01bd6a77874480698802566de88, type: 3}

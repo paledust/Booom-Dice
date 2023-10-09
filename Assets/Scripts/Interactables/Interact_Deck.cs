@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SimpleAudioSystem;
 using UnityEngine;
 
 public class Interact_Deck : BasicPointAndClickInteractable
@@ -8,6 +9,8 @@ public class Interact_Deck : BasicPointAndClickInteractable
     [SerializeField] private Card[] cards;
     [SerializeField] private float cardHeight;
     [SerializeField] private float cardIntersection;
+    [SerializeField] private AudioSource sfx_audio;
+    [SerializeField] private AudioClip[] sfX_pickCardClip;
 
     private const int maxCount = 3;
     private int cardIndex;
@@ -28,6 +31,7 @@ public class Interact_Deck : BasicPointAndClickInteractable
     public override void OnClick(HandController handController)
     {
         base.OnClick(handController);
+        AudioManager.Instance.PlaySoundEffect(sfx_audio, sfX_pickCardClip[Random.Range(0, sfX_pickCardClip.Length)], 1);
         handController.Pick_Card(cards[cardIndex]);
 
         cardIndex --;

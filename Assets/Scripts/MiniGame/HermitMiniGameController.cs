@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using SimpleAudioSystem;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HermitMiniGameController : BasicMiniGameController
@@ -17,11 +19,18 @@ public class HermitMiniGameController : BasicMiniGameController
     [SerializeField] private Transform spawnRight;
     [SerializeField] private float spawnWidth = 1;
     [SerializeField] private float spawnHeight = 0.2f;
-
+[Space(20), Header("Audio")]
+    [SerializeField] private AudioSource riverAudio;
+    [SerializeField] private AudioSource stepAudio;
+    [SerializeField] private AudioClip[] stepClips; 
+    [SerializeField] private AudioClip[] lanternClips;
+    [SerializeField] private float audioStep;
     private float depth;
     private MovingTree[] treeArray;
     private float spawnTimer;
+    private float audioTimer;
     private int spawnIndex = 0;
+    private int stepClipIndex = 0;
 
     void OnEnable(){
         depth = targetCamera.WorldToScreenPoint(lightSource.position).z;
@@ -40,6 +49,13 @@ public class HermitMiniGameController : BasicMiniGameController
             spawnIndex ++;
             if(spawnIndex>=poolSize) spawnIndex = 0;
         }
+    //Update Audio
+        if(audioTimer + audioStep<Time.time){
+            audioTimer = Time.time;
+            AudioManager.Instance.PlaySoundEffect(stepAudio, stepClips[stepClipIndex], 1);
+            stepClipIndex++;
+            if(stepClipIndex>=stepClips.Length) stepClipIndex = 0;
+        }
     }
     protected override void OnStart(){
         treeArray = new MovingTree[poolSize];
@@ -47,7 +63,9 @@ public class HermitMiniGameController : BasicMiniGameController
             treeArray[i] = GameObject.Instantiate(treePrefabs[i%treePrefabs.Length], Vector3.zero, Quaternion.identity, transform).GetComponent<MovingTree>();
             treeArray[i].gameObject.SetActive(false);
         }
+        Service.Shuffle(ref stepClips);
         Service.Shuffle(ref treeArray);
+        riverAudio.Play();
     }
     void SpawnATree(int index){
         Transform spawnTrans = Random.Range(0,2)==0?spawnLeft:spawnRight;

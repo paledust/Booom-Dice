@@ -11,7 +11,6 @@ public class Card : BasicPointAndClickInteractable
     {
         base.OnClick(handController);
         handController.StartFlipCard(this);
-        // EventHandler.Call_OnFlipCard(this);
         
         DisableHitbox();
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 [System.Serializable]
@@ -22,6 +23,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject miniGameMaskRT_Group;
     [SerializeField] private MiniGameRT_Group[] miniGamesRT_Group;
     [SerializeField] private List<BasicMiniGameController> miniGames;
+[Header("Audio")]
+    [SerializeField] private AudioMixerGroup[] mixerGroups;
 
     private int flipCardIndex = 0;
     private Vector3 pointerPos;
@@ -54,7 +57,7 @@ public class GameController : MonoBehaviour
         hintParticle.Play();
         for(int i=0; i<cards.Length; i++){
             var miniGame = GameObject.Instantiate(cardToMiniGame.GetMiniGamePrefabFromCardType(cards[i].m_cardType)).GetComponent<BasicMiniGameController>();
-            miniGame.SetUp(miniGamesRT_Group[i].miniGameRT_Cam);
+            miniGame.SetUp(miniGamesRT_Group[i].miniGameRT_Cam, mixerGroups[i]);
             miniGame.gameObject.SetActive(false);
             miniGame.transform.parent = miniGamesRT_Group[i].miniGameRoot;
             miniGame.transform.localPosition = miniGamePlacePos;

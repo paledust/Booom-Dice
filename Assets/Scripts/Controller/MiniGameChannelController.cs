@@ -39,7 +39,7 @@ public class MiniGameChannelController : MonoBehaviour
             realTimeWeight[i] = t * channelWeight[i];
         //Assign Value Based On Weight
             Shader.SetGlobalFloat(channelDatas[i].channelWeightName, realTimeWeight[i]);
-            AudioManager.Instance.SetMixerValue(channelDatas[i].mixerValueName, Mathf.Lerp(-80, 0, realTimeWeight[i]));
+            AudioManager.Instance.SetMixerValue(channelDatas[i].mixerValueName, Mathf.Lerp(-30, 0, realTimeWeight[i]));
         }
     }
     public void FadeInChannel(int targetChannel){

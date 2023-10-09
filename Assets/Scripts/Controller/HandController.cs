@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SimpleAudioSystem;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ public class HandController : MonoBehaviour
     [SerializeField, ShowOnly] private HandState handState = HandState.Default;
     [SerializeField] private GameController gameController;
 [Header("Hand IK")]
-    [SerializeField] private IK_Control handIK;
     [SerializeField] private Transform handRootTrans;
 [Header("Hand Move")]
     [SerializeField] private Transform handTarget;
@@ -33,6 +33,10 @@ public class HandController : MonoBehaviour
 [Space(20)]
 [Header("Animation")]
     [SerializeField] private Animator hand_animator;
+[Header("Audio")]
+    [SerializeField] private AudioSource sfx_source;
+    [SerializeField] private AudioClip sfx_OnflipCard;
+    [SerializeField] private AudioClip sfx_EndflipCard;
 
     private float depth;
     private Interact_Dice pickedDice;
@@ -156,6 +160,8 @@ public class HandController : MonoBehaviour
         StartCoroutine(coroutineStartFlipCard(card));
         flipingCard = card;
         handState = HandState.FlipCard;
+
+        AudioManager.Instance.PlaySoundEffect(sfx_source, sfx_OnflipCard, 1);
     }
     public void EndFlipCard(){
         StartCoroutine(coroutineEndFlipCard(flipingCard));
@@ -183,6 +189,7 @@ public class HandController : MonoBehaviour
         euler.z = 360;
 
         yield return CommonCoroutine.CoroutineSetTrans(card.transform, initCardPos, Quaternion.Euler(euler), false, .35f, EasingFunc.Easing.FunctionType.QuadEaseIn);
+        AudioManager.Instance.PlaySoundEffect(sfx_source, sfx_EndflipCard, 1);
         EventHandler.Call_OnFlipCard(card);
     }
     void OnDrawGizmosSelected(){
