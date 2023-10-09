@@ -1161,14 +1161,26 @@ MonoBehaviour:
   spawnRight: {fileID: 6429952188652623219}
   spawnWidth: 0.35
   spawnHeight: 0.1
+  lanternRigid: {fileID: 6429952189076678283}
+  anglularThreashold: 2.5
   riverAudio: {fileID: 3392733245739699484}
-  stepAudio: {fileID: 5054812891529148155}
+  sfxAudio: {fileID: 5054812891529148155}
   stepClips:
   - {fileID: 8300000, guid: 31888e8a97389c344a93f4ac1d4de376, type: 3}
   - {fileID: 8300000, guid: 273f0643547cba54ea3e7dcdd87ccb21, type: 3}
   - {fileID: 8300000, guid: 40ca09eac3decbc4b8436220c5986e13, type: 3}
   - {fileID: 8300000, guid: 334a5cf1fcd4b3e4e9da80e5c974d884, type: 3}
-  audioStep: 1.2
+  lanternClips:
+  - {fileID: 8300000, guid: f7e249b0ee1fa534292e93aece845621, type: 3}
+  - {fileID: 8300000, guid: 539bcbb734565494498d64020380ada4, type: 3}
+  - {fileID: 8300000, guid: 7445714166b131447b58a84b4acd8486, type: 3}
+  - {fileID: 8300000, guid: 9134fc0e6c1e39243815fd44013c325d, type: 3}
+  - {fileID: 8300000, guid: 72372554fca4c7d43ac0a5b9816b14a7, type: 3}
+  - {fileID: 8300000, guid: 89cdffd2e956ee745a4f39796cb9da0a, type: 3}
+  - {fileID: 8300000, guid: 30ad29ed141531641b7044eb13a334a3, type: 3}
+  - {fileID: 8300000, guid: cdd168914588e094ebf2d34849014899, type: 3}
+  stepClipIntersection: 1.2
+  lanternClipIntersection: 1.4
 --- !u!1 &6429952189266618581
 GameObject:
   m_ObjectHideFlags: 0

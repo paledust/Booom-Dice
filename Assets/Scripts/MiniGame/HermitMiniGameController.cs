@@ -20,17 +20,23 @@ public class HermitMiniGameController : BasicMiniGameController
     [SerializeField] private float spawnWidth = 1;
     [SerializeField] private float spawnHeight = 0.2f;
 [Space(20), Header("Audio")]
+    [SerializeField] private Rigidbody lanternRigid;
+    [SerializeField] private float anglularThreashold = 10;
     [SerializeField] private AudioSource riverAudio;
-    [SerializeField] private AudioSource stepAudio;
+    [SerializeField] private AudioSource sfxAudio;
     [SerializeField] private AudioClip[] stepClips; 
     [SerializeField] private AudioClip[] lanternClips;
-    [SerializeField] private float audioStep;
+    [SerializeField] private float stepClipIntersection = 1.2f;
+    [SerializeField] private float lanternClipIntersection = 2f;
     private float depth;
     private MovingTree[] treeArray;
     private float spawnTimer;
-    private float audioTimer;
+
+    private float stepClipTimer;
+    private float lanternClipTimer;
     private int spawnIndex = 0;
     private int stepClipIndex = 0;
+    private int lanternClipIndex = 0;
 
     void OnEnable(){
         depth = targetCamera.WorldToScreenPoint(lightSource.position).z;
@@ -50,11 +56,17 @@ public class HermitMiniGameController : BasicMiniGameController
             if(spawnIndex>=poolSize) spawnIndex = 0;
         }
     //Update Audio
-        if(audioTimer + audioStep<Time.time){
-            audioTimer = Time.time;
-            AudioManager.Instance.PlaySoundEffect(stepAudio, stepClips[stepClipIndex], 1);
+        if(stepClipTimer + stepClipIntersection<Time.time){
+            stepClipTimer = Time.time;
+            AudioManager.Instance.PlaySoundEffect(sfxAudio, stepClips[stepClipIndex], 1);
             stepClipIndex++;
             if(stepClipIndex>=stepClips.Length) stepClipIndex = 0;
+        }
+        if(lanternClipTimer + lanternClipIntersection<Time.time && lanternRigid.angularVelocity.magnitude>=anglularThreashold){
+            lanternClipTimer = Time.time;
+            AudioManager.Instance.PlaySoundEffect(sfxAudio, lanternClips[lanternClipIndex], 1);
+            lanternClipIndex++;
+            if(lanternClipIndex>=lanternClips.Length) lanternClipIndex = 0;
         }
     }
     protected override void OnStart(){
@@ -64,6 +76,7 @@ public class HermitMiniGameController : BasicMiniGameController
             treeArray[i].gameObject.SetActive(false);
         }
         Service.Shuffle(ref stepClips);
+        Service.Shuffle(ref lanternClips);
         Service.Shuffle(ref treeArray);
         riverAudio.Play();
     }
