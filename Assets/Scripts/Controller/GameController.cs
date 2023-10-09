@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     private int flipCardIndex = 0;
     private Vector3 pointerPos;
 
+    public const string DissolveRadiusName = "_DissolveRadius";
     private static readonly Vector3 miniGamePlacePos = new Vector3(0,0,1);
     private static readonly Vector3 miniGamePlaceRot = new Vector3(-90,0,0);
 
@@ -71,11 +72,21 @@ public class GameController : MonoBehaviour
 
         miniGameControl.FadeInChannel(flipCardIndex);
 
+        // miniGames[flipCardIndex].gameObject.SetActive(true);
+        // miniGames[flipCardIndex].StartMiniGame();
+        // miniGamesRT_Group[flipCardIndex].miniGameRoot.gameObject.SetActive(true);
+        StartCoroutine(CommonCoroutine.CoroutineDissolveSprite(miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer, 
+                                                               miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer.material.GetFloat(DissolveRadiusName), 
+                                                               0.35f, 2f));
+        flipCardIndex ++;
+    }
+    public void OnStartFlipCard(Card card){
         miniGames[flipCardIndex].gameObject.SetActive(true);
         miniGames[flipCardIndex].StartMiniGame();
-
         miniGamesRT_Group[flipCardIndex].miniGameRoot.gameObject.SetActive(true);
-        StartCoroutine(CommonCoroutine.CoroutineDissolveSprite(miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer, 0, 0.35f, 2f));
-        flipCardIndex ++;
+    }
+    public void UpdateChannelMask(float value){
+        miniGameControl.channelWeight[flipCardIndex] = value*0.75f;
+        miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer.material.SetFloat(DissolveRadiusName, value*0.3f);
     }
 }

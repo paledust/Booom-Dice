@@ -22,11 +22,9 @@ public static class CommonCoroutine
         });
     }
     public static IEnumerator CoroutineDissolveSprite(SpriteRenderer m_sprite, float initRadius, float targetRadius, float duration, Easing.FunctionType easeType=Easing.FunctionType.QuadEaseOut){
-        string dissolveRadiusName = "_DissolveRadius";
-
         var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
         yield return new WaitForLoop(duration, (t)=>{
-            m_sprite.material.SetFloat(dissolveRadiusName, Mathf.Lerp(initRadius, targetRadius, easeFunc(t)));
+            m_sprite.material.SetFloat(GameController.DissolveRadiusName, Mathf.Lerp(initRadius, targetRadius, easeFunc(t)));
         });
     }
     public static IEnumerator CoroutineSetTrans(Transform trans, Vector3 targetPos, Quaternion targetRot, bool isLocal, float duration, Easing.FunctionType easeType = Easing.FunctionType.QuadEaseOut){
