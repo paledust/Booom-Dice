@@ -15,7 +15,7 @@ public class MiniGameChannelController : MonoBehaviour
 {
     [SerializeField] private Vector2 sinFadeRange;
     [SerializeField] private float sinFadeSpeed = 0.25f;
-    [SerializeField, Range(0, 1)] private float[] channelWeight;
+    [Range(0, 1)] public float[] channelWeight;
     [SerializeField] private ChannelData[] channelDatas;
 [Header("Fade Timing")]
     [SerializeField] private float channelFadeInTime = 0.2f;

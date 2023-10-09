@@ -167,16 +167,20 @@ public class HandController : MonoBehaviour
         card.transform.localRotation = card.upsideDown?Quaternion.Euler(0, 180, 0):Quaternion.identity;
     }
     IEnumerator coroutineEndFlipCard(Card card){
-        Vector3 euler = card.transform.eulerAngles;
-        euler.x = 0;
-        euler.z = 360;
-
-        StartCoroutine(CommonCoroutine.CoroutineSetTrans(card.transform, initCardPos, Quaternion.Euler(euler), false, .5f, EasingFunc.Easing.FunctionType.QuadEaseIn));
-        card.transform.parent = cardParent;
+        StartCoroutine(coroutineLaydownCard(card));
         yield return CommonCoroutine.CoroutineSetTrans(handRootTrans, handRootTrans.position + Vector3.right*0.5f, handRootTrans.rotation, false, 0.5f);
         yield return new WaitForSeconds(0.15f);
         yield return CommonCoroutine.CoroutineSetTrans(handRootTrans, initHandLocalPos, initHandLocalRot, true, 0.5f);
+    }
+    IEnumerator coroutineLaydownCard(Card card){
+        card.transform.parent = cardParent;
+        Vector3 euler = card.transform.eulerAngles;
+        euler.x = 0;
+        euler.y += Random.Range(-10f, 10f);
+        euler.z = 360;
 
+        yield return CommonCoroutine.CoroutineSetTrans(card.transform, initCardPos, Quaternion.Euler(euler), false, .35f, EasingFunc.Easing.FunctionType.QuadEaseIn);
+        EventHandler.Call_OnFlipCard(card);
     }
     void OnDrawGizmosSelected(){
         DebugExtension.DrawArrow(pickDiceTrans.position,ThrowForce, Color.green);
