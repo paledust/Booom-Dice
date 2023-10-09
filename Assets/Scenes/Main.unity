@@ -1681,8 +1681,9 @@ MonoBehaviour:
     sinWeight: 0
     channelWeightName: BlueWeight
     mixerValueName: BlueVolume
-  channelFadeInTime: 0.2
-  channelLerpToSinTime: 4
+  channelFadeInTime: 1
+  channelStayTime: 4
+  channelLerpToSinTime: 3
   realTimeWeight: []
 --- !u!1 &943338369
 GameObject:
@@ -3258,7 +3259,7 @@ MonoBehaviour:
   hintParticle: {fileID: 2000877197}
   _hand: {fileID: 535873606}
   tarotGame: {fileID: 1532625449}
-  miniGameControl: {fileID: 0}
+  miniGameControl: {fileID: 942152045}
   cardToMiniGame: {fileID: 11400000, guid: 58a12ec3e3a6d364d8555bbee564e262, type: 2}
   miniGameMaskRT_Group: {fileID: 1706026494}
   miniGamesRT_Group:

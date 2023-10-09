@@ -19,6 +19,7 @@ public class MiniGameChannelController : MonoBehaviour
     [SerializeField] private ChannelData[] channelDatas;
 [Header("Fade Timing")]
     [SerializeField] private float channelFadeInTime = 0.2f;
+    [SerializeField] private float channelStayTime = 2;
     [SerializeField] private float channelLerpToSinTime = 4;
 [Space(20), Header("Information")]
     [SerializeField] private float[] realTimeWeight;
@@ -60,7 +61,7 @@ public class MiniGameChannelController : MonoBehaviour
                 break;
         }
 
-        yield return new WaitForSeconds(2f+duration);
+        yield return new WaitForSeconds(channelStayTime+duration);
 
         switch(targetChannel){
             case 0:
