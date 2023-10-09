@@ -11,8 +11,11 @@ public class MiniGameRT_Group{
 }
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem hintParticle;
 [Header("Hand Control")]
     [SerializeField] private HandController _hand;
+[Header("Tarot Game")]
+    [SerializeField] private TarotGameManager tarotGame;
 [Space(20), Header("Mini Game")]
     [SerializeField] private CardToMiniGame cardToMiniGame;
     [SerializeField] private GameObject miniGameMaskRT_Group;
@@ -46,9 +49,9 @@ public class GameController : MonoBehaviour
         _hand.Hand_Interact(value.isPressed);
     }
     public void ProceedToFlipCard(Card[] cards){
+        hintParticle.Play();
         for(int i=0; i<cards.Length; i++){
-            cards[i].EnableHitbox();
-            
+            // cards[i].EnableHitbox();
             var miniGame = GameObject.Instantiate(cardToMiniGame.GetMiniGamePrefabFromCardType(cards[i].m_cardType)).GetComponent<BasicMiniGameController>();
             miniGame.SetUp(miniGamesRT_Group[i].miniGameRT_Cam);
             miniGame.gameObject.SetActive(false);
@@ -58,8 +61,14 @@ public class GameController : MonoBehaviour
             miniGames.Add(miniGame);
         }
         miniGameMaskRT_Group.SetActive(true);
+        tarotGame.PrepareNextCard();
+    }
+    public void ProceedToFinishCard(){
+        hintParticle.Play();
     }
     public void OnFlipCardHandler(Card card){
+        tarotGame.PrepareNextCard();
+
         miniGames[flipCardIndex].gameObject.SetActive(true);
         miniGames[flipCardIndex].StartMiniGame();
 

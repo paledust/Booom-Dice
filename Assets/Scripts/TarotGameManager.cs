@@ -8,6 +8,7 @@ public class TarotGameManager : MonoBehaviour
     [SerializeField] private Interact_PlaceCard[] cardPlacers;
     
     private int placerIndex = 0;
+    private int flipIndex = 0;
     private List<Card> placedCardList;
 
     void OnEnable(){
@@ -28,7 +29,17 @@ public class TarotGameManager : MonoBehaviour
     void OnPlaceCardHandler(Card card){
         placedCardList.Add(card);
         placerIndex ++;
-        if(placerIndex == 3)
+        if(placerIndex == 3){
             gameController.ProceedToFlipCard(placedCardList.ToArray());
+        }
+    }
+    public void PrepareNextCard(){
+        if(flipIndex>=placedCardList.Count){
+            gameController.ProceedToFinishCard();
+        }
+        else{
+            placedCardList[flipIndex].EnableHitbox();
+            flipIndex ++;
+        }
     }
 }
