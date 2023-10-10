@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardIndex: 0
   detectCenter: {fileID: 1742242297674408447}
-  offsetToAlpha: 0.15
+  offsetToAlpha: 0.2
   offsetToPos: 5
   targetCam: {fileID: 0}
   triangleRenderers:
@@ -550,7 +550,7 @@ MonoBehaviour:
   - {fileID: 7492599185063880852}
   - {fileID: 7492599184196418281}
   clearTriangles: {fileID: 1021566313647456394}
-  matchRange: 0.03
+  matchRange: 0.02
   triangleFormCondition:
     detectionTime: 1
   hintAudio: {fileID: 4313920569663738642}
@@ -633,7 +633,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.2509804}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -717,7 +717,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.7490196}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -801,7 +801,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.8}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
