@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -66,22 +67,14 @@ namespace SimpleAudioSystem{
             StartCoroutine(coroutineCrossFadeAmbience(current_ambience_name, audio_name, targetVolume, transitionTime));
         }
         public void FadeAudio(AudioSource m_audio, float targetVolume, float transitionTime, bool StopOnFadeOut = false){
-            StartCoroutine(coroutineFadeAudio(m_audio, targetVolume, transitionTime, StopOnFadeOut));
+            m_audio.DOFade(targetVolume, transitionTime).OnComplete(()=>{
+                if(targetVolume == 0 && StopOnFadeOut) m_audio.Stop();
+            });
         }
         public void SetMixerValue(string valueName, float value){
             main_mixer.SetFloat(valueName, value);
         }
     #endregion
-    
-        IEnumerator coroutineFadeAudio(AudioSource m_audio, float targetVolume, float transitionTime, bool StopOnFadeOut){
-            float initVolume = m_audio.volume;
-            for(float t=0; t<1; t+=Time.deltaTime/transitionTime){
-                m_audio.volume = Mathf.Lerp(initVolume, targetVolume, t);
-                yield return null;
-            }
-            m_audio.volume = targetVolume;
-            if(StopOnFadeOut && m_audio.volume == 0) m_audio.Stop();
-        }
         IEnumerator coroutineCrossFadeAmbience(string from_clip, string to_clip, float targetVolume, float transitionTime){
             ambience_crossfading = true;
             if(from_clip!=string.Empty){
@@ -108,12 +101,9 @@ namespace SimpleAudioSystem{
         }
         IEnumerator coroutineFadeAudio(AudioSource source, float targetVolume, float transition){
             float initVolume = source.volume;
-            for(float t=0; t<1; t+=Time.unscaledDeltaTime/transition){
+            yield return new WaitForLoop(transition, (t)=>{
                 source.volume = Mathf.Lerp(initVolume, targetVolume, t);
-                yield return null;
-            }
-            source.volume = targetVolume;
-            yield return null;
+            });
         }
     }
 }

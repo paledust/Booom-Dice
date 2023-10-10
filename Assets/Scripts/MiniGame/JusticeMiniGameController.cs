@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SimpleAudioSystem;
 using UnityEngine;
 
 public class JusticeMiniGameController : BasicMiniGameController
@@ -11,7 +12,10 @@ public class JusticeMiniGameController : BasicMiniGameController
     [SerializeField] private float eyeSpeedLerp = 10;
 [Header("Look At Object")]
     [SerializeField] private BalancingHand balancingHand;
-
+[Header("Audio")]
+    [SerializeField] private AudioSource amb_audio;
+    [SerializeField] private AudioSource looking_audio;
+    [SerializeField] private SFX_Emitter lookAtEmiter;
     private float depth;
     private Lookable currentLookable;
     private const string onLookTriggerName = "OnLook";
@@ -24,6 +28,9 @@ public class JusticeMiniGameController : BasicMiniGameController
     }
     void OnDisable(){
         EventHandler.E_OnSpotLookable -= SpotLookableHandler;
+    }
+    protected override void OnStart(){
+        amb_audio.Play();
     }
     public override void UpdateMiniGame(Vector3 pointerScreenPos)
     {
@@ -52,6 +59,7 @@ public class JusticeMiniGameController : BasicMiniGameController
                         eyeTrans.localScale = Vector3.one * 0.02f;
                         eyeAnimator.SetTrigger(onLookTriggerName);
                     }
+                    AudioManager.Instance.FadeAudio(looking_audio, 0.35f, 0.25f);
                     currentLookable = hit_lookable;
                     currentLookable.OnLookAt();
                 }
@@ -66,6 +74,7 @@ public class JusticeMiniGameController : BasicMiniGameController
     }
     public void SpotLookableHandler(LookableType lookableType){
         eyeAnimator.SetTrigger(blinkTriggerName);
+        lookAtEmiter.EmitSoundEffect();
         switch(lookableType){
             case LookableType.Heart:
                 balancingHand.AddToLeftHand(0.3f);
@@ -78,6 +87,7 @@ public class JusticeMiniGameController : BasicMiniGameController
     void ClearLookable()
     {
         if(currentLookable != null){
+            AudioManager.Instance.FadeAudio(looking_audio, 0, 0.25f, false);
             currentLookable.OnNotLooked();
             currentLookable = null;
             eyeTrans.localScale = Vector3.one * 0.015f;

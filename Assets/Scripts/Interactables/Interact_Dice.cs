@@ -6,11 +6,12 @@ public class Interact_Dice : BasicPointAndClickInteractable
 {
     [SerializeField] private Rigidbody rigid;
     [SerializeField] private float torqueScale = 1;
+    [SerializeField] private SFX_Emitter pickDiceEmit;
     public Rigidbody m_rigid{get{return rigid;}}
-
     public override void OnClick(HandController handController)
     {
         base.OnClick(handController);
+        pickDiceEmit.EmitSoundEffect();
         rigid.isKinematic = true;
         handController.Pick_Dice(this);
     }

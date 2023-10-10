@@ -203,7 +203,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c8a6c1cc6c1788a4fa795db8c9aa46bc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -5364,6 +5364,7 @@ MonoBehaviour:
   spawnWidth: 0.6
   spawnRate: 0.5
   cloudPoolSize: 10
+  amb_audio: {fileID: 4739141383247859808}
 --- !u!1 &7366992009908008375
 GameObject:
   m_ObjectHideFlags: 0

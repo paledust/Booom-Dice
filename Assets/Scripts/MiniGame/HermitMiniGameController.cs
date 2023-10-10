@@ -24,21 +24,12 @@ public class HermitMiniGameController : BasicMiniGameController
     [SerializeField] private AudioSource riverAudio;
     [SerializeField] private SFX_Emitter stepEmiter;
     [SerializeField] private SFX_Emitter lanternEmiter;
-    
-    [SerializeField] private AudioSource sfxAudio;
-    [SerializeField] private AudioClip[] stepClips; 
-    [SerializeField] private AudioClip[] lanternClips;
-    [SerializeField] private float stepClipIntersection = 1.2f;
-    [SerializeField] private float lanternClipIntersection = 2f;
+
     private float depth;
     private MovingTree[] treeArray;
     private float spawnTimer;
 
-    private float stepClipTimer;
-    private float lanternClipTimer;
     private int spawnIndex = 0;
-    private int stepClipIndex = 0;
-    private int lanternClipIndex = 0;
 
     void OnEnable(){
         depth = targetCamera.WorldToScreenPoint(lightSource.position).z;
@@ -67,8 +58,6 @@ public class HermitMiniGameController : BasicMiniGameController
             treeArray[i] = GameObject.Instantiate(treePrefabs[i%treePrefabs.Length], Vector3.zero, Quaternion.identity, transform).GetComponent<MovingTree>();
             treeArray[i].gameObject.SetActive(false);
         }
-        Service.Shuffle(ref stepClips);
-        Service.Shuffle(ref lanternClips);
         Service.Shuffle(ref treeArray);
         riverAudio.Play();
     }

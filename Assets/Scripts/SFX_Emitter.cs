@@ -10,12 +10,12 @@ public class SFX_Emitter
     [SerializeField] private AudioClip[] clips;
     [SerializeField] private float clipIntersection = 1;
     [SerializeField] private float volumeScale = 1;
+    [SerializeField] private bool testTimeDuringEmit = false;
     private float audioTimer = 0;
     private int clipIndex = 0;
 
-    public void Prepare(){
+    public void ShuffleClip(){
         Service.Shuffle(ref clips);
-        audioTimer = Time.time;
     }
     public void KeepEmitSound(){
         if(audioTimer+clipIntersection<Time.time){
@@ -28,6 +28,8 @@ public class SFX_Emitter
         }
     }
     public void EmitSoundEffect(){
+        if(testTimeDuringEmit && audioTimer+clipIntersection>Time.time) return;
+        
         AudioManager.Instance.PlaySoundEffect(m_audio, clips[clipIndex], volumeScale);
         audioTimer = Time.time;
 

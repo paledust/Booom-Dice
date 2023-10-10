@@ -14,6 +14,8 @@ public class TowerMiniGameController : BasicMiniGameController
     [SerializeField] private float spawnWidth = 2;
     [SerializeField] private float spawnRate = 5;
     [SerializeField] private int cloudPoolSize = 10;
+[Header("Audio")]
+    [SerializeField] private AudioSource amb_audio;
 
     private int side = 1;
     private float depth;
@@ -60,6 +62,7 @@ public class TowerMiniGameController : BasicMiniGameController
             cloudList.Add(cloudObj.GetComponent<Cloud>());
         }
         spawnTimer = Time.time;
+        amb_audio.Play();
     }
     IEnumerator coroutineFlipSize(float targetAngle, float duration){
         float currentAngle = personTrans.localEulerAngles.x;

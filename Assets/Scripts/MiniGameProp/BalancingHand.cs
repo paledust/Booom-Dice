@@ -12,6 +12,8 @@ public class BalancingHand : MonoBehaviour
 [Header("Animation")]
     [SerializeField] private Animator leftHandAnime;
     [SerializeField] private Animator rightHandAnime;
+[Header("Audio")]
+    [SerializeField] private SFX_Emitter sfx_gears;
 
     private float balanceHeight;
     private Vector3 initLeftHandPos;
@@ -36,6 +38,7 @@ public class BalancingHand : MonoBehaviour
         rightHandTrans.localPosition = initRightHandPos - balanceHeight*Vector3.forward;
     }
     public void AddToRightHand(float weight){
+        sfx_gears.EmitSoundEffect();
         if(balanceValue>=1){
             balanceValue += weight;
             weightChanger.Excute(coroutineShakeHand(balanceValue*balanceToHeight, 1f));
@@ -48,6 +51,7 @@ public class BalancingHand : MonoBehaviour
         }
     }
     public void AddToLeftHand(float weight){
+        sfx_gears.EmitSoundEffect();
         if(balanceValue<=-1){
             balanceValue -= weight;
             weightChanger.Excute(coroutineShakeHand(balanceValue*balanceToHeight, 1f));
