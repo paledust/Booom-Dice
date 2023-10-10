@@ -26,10 +26,10 @@ public static class EventHandler
     public static event Action<LookableType> E_OnSpotLookable;
     public static void Call_OnSpotLookable(LookableType lookableType)=>E_OnSpotLookable?.Invoke(lookableType);
 
-    public static event Action E_OnFoundVision;
-    public static void Call_OnFoundVision()=>E_OnFoundVision?.Invoke();
-    public static event Action E_OnLostVision;
-    public static void Call_OnLostVision()=>E_OnLostVision?.Invoke();
+    public static event Action<int> E_OnFoundVision;
+    public static void Call_OnFoundVision(int visionIndex)=>E_OnFoundVision?.Invoke(visionIndex);
+    public static event Action<int> E_OnLostVision;
+    public static void Call_OnLostVision(int visionIndex)=>E_OnLostVision?.Invoke(visionIndex);
     public static event Action<Card> E_OnGetVision;
     public static void Call_OnGetVision(Card card)=>E_OnGetVision?.Invoke(card);
 }

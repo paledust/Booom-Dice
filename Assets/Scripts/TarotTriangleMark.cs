@@ -91,15 +91,15 @@ public class TarotTriangleMark : MonoBehaviour
             triangleRenderers[i].color = color;
         }
 
-        triangleFormCondition.DetectUpdate(isMatched);
+        if(!GameController.Instance.ReadingVision) triangleFormCondition.DetectUpdate(isMatched);
     }
     void OnConditionMeetHandler(){
         AudioManager.Instance.FadeAudio(hintAudio, 1, 0.5f);
-        EventHandler.Call_OnFoundVision();
+        EventHandler.Call_OnFoundVision(cardIndex);
     }
     void OnResetHandler(){
         AudioManager.Instance.FadeAudio(hintAudio, 0, 1f);
-        EventHandler.Call_OnLostVision();
+        EventHandler.Call_OnLostVision(cardIndex);
     }
     void OnCompleteHandler(){
         foundAudio.PlayOneShot(foundClips[Random.Range(0, foundClips.Length)]);
@@ -109,7 +109,7 @@ public class TarotTriangleMark : MonoBehaviour
     }
     public void OnFinishVision(){
         AudioManager.Instance.FadeAudio(hintAudio, 0, 1f);
-        EventHandler.Call_OnLostVision();
+        EventHandler.Call_OnLostVision(cardIndex);
         StartCoroutine(coroutineHideTriangle());
     }
     IEnumerator coroutineHideTriangle(){

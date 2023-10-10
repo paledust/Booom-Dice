@@ -8,8 +8,10 @@ public class ChannelData{
     public float sinOffset;
     public float sinWeight;
     public string channelWeightName;
+    public string channelMuteName;
     public string mixerValueName;
     public CoroutineExcuter channelFader;
+    public bool isShowing = false;
 }
 public class MiniGameChannelController : MonoBehaviour
 {
@@ -24,6 +26,40 @@ public class MiniGameChannelController : MonoBehaviour
 [Space(20), Header("Information")]
     [SerializeField] private float[] realTimeWeight;
 
+    void OnEnable(){
+        EventHandler.E_OnFoundVision += FoundVisionHandler;
+        EventHandler.E_OnLostVision +=  LostVisionHandler;
+    }
+    void OnDisable(){
+        EventHandler.E_OnFoundVision -= FoundVisionHandler;
+        EventHandler.E_OnLostVision -= LostVisionHandler;
+    }
+    void FoundVisionHandler(int visionIndex){
+        for(int i=0;i<channelDatas.Length; i++){
+            if(channelDatas[i].isShowing){
+                if(i!=visionIndex){
+                    channelDatas[i].channelFader.Excute(coroutineFadeChannelWeight(i, 0, 0.5f));
+                    Shader.SetGlobalFloat(channelDatas[i].channelMuteName, 1);
+                }
+                else{
+                    channelDatas[i].sinWeight = 0;
+                }
+            }
+        }
+    }
+    void LostVisionHandler(int visionIndex){
+        for(int i=0;i<channelDatas.Length; i++){
+            if(channelDatas[i].isShowing){
+                if(i!=visionIndex){
+                    channelDatas[i].channelFader.Excute(coroutineFadeChannelWeight(i, 1, 0.5f));
+                    Shader.SetGlobalFloat(channelDatas[i].channelMuteName, 0);
+                }
+                else{
+                    channelDatas[i].sinWeight = 1;
+                }
+            }
+        }
+    }
     void Start(){
         for(int i=0; i<channelDatas.Length; i++){
             channelDatas[i].channelFader = new CoroutineExcuter(this);
@@ -46,6 +82,8 @@ public class MiniGameChannelController : MonoBehaviour
         StartCoroutine(coroutineFadeInChannel(targetChannel, channelFadeInTime, channelLerpToSinTime));
     }
     IEnumerator coroutineFadeInChannel(int targetChannel, float duration, float toSinDuration){
+        channelDatas[targetChannel].isShowing = true;
+
         switch(targetChannel){
             case 0:
                 channelDatas[0].channelFader.Excute(coroutineFadeChannelWeight(0, 1, duration));

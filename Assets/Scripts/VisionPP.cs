@@ -18,10 +18,10 @@ public class VisionPP : MonoBehaviour
         EventHandler.E_OnFoundVision -= FoundVision;
         EventHandler.E_OnLostVision -= LostVision;
     }
-    void FoundVision(){
+    void FoundVision(int visionIndex){
         PPFader.Excute(coroutineFadePP(1, 0.25f));
     }
-    void LostVision(){
+    void LostVision(int visionIndex){
         PPFader.Excute(coroutineFadePP(0, 0.25f));
     }
     IEnumerator coroutineFadePP(float targetWeight, float duration){
