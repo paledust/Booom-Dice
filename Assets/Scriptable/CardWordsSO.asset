@@ -26,23 +26,23 @@ MonoBehaviour:
     - "\u7F3A\u4E4F\u6307\u5BFC"
   - cardType: 4
     upWords:
-    - 
-    - 
-    - 
-    - 
+    - "\u7A81\u53D8"
+    - "\u707E\u96BE"
+    - "\u7A81\u7834"
+    - "\u76F4\u9762\u771F\u76F8"
     downWords:
-    - 
-    - 
-    - 
-    - 
+    - "\u62D6\u5EF6"
+    - "\u9003\u907F"
+    - "\u9003\u907F\u707E\u96BE"
+    - "\u4E0D\u65AD\u5D29\u6E83"
   - cardType: 2
     upWords:
-    - 
-    - 
-    - 
-    - 
+    - "\u516C\u5E73"
+    - "\u5E73\u8861"
+    - "\u8BDA\u5B9E"
+    - "\u5BA1\u5224"
     downWords:
-    - 
-    - 
-    - 
-    - 
+    - "\u4E0D\u516C"
+    - "\u504F\u89C1"
+    - "\u4E0D\u8BDA\u5B9E"
+    - "\u9053\u5FB7\u95EE\u9898"
