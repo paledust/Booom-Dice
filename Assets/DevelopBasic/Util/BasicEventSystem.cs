@@ -21,4 +21,11 @@ public static class EventHandler
 
     public static event Action<LookableType> E_OnSpotLookable;
     public static void Call_OnSpotLookable(LookableType lookableType)=>E_OnSpotLookable?.Invoke(lookableType);
+
+    public static event Action E_OnFoundVision;
+    public static void Call_OnFoundVision()=>E_OnFoundVision?.Invoke();
+    public static event Action E_OnLostVision;
+    public static void Call_OnLostVision()=>E_OnLostVision?.Invoke();
+    public static event Action E_OnGetVision;
+    public static void Call_OnGetVision()=>E_OnGetVision?.Invoke();
 }

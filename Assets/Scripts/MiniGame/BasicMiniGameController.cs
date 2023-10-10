@@ -11,7 +11,6 @@ public abstract class BasicMiniGameController : MonoBehaviour
     [SerializeField] protected AudioSource[] audioSources;
     public bool m_updating = false;
     protected float ratio;
-    protected Camera mainCam;
     public void StartMiniGame(){
         m_updating = true;
         this.enabled = true;
@@ -20,8 +19,7 @@ public abstract class BasicMiniGameController : MonoBehaviour
     }
     public void SetUp(Camera _targetCam, AudioMixerGroup mixerGroup){
         targetCamera = _targetCam;
-        mainCam = Camera.main;
-        ratio = (targetCamera.pixelWidth+0f)/(mainCam.pixelWidth+0f);
+        ratio = (targetCamera.pixelWidth+0f)/(Camera.main.pixelWidth+0f);
 
         for(int i=0; i<audioSources.Length; i++){
             audioSources[i].outputAudioMixerGroup = mixerGroup;

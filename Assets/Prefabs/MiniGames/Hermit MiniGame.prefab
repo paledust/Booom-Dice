@@ -1172,7 +1172,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 40ca09eac3decbc4b8436220c5986e13, type: 3}
     - {fileID: 8300000, guid: 334a5cf1fcd4b3e4e9da80e5c974d884, type: 3}
     clipIntersection: 1.2
-    volumeScale: 0.6
+    volumeScale: 1
     testTimeDuringEmit: 0
   lanternEmiter:
     m_audio: {fileID: 5054812891529148155}

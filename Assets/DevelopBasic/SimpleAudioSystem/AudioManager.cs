@@ -67,6 +67,7 @@ namespace SimpleAudioSystem{
             StartCoroutine(coroutineCrossFadeAmbience(current_ambience_name, audio_name, targetVolume, transitionTime));
         }
         public void FadeAudio(AudioSource m_audio, float targetVolume, float transitionTime, bool StopOnFadeOut = false){
+            if(targetVolume!=0 && !m_audio.isPlaying) m_audio.Play();
             m_audio.DOFade(targetVolume, transitionTime).OnComplete(()=>{
                 if(targetVolume == 0 && StopOnFadeOut) m_audio.Stop();
             });

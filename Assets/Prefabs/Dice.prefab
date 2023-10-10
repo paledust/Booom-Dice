@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 266839439803662910}
   - component: {fileID: 157260559902973110}
   - component: {fileID: 1380085325407646604}
+  - component: {fileID: 2381342675093406266}
   m_Layer: 0
   m_Name: Dice
   m_TagString: Untagged
@@ -235,6 +236,19 @@ MonoBehaviour:
     clipIntersection: 1
     volumeScale: 1
     testTimeDuringEmit: 1
+--- !u!114 &2381342675093406266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129660576903046748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9595e27981ed79d4f8143583c6efc9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceLight: {fileID: 180128466}
 --- !u!1 &4265753025289494169
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +290,7 @@ AudioSource:
   m_GameObject: {fileID: 4265753025289494169}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1603586011595450212, guid: 3e1d0a7194314b440b41badb1f52dd30, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

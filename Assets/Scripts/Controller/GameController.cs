@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class MiniGameRT_Group{
     public Transform miniGameRoot;
     public Camera miniGameRT_Cam;
+    public TarotTriangleMark tarotTriangleMark;
     public SpriteRenderer miniGameMaskRenderer;
 }
 public class GameController : MonoBehaviour
@@ -46,6 +47,11 @@ public class GameController : MonoBehaviour
                 miniGame.UpdateMiniGame(pointerPos);
             }
         }
+        for(int i=0; i<miniGamesRT_Group.Length; i++){
+            if(miniGamesRT_Group[i].tarotTriangleMark.m_IsRunning){
+                miniGamesRT_Group[i].tarotTriangleMark.UpdateTriangle(pointerPos);
+            }
+        }
     }
     void OnPointer(InputValue value){
         pointerPos = value.Get<Vector2>();
@@ -75,9 +81,7 @@ public class GameController : MonoBehaviour
 
         miniGameControl.FadeInChannel(flipCardIndex);
 
-        // miniGames[flipCardIndex].gameObject.SetActive(true);
-        // miniGames[flipCardIndex].StartMiniGame();
-        // miniGamesRT_Group[flipCardIndex].miniGameRoot.gameObject.SetActive(true);
+        miniGamesRT_Group[flipCardIndex].tarotTriangleMark.OnStart(card.upsideDown);
         StartCoroutine(CommonCoroutine.CoroutineDissolveSprite(miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer, 
                                                                miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer.material.GetFloat(DissolveRadiusName), 
                                                                0.35f, 2f));
