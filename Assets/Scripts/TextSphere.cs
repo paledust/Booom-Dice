@@ -31,11 +31,18 @@ public class TextSphere : MonoBehaviour
         for(int i=0; i<texts.Length; i++){
             texts[i].text = words[i];
         }
-        StartCoroutine(coroutineExpandSphere(4, 1));
+        StartCoroutine(coroutineExpandSphere(1));
     }
-    IEnumerator coroutineExpandSphere(float targetRadius, float duration){
+    IEnumerator coroutineExpandSphere(float duration){
         yield return new WaitForLoop(duration, (t)=>{
-            
+            radius = Mathf.LerpUnclamped(0, 4, EasingFunc.Easing.BackEaseOut(t));
+            textScale = Mathf.LerpUnclamped(0, 1, EasingFunc.Easing.BackEaseOut(t));
+        });
+    }
+    IEnumerator coroutineShrinkSphere(float duration){
+        yield return new WaitForLoop(duration, (t)=>{
+            radius = Mathf.LerpUnclamped(4, 0, EasingFunc.Easing.BackEaseIn(t));
+            textScale = Mathf.LerpUnclamped(1, 0, EasingFunc.Easing.BackEaseIn(t));
         });
     }
 }
