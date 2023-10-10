@@ -15,7 +15,6 @@ public class MiniGameRT_Group{
 public class GameController : Singleton<GameController>
 {
     [SerializeField] private ParticleSystem hintParticle;
-    [SerializeField] private Camera textCamera;
 [Header("Hand Control")]
     [SerializeField] private HandController _hand;
 [Header("Tarot Game")]
@@ -31,6 +30,7 @@ public class GameController : Singleton<GameController>
 [Header("Collect Words")]
     [SerializeField] private List<TextMeshPro> collectedWords;
 [Header("Game Final")]
+    [SerializeField] private TextMeshPro nameText;
     [SerializeField] private Animation maskAnime;
     [SerializeField] private Material textMaterial;
     [SerializeField] private Transform[] textPoses;
@@ -38,7 +38,6 @@ public class GameController : Singleton<GameController>
     private TarotTriangleMark currentVisionTriangle;
     private int flipCardIndex = 0;
     private Vector3 pointerPos;
-    private Camera mainCam;
 
     public const string DissolveRadiusName = "_DissolveRadius";
     private static readonly Vector3 miniGamePlacePos = new Vector3(0,0,1);
@@ -46,7 +45,7 @@ public class GameController : Singleton<GameController>
     protected override void Awake()
     {
         base.Awake();
-        mainCam = Camera.main;
+        nameText.text = GameManager.Instance.StoredName;
     }
     void OnEnable(){
         EventHandler.E_OnFlipCard += OnFlipCardHandler;
@@ -119,10 +118,6 @@ public class GameController : Singleton<GameController>
     public void FindTheWords(TextMeshPro text){
         currentVisionTriangle.OnFinishVision();
 
-        float ratio = (Camera.main.pixelWidth+0f)/(textCamera.pixelWidth+0f);
-        Vector3 screenPos = textCamera.WorldToScreenPoint(text.transform.position);
-        screenPos *= ratio;
-
         TextMeshPro showingText = GameObject.Instantiate(text.gameObject).GetComponent<TextMeshPro>();
         showingText.color = new Color(1,1,1,0);
         showingText.transform.localScale = Vector3.one*0.44f;
@@ -156,5 +151,6 @@ public class GameController : Singleton<GameController>
         maskPos.y = maskAnime.transform.position.y;
         maskAnime.gameObject.SetActive(true);
         maskAnime.Play();
+        yield return new WaitForSeconds(maskAnime.clip.length);
     }
 }

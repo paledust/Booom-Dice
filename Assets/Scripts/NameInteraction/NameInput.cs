@@ -96,6 +96,14 @@ public class NameInput : MonoBehaviour
         complete = true;
         this.enabled = false;
 
+        for(int i=0; i<nameTexts.Length; i++){
+            if(nameTexts[i].text.text==null || nameTexts[i].text.text==string.Empty){
+                GameManager.Instance.StoredName += " ";
+            }
+            else{
+                GameManager.Instance.StoredName += nameTexts[i].text.text;
+            }
+        }
         StartCoroutine(EndSequence());
     }
     void OnConditionMeet(){

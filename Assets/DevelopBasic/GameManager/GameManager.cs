@@ -22,6 +22,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private Text demoText;
 [Header("Debug")]
     [SerializeField] private InputActionMap debugActions;
+    public string StoredName;
     private static bool isSwitchingScene = false;
     private static bool isPaused = false;
     protected override void Awake(){
