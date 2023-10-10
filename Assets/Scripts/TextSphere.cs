@@ -28,6 +28,7 @@ public class TextSphere : MonoBehaviour
         }
     }
     public void ExpandSphere(string[] words){
+        this.enabled = true;
         for(int i=0; i<texts.Length; i++){
             texts[i].text = words[i];
         }
@@ -44,5 +45,6 @@ public class TextSphere : MonoBehaviour
             radius = Mathf.LerpUnclamped(4, 0, EasingFunc.Easing.BackEaseIn(t));
             textScale = Mathf.LerpUnclamped(1, 0, EasingFunc.Easing.BackEaseIn(t));
         });
+        this.enabled = false;
     }
 }

@@ -6,9 +6,9 @@ using UnityEngine;
 public class CardWordsSO : ScriptableObject
 {
     [SerializeField] private List<cardWord> cardWordList;
-    public string[] GetCardWords(CardType cardType, bool isUp){
+    public string[] GetCardWords(CardType cardType, bool upsideDown){
         var cardWord = cardWordList.Find(x=>x.cardType==cardType);
-        return isUp?cardWord.upWords:cardWord.downWords;
+        return upsideDown?cardWord.downWords:cardWord.upWords;
     }
 }
 
