@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Booom_Dice/CardWords")]
-public class CardWords : ScriptableObject
+[CreateAssetMenu(menuName = "Booom_Dice/CardWordsSO")]
+public class CardWordsSO : ScriptableObject
 {
     [SerializeField] private List<cardWord> cardWordList;
     public string[] GetCardWords(CardType cardType, bool isUp){

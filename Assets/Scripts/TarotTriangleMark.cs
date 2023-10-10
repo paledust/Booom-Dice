@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TarotTriangleMark : MonoBehaviour
 {
+    [SerializeField] private int cardIndex;
     [SerializeField] private Transform detectCenter;
     [SerializeField] private float offsetToAlpha;
     [SerializeField] private float offsetToPos;
@@ -101,6 +102,6 @@ public class TarotTriangleMark : MonoBehaviour
     void OnCompleteHandler(){
         foundAudio.PlayOneShot(foundClips[Random.Range(0, foundClips.Length)]);
         getVision = true;
-        EventHandler.Call_OnGetVision();
+        EventHandler.Call_OnGetVision(GameController.Instance.GetCardByIndex(cardIndex));
     }
 }

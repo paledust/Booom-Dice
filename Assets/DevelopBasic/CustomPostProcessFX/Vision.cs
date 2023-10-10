@@ -19,6 +19,7 @@ public class Vision : PostProcessEffectSettings
 //     [Range(0,1)] public FloatParameter blueSinWeight = new FloatParameter{value = 1};
 [Space(20), Header("Texture")]
     public TextureParameter MaskTex = new TextureParameter{value = null};
+    public TextureParameter screenTex_0 = new TextureParameter{value = null};
     public TextureParameter screenTex_1 = new TextureParameter{value = null};
     public TextureParameter screenTex_2 = new TextureParameter{value = null};
     public TextureParameter screenTex_3 = new TextureParameter{value = null};
@@ -31,6 +32,7 @@ public class Vision : PostProcessEffectSettings
 public sealed class VisionRenderer: PostProcessEffectRenderer<Vision>{
     private const string blendName = "_Blend";
     private const string maskTexName = "_MaskTex";
+    private const string screen_0_Name = "_Screen_0";
     private const string screen_1_Name = "_Screen_1";
     private const string screen_2_Name = "_Screen_2";
     private const string screen_3_Name = "_Screen_3";
@@ -56,11 +58,13 @@ public sealed class VisionRenderer: PostProcessEffectRenderer<Vision>{
         // sheet.properties.SetFloat(blueSinWeight_Name, settings.blueSinWeight.value);
 
         var maskTex = settings.MaskTex.value==null?RuntimeUtilities.whiteTexture:settings.MaskTex.value;
+        var screenTex_0 = settings.screenTex_0.value==null?RuntimeUtilities.whiteTexture:settings.screenTex_0.value;
         var screenTex_1 = settings.screenTex_1.value==null?RuntimeUtilities.whiteTexture:settings.screenTex_1.value;
         var screenTex_2 = settings.screenTex_2.value==null?RuntimeUtilities.whiteTexture:settings.screenTex_2.value;
         var screenTex_3 = settings.screenTex_3.value==null?RuntimeUtilities.whiteTexture:settings.screenTex_3.value;
 
         sheet.properties.SetTexture(maskTexName, maskTex);
+        sheet.properties.SetTexture(screen_0_Name, screenTex_0);
         sheet.properties.SetTexture(screen_1_Name, screenTex_1);
         sheet.properties.SetTexture(screen_2_Name, screenTex_2);
         sheet.properties.SetTexture(screen_3_Name, screenTex_3);

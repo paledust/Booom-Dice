@@ -20,6 +20,10 @@ PrefabInstance:
       value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: 3383163661351182699, guid: 85874c5441c748a4b95618787b832b05, type: 3}
+      propertyPath: cardIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383163661351182699, guid: 85874c5441c748a4b95618787b832b05, type: 3}
       propertyPath: targetCam
       value: 
       objectReference: {fileID: 0}

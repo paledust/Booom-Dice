@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TarotGameManager : MonoBehaviour
 {
-    [SerializeField] private GameController gameController;
     [SerializeField] private Interact_PlaceCard[] cardPlacers;
     
     private int placerIndex = 0;
@@ -30,16 +29,19 @@ public class TarotGameManager : MonoBehaviour
         placedCardList.Add(card);
         placerIndex ++;
         if(placerIndex == 3){
-            gameController.ProceedToFlipCard(placedCardList.ToArray());
+            GameController.Instance.ProceedToFlipCard(placedCardList.ToArray());
         }
     }
     public void PrepareNextCard(){
         if(flipIndex>=placedCardList.Count){
-            gameController.ProceedToFinishCard();
+            GameController.Instance.ProceedToFinishCard();
         }
         else{
             placedCardList[flipIndex].EnableHitbox();
             flipIndex ++;
         }
+    }
+    public Card GetPlacedCardByIndex(int index){
+        return placedCardList[index];
     }
 }

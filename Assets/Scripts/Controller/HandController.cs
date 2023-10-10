@@ -8,7 +8,6 @@ using UnityEngine;
 public class HandController : MonoBehaviour
 {
     [SerializeField, ShowOnly] private HandState handState = HandState.Default;
-    [SerializeField] private GameController gameController;
 [Header("Hand IK")]
     [SerializeField] private Transform handRootTrans;
 [Header("Hand Move")]
@@ -77,7 +76,7 @@ public class HandController : MonoBehaviour
                 handRootTrans.rotation = rot * Quaternion.Euler(cardRotEuler);
                 handRootTrans.position = rotateTrans.position + rot * (cardPosOffset-rotateOffset);
 
-                gameController.UpdateChannelMask(Mathf.Abs(flipValue/flipThreashold));
+                GameController.Instance.UpdateChannelMask(Mathf.Abs(flipValue/flipThreashold));
                 if(Mathf.Abs(flipValue)>flipThreashold){
                     EndFlipCard();
                 }
@@ -156,7 +155,7 @@ public class HandController : MonoBehaviour
 
         rotateTrans.position = card.transform.position + rotateOffset;
 
-        gameController.OnStartFlipCard(card);
+        GameController.Instance.OnStartFlipCard(card);
         StartCoroutine(coroutineStartFlipCard(card));
         flipingCard = card;
         handState = HandState.FlipCard;

@@ -11,7 +11,7 @@ public class MiniGameRT_Group{
     public TarotTriangleMark tarotTriangleMark;
     public SpriteRenderer miniGameMaskRenderer;
 }
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController>
 {
     [SerializeField] private ParticleSystem hintParticle;
 [Header("Hand Control")]
@@ -95,5 +95,8 @@ public class GameController : MonoBehaviour
     public void UpdateChannelMask(float value){
         miniGameControl.channelWeight[flipCardIndex] = value*0.75f;
         miniGamesRT_Group[flipCardIndex].miniGameMaskRenderer.material.SetFloat(DissolveRadiusName, value*0.3f);
+    }
+    public Card GetCardByIndex(int index){
+        return tarotGame.GetPlacedCardByIndex(index);
     }
 }

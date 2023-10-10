@@ -26,6 +26,6 @@ public static class EventHandler
     public static void Call_OnFoundVision()=>E_OnFoundVision?.Invoke();
     public static event Action E_OnLostVision;
     public static void Call_OnLostVision()=>E_OnLostVision?.Invoke();
-    public static event Action E_OnGetVision;
-    public static void Call_OnGetVision()=>E_OnGetVision?.Invoke();
+    public static event Action<Card> E_OnGetVision;
+    public static void Call_OnGetVision(Card card)=>E_OnGetVision?.Invoke(card);
 }

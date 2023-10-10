@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class Dice_Dice : MonoBehaviour
+public class VisionWordsController : MonoBehaviour
 {
-    [SerializeField] private Light diceLight;
+    [SerializeField] private CardWordsSO cardWords_SO;
     void OnEnable(){
         EventHandler.E_OnGetVision += GetVisionHandler;
     }
@@ -13,6 +12,6 @@ public class Dice_Dice : MonoBehaviour
         EventHandler.E_OnGetVision -= GetVisionHandler;
     }
     void GetVisionHandler(Card card){
-        diceLight.DOIntensity(3, 0.5f);
+        
     }
 }

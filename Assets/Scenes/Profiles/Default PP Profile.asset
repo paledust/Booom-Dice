@@ -70,6 +70,10 @@ MonoBehaviour:
     overrideState: 1
     value: {fileID: 8400000, guid: 2020b1e062cf19043801e2cfa744fa7d, type: 2}
     defaultState: 1
+  screenTex_0:
+    overrideState: 1
+    value: {fileID: 8400000, guid: b378b6e5e3863ce4cacf326a0aed185a, type: 2}
+    defaultState: 1
   screenTex_1:
     overrideState: 1
     value: {fileID: 8400000, guid: c64cb11f3eee13d45b6d30075802d614, type: 2}
@@ -81,10 +85,6 @@ MonoBehaviour:
   screenTex_3:
     overrideState: 1
     value: {fileID: 8400000, guid: 6df0d635a7af4154785b20973f1c4831, type: 2}
-    defaultState: 1
-  screenTex_4:
-    overrideState: 1
-    value: {fileID: 8400000, guid: 221dd670efb27064590359aceac24a1b, type: 2}
     defaultState: 1
 --- !u!114 &-2114474253571281053
 MonoBehaviour:
