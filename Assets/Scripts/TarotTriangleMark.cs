@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TarotTriangleMark : MonoBehaviour
 {
-    [SerializeField] private int cardIndex;
+    public int cardIndex;
     [SerializeField] private Transform detectCenter;
     [SerializeField] private float offsetToAlpha;
     [SerializeField] private float offsetToPos;
@@ -26,6 +26,7 @@ public class TarotTriangleMark : MonoBehaviour
     private float depth;
     private bool isMatched = false;
     private bool getVision;
+
     void Start(){
         depth = targetCam.WorldToScreenPoint(detectCenter.position).z;
         ratio = (targetCam.pixelWidth+0f)/(Camera.main.pixelWidth+0f);
@@ -55,7 +56,7 @@ public class TarotTriangleMark : MonoBehaviour
     public void UpdateTriangle(Vector3 pointerPos){
         Vector3 offset = Vector3.zero;
 
-        if(!getVision){
+        if(!getVision && !GameController.Instance.ReadingVision){
             pointerPos.z = depth;
             pointerPos.x *= ratio;
             pointerPos.y *= ratio;
@@ -97,7 +98,7 @@ public class TarotTriangleMark : MonoBehaviour
         EventHandler.Call_OnFoundVision();
     }
     void OnResetHandler(){
-        AudioManager.Instance.FadeAudio(hintAudio, 0, 0.5f);
+        AudioManager.Instance.FadeAudio(hintAudio, 0, 1f);
         EventHandler.Call_OnLostVision();
     }
     void OnCompleteHandler(){
@@ -107,13 +108,12 @@ public class TarotTriangleMark : MonoBehaviour
         EventHandler.Call_OnGetVision(GameController.Instance.GetCardByIndex(cardIndex));
     }
     public void OnFinishVision(){
-        getVision = false;
-        AudioManager.Instance.FadeAudio(hintAudio, 0, 0.5f);
+        AudioManager.Instance.FadeAudio(hintAudio, 0, 1f);
         EventHandler.Call_OnLostVision();
         StartCoroutine(coroutineHideTriangle());
     }
     IEnumerator coroutineHideTriangle(){
-        yield return CommonCoroutine.CoroutineFadeSprite(clearTriangles, 0, 0.2f);
+        yield return CommonCoroutine.CoroutineFadeSprite(clearTriangles, 0, 1f);
         gameObject.SetActive(false);
     }
 }

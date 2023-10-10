@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class SFX_Emitter
 {
-    [SerializeField] private AudioSource m_audio;
+    public AudioSource m_audio;
     [SerializeField] private AudioClip[] clips;
     [SerializeField] private float clipIntersection = 1;
     [SerializeField] private float volumeScale = 1;

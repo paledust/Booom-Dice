@@ -75,7 +75,18 @@ namespace SimpleAudioSystem{
         public void SetMixerValue(string valueName, float value){
             main_mixer.SetFloat(valueName, value);
         }
+        public void FadeMixer(string valueName, float targetValue, float duration){
+            StartCoroutine(coroutineFadeMixer(valueName, targetValue, duration));
+        }
     #endregion
+        IEnumerator coroutineFadeMixer(string valueName, float targetValue, float duration){
+            float initValue;
+            main_mixer.GetFloat(valueName, out initValue);
+            yield return new WaitForLoop(duration, (t)=>{
+                main_mixer.SetFloat(valueName, Mathf.Lerp(initValue, targetValue, t));
+            });
+
+        }
         IEnumerator coroutineCrossFadeAmbience(string from_clip, string to_clip, float targetVolume, float transitionTime){
             ambience_crossfading = true;
             if(from_clip!=string.Empty){

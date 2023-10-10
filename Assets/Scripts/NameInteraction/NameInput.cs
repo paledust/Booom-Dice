@@ -19,6 +19,9 @@ public class NameInput : MonoBehaviour
     [SerializeField] private ConditionDetector NameComplete;
 [Header("Ending")]
     [SerializeField] private float endTextFadeDuration = 3;
+[Header("Audio")]
+    [SerializeField] private SFX_Emitter inputEmiter;
+    [SerializeField] private AudioClip completeClip;
 
     private bool complete = false;
     private Dictionary<Key, NameText> keyToCharacterDict;
@@ -62,6 +65,7 @@ public class NameInput : MonoBehaviour
                         nameText.FadeInText();
                         keyToCharacterDict[key.keyCode] = nameText;
                         pendingNameTexts.Remove(nameText);
+                        inputEmiter.EmitSoundEffect();
                     }
                 }
             }
@@ -96,6 +100,9 @@ public class NameInput : MonoBehaviour
         complete = true;
         this.enabled = false;
 
+        inputEmiter.m_audio.PlayOneShot(completeClip);
+
+        GameManager.Instance.StoredName = string.Empty;
         for(int i=0; i<nameTexts.Length; i++){
             if(nameTexts[i].text.text==null || nameTexts[i].text.text==string.Empty){
                 GameManager.Instance.StoredName += " ";

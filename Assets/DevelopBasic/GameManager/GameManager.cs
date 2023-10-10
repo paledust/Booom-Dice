@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using SimpleSaveSystem;
+using SimpleAudioSystem;
 
 //Please make sure "GameManager" is excuted before every custom script
 public class GameManager : Singleton<GameManager>
@@ -96,6 +97,7 @@ public class GameManager : Singleton<GameManager>
         SwitchingScene(from, to, resume);
     }
     IEnumerator EndGameCoroutine(string level){
+        AudioManager.Instance.FadeMixer("MainVolume", -80, 3);
         yield return FadeInScreen(3f);
 
         EventHandler.Call_BeforeUnloadScene();

@@ -34,6 +34,7 @@ public class GameController : Singleton<GameController>
     [SerializeField] private Animation maskAnime;
     [SerializeField] private Material textMaterial;
     [SerializeField] private Transform[] textPoses;
+    public bool ReadingVision = false;
 
     private TarotTriangleMark currentVisionTriangle;
     private int flipCardIndex = 0;
@@ -42,10 +43,8 @@ public class GameController : Singleton<GameController>
     public const string DissolveRadiusName = "_DissolveRadius";
     private static readonly Vector3 miniGamePlacePos = new Vector3(0,0,1);
     private static readonly Vector3 miniGamePlaceRot = new Vector3(-90,0,0);
-    protected override void Awake()
-    {
-        base.Awake();
-        nameText.text = GameManager.Instance.StoredName;
+    void Start(){
+        nameText.text = GameManager.Instance.StoredName+"\n的\n占卜结果";
     }
     void OnEnable(){
         EventHandler.E_OnFlipCard += OnFlipCardHandler;
@@ -113,18 +112,21 @@ public class GameController : Singleton<GameController>
         return tarotGame.GetPlacedCardByIndex(index);
     }
     public void LoadVisionTriangle(TarotTriangleMark visionTriangle){
+        ReadingVision = true;
         currentVisionTriangle = visionTriangle;
     }
     public void FindTheWords(TextMeshPro text){
+        int index = currentVisionTriangle.cardIndex;
+        ReadingVision = false;
         currentVisionTriangle.OnFinishVision();
+        currentVisionTriangle = null;
 
         TextMeshPro showingText = GameObject.Instantiate(text.gameObject).GetComponent<TextMeshPro>();
         showingText.color = new Color(1,1,1,0);
         showingText.transform.localScale = Vector3.one*0.44f;
-        showingText.transform.position = textPoses[collectedWords.Count].position;
+        showingText.transform.position = textPoses[index].position;
         showingText.transform.rotation = text.transform.rotation;
         showingText.transform.localScale = Vector3.one * 0.15f;
-
         
         collectedWords.Add(showingText);
         if(collectedWords.Count == 3){
@@ -152,5 +154,7 @@ public class GameController : Singleton<GameController>
         maskAnime.gameObject.SetActive(true);
         maskAnime.Play();
         yield return new WaitForSeconds(maskAnime.clip.length);
+        yield return new WaitForSeconds(7f);
+        GameManager.Instance.EndGame();
     }
 }

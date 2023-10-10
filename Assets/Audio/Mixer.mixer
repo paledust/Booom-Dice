@@ -184,6 +184,8 @@ AudioMixerController:
     name: BlueVolume
   - guid: cb65bf3896b700e4685d2c465bd44276
     name: GreenVolume
+  - guid: 8921383cfe9fe4b4bbfa6fc85117b766
+    name: MainVolume
   - guid: c60284c33fd4e524a8a2e3442530e36f
     name: RedVolume
   m_AudioMixerGroupViews:
