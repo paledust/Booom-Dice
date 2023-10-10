@@ -21,6 +21,21 @@ public static class CommonCoroutine
             text.color = Color.Lerp(initColor, targetColor, easeFunc(t));
         });
     }
+    public static IEnumerator CoroutineFadeText(TextMeshPro text, float targetAlpha, float duration, Easing.FunctionType easeType=Easing.FunctionType.QuadEaseOut){
+        Color initColor = text.color;
+        Color targetColor = initColor;
+        targetColor.a = targetAlpha;
+
+        string outlineSoftnessName = "_OutlineSoftness";
+        float initSoftness = text.fontMaterial.GetFloat(outlineSoftnessName);
+        float targetSoftness = 1-targetAlpha;
+
+        var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
+        yield return new WaitForLoop(duration, (t)=>{
+            text.fontMaterial.SetFloat(outlineSoftnessName, Mathf.Lerp(initSoftness, targetSoftness, easeFunc(Mathf.Clamp01(t*5))));
+            text.color = Color.Lerp(initColor, targetColor, easeFunc(t));
+        });
+    }
     public static IEnumerator CoroutineDissolveSprite(SpriteRenderer m_sprite, float initRadius, float targetRadius, float duration, Easing.FunctionType easeType=Easing.FunctionType.QuadEaseOut){
         var easeFunc = Easing.GetFunctionWithTypeEnum(easeType);
         yield return new WaitForLoop(duration, (t)=>{
@@ -49,6 +64,12 @@ public static class CommonCoroutine
                 trans.position = Vector3.LerpUnclamped(initPos, targetPos, easeFunc(t));
                 trans.rotation = Quaternion.LerpUnclamped(initRot, targetRot, easeFunc(t));
             }
+        });
+    }
+    public static IEnumerator CoroutineChangeTransSize(Transform trans, Vector3 targetSize, float duration){
+        Vector3 initSize = trans.localScale;
+        yield return new WaitForLoop(duration, (t)=>{
+            trans.localScale = Vector3.Lerp(initSize, targetSize, Easing.SmoothInOut(t));
         });
     }
 }

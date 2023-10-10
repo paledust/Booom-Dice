@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -17,7 +16,6 @@ public class GameController : Singleton<GameController>
 {
     [SerializeField] private ParticleSystem hintParticle;
     [SerializeField] private Camera textCamera;
-    [SerializeField] private List<string> collectedWords;
 [Header("Hand Control")]
     [SerializeField] private HandController _hand;
 [Header("Tarot Game")]
@@ -30,15 +28,26 @@ public class GameController : Singleton<GameController>
     [SerializeField] private List<BasicMiniGameController> miniGames;
 [Header("Audio")]
     [SerializeField] private AudioMixerGroup[] mixerGroups;
+[Header("Collect Words")]
+    [SerializeField] private List<TextMeshPro> collectedWords;
+[Header("Game Final")]
+    [SerializeField] private Animation maskAnime;
+    [SerializeField] private Material textMaterial;
+    [SerializeField] private Transform[] textPoses;
 
     private TarotTriangleMark currentVisionTriangle;
     private int flipCardIndex = 0;
     private Vector3 pointerPos;
+    private Camera mainCam;
 
     public const string DissolveRadiusName = "_DissolveRadius";
     private static readonly Vector3 miniGamePlacePos = new Vector3(0,0,1);
     private static readonly Vector3 miniGamePlaceRot = new Vector3(-90,0,0);
-
+    protected override void Awake()
+    {
+        base.Awake();
+        mainCam = Camera.main;
+    }
     void OnEnable(){
         EventHandler.E_OnFlipCard += OnFlipCardHandler;
     }
@@ -109,10 +118,43 @@ public class GameController : Singleton<GameController>
     }
     public void FindTheWords(TextMeshPro text){
         currentVisionTriangle.OnFinishVision();
+
+        float ratio = (Camera.main.pixelWidth+0f)/(textCamera.pixelWidth+0f);
+        Vector3 screenPos = textCamera.WorldToScreenPoint(text.transform.position);
+        screenPos *= ratio;
+
+        TextMeshPro showingText = GameObject.Instantiate(text.gameObject).GetComponent<TextMeshPro>();
+        showingText.color = new Color(1,1,1,0);
+        showingText.transform.localScale = Vector3.one*0.44f;
+        showingText.transform.position = textPoses[collectedWords.Count].position;
+        showingText.transform.rotation = text.transform.rotation;
+        showingText.transform.localScale = Vector3.one * 0.15f;
+
         
-        collectedWords.Add(text.text);
+        collectedWords.Add(showingText);
         if(collectedWords.Count == 3){
-            Debug.Log("Find all words");
+            StartCoroutine(coroutineEndGame(showingText));
         }
+        else{
+            StartCoroutine(coroutineBriefText(showingText, true));
+        }
+    }
+    IEnumerator coroutineBriefText(TextMeshPro text, bool fadeOut){
+        yield return CommonCoroutine.CoroutineFadeText(text, 1, 0.5f);
+        if(fadeOut){
+            yield return new WaitForSeconds(0.75f);
+            yield return CommonCoroutine.CoroutineFadeText(text, 0, 3f);
+            text.fontMaterial = textMaterial;
+            text.color = Color.white;
+        }
+    }
+    IEnumerator coroutineEndGame(TextMeshPro finalText){
+        yield return CommonCoroutine.CoroutineFadeText(finalText, 1, 0.5f);
+        StartCoroutine(CommonCoroutine.CoroutineChangeTransSize(finalText.transform, Vector3.one*0.15f, 3f));
+        yield return new WaitForSeconds(1f);
+        Vector3 maskPos = finalText.transform.position;
+        maskPos.y = maskAnime.transform.position.y;
+        maskAnime.gameObject.SetActive(true);
+        maskAnime.Play();
     }
 }

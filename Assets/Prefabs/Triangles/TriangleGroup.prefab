@@ -552,7 +552,7 @@ MonoBehaviour:
   clearTriangles: {fileID: 1021566313647456394}
   matchRange: 0.015
   triangleFormCondition:
-    detectionTime: 1.2
+    detectionTime: 1
   hintAudio: {fileID: 4313920569663738642}
   foundAudio: {fileID: 5552936772087960832}
   foundClips:

@@ -27,6 +27,7 @@ public class VisionWordsController : MonoBehaviour
     }
     void DropDice(){
         if(inVision){
+            inVision = false;
             dice.OnBeenThrown();
             textSphere.DetectingWords();
         }

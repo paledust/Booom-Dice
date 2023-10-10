@@ -23,7 +23,7 @@ public class TextSphere : MonoBehaviour
     {
         switch(sphereState){
             case SphereState.Idle:
-                transform.rotation *= Quaternion.Euler(Mathf.PerlinNoise(0.2f,0.5421f+Time.time)*idleSpeed.x*Time.deltaTime, Mathf.PerlinNoise(0.4212f,Time.time+0.3221f)*idleSpeed.y*Time.deltaTime, 0);
+                transform.rotation *= Quaternion.Euler(Mathf.PerlinNoise(0.2f,0.5421f+Time.time)*idleSpeed.x*Time.deltaTime, 0, Mathf.PerlinNoise(0.4212f,Time.time+0.3221f)*idleSpeed.y*Time.deltaTime);
                 break;
             default:
                 transform.rotation = Quaternion.Slerp(transform.rotation, followRigid.rotation, Time.deltaTime*5);
