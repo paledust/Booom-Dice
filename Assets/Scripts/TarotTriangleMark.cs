@@ -44,6 +44,7 @@ public class TarotTriangleMark : MonoBehaviour
         for(int i=0; i<initColors.Length; i++){
             if(upsideDown) triangleRenderers[i].transform.localRotation = Quaternion.Euler(0, 0, 180);
         }
+        if(upsideDown)clearTriangles.transform.localRotation = Quaternion.Euler(0, 0, 180);
 
         triangleFormCondition.OnConditionMeet(OnConditionMeetHandler);
         triangleFormCondition.OnReset(OnResetHandler);

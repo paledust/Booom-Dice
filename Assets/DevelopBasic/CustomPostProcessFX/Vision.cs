@@ -36,26 +36,11 @@ public sealed class VisionRenderer: PostProcessEffectRenderer<Vision>{
     private const string screen_1_Name = "_Screen_1";
     private const string screen_2_Name = "_Screen_2";
     private const string screen_3_Name = "_Screen_3";
-    // private const string redSinWeight_Name = "_RedSinWeight";
-    // private const string greenSinWeight_Name = "_GreenSinWeight";
-    // private const string blueSinWeight_Name = "_BlueSinWeight";
-    // private const string fadeSpeed_Name = "_Speed";
-    // private const string offsetRed_Name = "_OffsetRed";
-    // private const string offsetGreen_Name = "_OffsetGreen";
-    // private const string offsetBlue_Name = "_OffsetBlue";
 
     public override void Render(PostProcessRenderContext context)
     {
         var sheet = context.propertySheets.Get(Shader.Find("Hidden/Custom/Vision"));
         sheet.properties.SetFloat(blendName, settings.blendAmount.value);
-
-        // sheet.properties.SetFloat(fadeSpeed_Name, settings.maskFadeSpeed.value);
-        // sheet.properties.SetFloat(offsetRed_Name, settings.redChannelOffset.value);
-        // sheet.properties.SetFloat(offsetGreen_Name, settings.greenChannelOffset.value);
-        // sheet.properties.SetFloat(offsetBlue_Name, settings.blueChannelOffset.value);
-        // sheet.properties.SetFloat(redSinWeight_Name, settings.redSinWeight.value);
-        // sheet.properties.SetFloat(greenSinWeight_Name, settings.greenSinWeight.value);
-        // sheet.properties.SetFloat(blueSinWeight_Name, settings.blueSinWeight.value);
 
         var maskTex = settings.MaskTex.value==null?RuntimeUtilities.whiteTexture:settings.MaskTex.value;
         var screenTex_0 = settings.screenTex_0.value==null?RuntimeUtilities.whiteTexture:settings.screenTex_0.value;

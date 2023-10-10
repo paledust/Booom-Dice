@@ -539,8 +539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a6bd2e27bfa8646a44cc0ad37b7915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardIndex: 0
   detectCenter: {fileID: 1742242297674408447}
-  offsetToAlpha: 0.1
+  offsetToAlpha: 0.15
   offsetToPos: 5
   targetCam: {fileID: 0}
   triangleRenderers:
