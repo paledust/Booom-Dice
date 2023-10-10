@@ -550,7 +550,7 @@ MonoBehaviour:
   - {fileID: 7492599185063880852}
   - {fileID: 7492599184196418281}
   clearTriangles: {fileID: 1021566313647456394}
-  matchRange: 0.015
+  matchRange: 0.03
   triangleFormCondition:
     detectionTime: 1
   hintAudio: {fileID: 4313920569663738642}
