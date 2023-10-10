@@ -86,7 +86,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LayerIntensity: 2
+    - _LayerIntensity: 5
     - _LayerMax: 0.87
     - _LayerMin: 0.45
     - _Metallic: 0.2

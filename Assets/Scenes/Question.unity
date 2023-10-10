@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 631989425}
   - component: {fileID: 631989424}
   - component: {fileID: 631989427}
+  - component: {fileID: 631989428}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -544,6 +545,19 @@ MonoBehaviour:
   - assemblyQualifiedName: Vision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!114 &631989428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631989423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3280b454d239a14fafd6680d551eb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReferenceRatio: {x: 4, y: 3}
 --- !u!1 &723220807
 GameObject:
   m_ObjectHideFlags: 0
