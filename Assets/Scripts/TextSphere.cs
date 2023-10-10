@@ -53,11 +53,13 @@ public class TextSphere : MonoBehaviour
         sphereState = SphereState.Follow;
     }
     void OnCompleteHandler(){
-        Debug.Log("Find the words");
         TextMeshPro topText = texts[0];
         for(int i=0; i<texts.Length; i++){
             if(texts[i].transform.position.y>topText.transform.position.y) topText = texts[i];
         }
+
+        GameController.Instance.FindTheWords(topText);
+        StartCoroutine(coroutineShrinkSphere(1));
     }
     IEnumerator coroutineExpandSphere(float duration){
         yield return new WaitForLoop(duration, (t)=>{
@@ -70,6 +72,11 @@ public class TextSphere : MonoBehaviour
             radius = Mathf.LerpUnclamped(4, 0, EasingFunc.Easing.BackEaseIn(t));
             textScale = Mathf.LerpUnclamped(1, 0, EasingFunc.Easing.BackEaseIn(t));
         });
+        for(int i=0; i<texts.Length; i++){
+            texts[i].transform.position = transform.position;
+            texts[i].transform.localScale = Vector3.zero;
+        }
+        sphereState = SphereState.Idle;
         this.enabled = false;
     }
 }

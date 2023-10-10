@@ -27,6 +27,14 @@ public static class CommonCoroutine
             m_sprite.material.SetFloat(GameController.DissolveRadiusName, Mathf.Lerp(initRadius, targetRadius, easeFunc(t)));
         });
     }
+    public static IEnumerator CoroutineFadeSprite(SpriteRenderer m_sprite, float targetAlpha, float duration){
+        Color targetColor = m_sprite.color;
+        Color initColor = m_sprite.color;
+        targetColor.a = targetAlpha;
+        yield return new WaitForLoop(duration, (t)=>{
+            m_sprite.color = Color.Lerp(initColor, targetColor, Easing.SmoothInOut(t));
+        });
+    }
     public static IEnumerator CoroutineSetTrans(Transform trans, Vector3 targetPos, Quaternion targetRot, bool isLocal, float duration, Easing.FunctionType easeType = Easing.FunctionType.QuadEaseOut){
         Vector3 initPos = isLocal?trans.localPosition:trans.position;
         Quaternion initRot = isLocal?trans.localRotation:trans.rotation;

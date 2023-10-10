@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
@@ -14,6 +16,8 @@ public class MiniGameRT_Group{
 public class GameController : Singleton<GameController>
 {
     [SerializeField] private ParticleSystem hintParticle;
+    [SerializeField] private Camera textCamera;
+    [SerializeField] private List<string> collectedWords;
 [Header("Hand Control")]
     [SerializeField] private HandController _hand;
 [Header("Tarot Game")]
@@ -27,6 +31,7 @@ public class GameController : Singleton<GameController>
 [Header("Audio")]
     [SerializeField] private AudioMixerGroup[] mixerGroups;
 
+    private TarotTriangleMark currentVisionTriangle;
     private int flipCardIndex = 0;
     private Vector3 pointerPos;
 
@@ -98,5 +103,16 @@ public class GameController : Singleton<GameController>
     }
     public Card GetCardByIndex(int index){
         return tarotGame.GetPlacedCardByIndex(index);
+    }
+    public void LoadVisionTriangle(TarotTriangleMark visionTriangle){
+        currentVisionTriangle = visionTriangle;
+    }
+    public void FindTheWords(TextMeshPro text){
+        currentVisionTriangle.OnFinishVision();
+        
+        collectedWords.Add(text.text);
+        if(collectedWords.Count == 3){
+            Debug.Log("Find all words");
+        }
     }
 }

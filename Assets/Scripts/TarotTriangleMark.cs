@@ -103,6 +103,17 @@ public class TarotTriangleMark : MonoBehaviour
     void OnCompleteHandler(){
         foundAudio.PlayOneShot(foundClips[Random.Range(0, foundClips.Length)]);
         getVision = true;
+        GameController.Instance.LoadVisionTriangle(this);
         EventHandler.Call_OnGetVision(GameController.Instance.GetCardByIndex(cardIndex));
+    }
+    public void OnFinishVision(){
+        getVision = false;
+        AudioManager.Instance.FadeAudio(hintAudio, 0, 0.5f);
+        EventHandler.Call_OnLostVision();
+        StartCoroutine(coroutineHideTriangle());
+    }
+    IEnumerator coroutineHideTriangle(){
+        yield return CommonCoroutine.CoroutineFadeSprite(clearTriangles, 0, 0.2f);
+        gameObject.SetActive(false);
     }
 }

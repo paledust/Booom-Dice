@@ -3815,6 +3815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintParticle: {fileID: 2000877197}
+  textCamera: {fileID: 522287412}
+  collectedWords: []
   _hand: {fileID: 535873606}
   tarotGame: {fileID: 1532625449}
   miniGameControl: {fileID: 942152045}
