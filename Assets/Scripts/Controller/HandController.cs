@@ -135,6 +135,7 @@ public class HandController : MonoBehaviour
         hand_animator.SetTrigger("PickDice");
 
         handState = HandState.PickDice;
+        EventHandler.Call_OnPickUpDice();
     }
     public void Throw_Dice(){
         pickedDice.m_rigid.transform.parent = null;
@@ -145,6 +146,7 @@ public class HandController : MonoBehaviour
         hand_animator.SetTrigger("DropDice");
 
         handState = HandState.Default;
+        EventHandler.Call_OnDropDice();
     }
     public void StartFlipCard(Card card){
         flipValue = 0;

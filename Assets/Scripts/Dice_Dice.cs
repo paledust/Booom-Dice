@@ -15,4 +15,7 @@ public class Dice_Dice : MonoBehaviour
     void GetVisionHandler(Card card){
         diceLight.DOIntensity(3, 0.5f);
     }
+    public void OnBeenThrown(){
+        diceLight.DOIntensity(1, 0.25f);
+    }
 }

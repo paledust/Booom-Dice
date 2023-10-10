@@ -100,16 +100,17 @@ Shader "Hidden/Custom/Vision"
 				float2 appendResult21 = (float2(ase_ppsScreenPosFragNorm.x , ase_ppsScreenPosFragNorm.y));
 				float2 screenUV23 = ( appendResult21 / ase_ppsScreenPosFragNorm.w );
 				float4 tex2DNode12 = tex2D( _MainTex, screenUV23 );
+				float4 tex2DNode15 = tex2D( _MaskTex, screenUV23 );
 				float3 appendResult73 = (float3(RedWeight , GreenWeight , BlueWeight));
 				float3 sinMask74 = appendResult73;
-				float4 break49 = ( tex2D( _MaskTex, screenUV23 ) * float4( sinMask74 , 0.0 ) );
+				float4 break49 = ( tex2DNode15 * float4( sinMask74 , 0.0 ) );
 				float4 lerpResult51 = lerp( tex2DNode12 , tex2D( _Screen_1, screenUV23 ) , break49.r);
 				float4 lerpResult57 = lerp( lerpResult51 , tex2D( _Screen_2, screenUV23 ) , break49.g);
 				float4 lerpResult58 = lerp( lerpResult57 , tex2D( _Screen_3, screenUV23 ) , break49.b);
 				float4 lerpResult14 = lerp( tex2DNode12 , lerpResult58 , _Blend);
 				float3 blendOpSrc102 = (lerpResult14).rgb;
 				float3 blendOpDest102 = (lerpResult14).rgb;
-				float3 lerpBlendMode102 = lerp(blendOpDest102,(( blendOpDest102 > 0.5 ) ? ( 1.0 - 2.0 * ( 1.0 - blendOpDest102 ) * ( 1.0 - blendOpSrc102 ) ) : ( 2.0 * blendOpDest102 * blendOpSrc102 ) ),( saturate( ( break49.r * 7 ) ) * tex2D( _Screen_0, screenUV23 ).r ));
+				float3 lerpBlendMode102 = lerp(blendOpDest102,(( blendOpDest102 > 0.5 ) ? ( 1.0 - 2.0 * ( 1.0 - blendOpDest102 ) * ( 1.0 - blendOpSrc102 ) ) : ( 2.0 * blendOpDest102 * blendOpSrc102 ) ),( saturate( ( (tex2DNode15).r * 7 ) ) * tex2D( _Screen_0, screenUV23 ).r ));
 				float4 appendResult99 = (float4(( saturate( lerpBlendMode102 )) , (lerpResult14).a));
 				
 
@@ -160,7 +161,7 @@ Node;AmplifyShaderEditor.GetLocalVarNode;77;-2592.206,232.3627;Inherit;False;74;
 Node;AmplifyShaderEditor.SimpleTimeNode;60;-2897.783,1748.991;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;61;-3184.783,1744.991;Inherit;False;Property;_Speed;Speed;5;0;Create;True;0;0;0;False;0;False;0.25;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;78;-2388.663,126.4031;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT3;0,0,0;False;1;COLOR;0
-Node;AmplifyShaderEditor.RangedFloatNode;80;-1836.414,1563.085;Inherit;False;Global;RedWeight;RedWeight;9;0;Create;True;0;0;0;False;0;False;1;0.3922415;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;80;-1836.414,1563.085;Inherit;False;Global;RedWeight;RedWeight;9;0;Create;True;0;0;0;False;0;False;1;0.05950902;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;82;-1836.14,2444.271;Inherit;False;Global;BlueWeight;BlueWeight;11;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;81;-1852.862,1986.802;Inherit;False;Global;GreenWeight;GreenWeight;10;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
 Node;AmplifyShaderEditor.SmoothstepOpNode;79;-891.1508,1815.712;Inherit;False;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0.25,0.25,0.25;False;2;FLOAT3;1,1,1;False;1;FLOAT3;0
@@ -185,6 +186,7 @@ Node;AmplifyShaderEditor.BreakToComponentsNode;49;-2178.855,120.0816;Inherit;Fal
 Node;AmplifyShaderEditor.ScaleNode;104;-824.36,167.0888;Inherit;False;7;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SaturateNode;105;-654.9987,164.3296;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.BlendOpsNode;102;-68.6607,-169.1759;Inherit;False;Overlay;True;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT;1;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.ComponentMaskNode;106;-2374.16,-34.7897;Inherit;False;True;False;False;False;1;0;COLOR;0,0,0,0;False;1;FLOAT;0
 WireConnection;21;0;20;1
 WireConnection;21;1;20;2
 WireConnection;22;0;21;0
@@ -242,10 +244,11 @@ WireConnection;99;3;98;0
 WireConnection;96;0;14;0
 WireConnection;93;0;14;0
 WireConnection;49;0;78;0
-WireConnection;104;0;49;0
+WireConnection;104;0;106;0
 WireConnection;105;0;104;0
 WireConnection;102;0;93;0
 WireConnection;102;1;96;0
 WireConnection;102;2;97;0
+WireConnection;106;0;15;0
 ASEEND*/
-//CHKSM=D57C1F937D2EC3035519B4EB3DE99425519F9D04
+//CHKSM=40E1585ADA07415474C99B36E01C125465EC99A7

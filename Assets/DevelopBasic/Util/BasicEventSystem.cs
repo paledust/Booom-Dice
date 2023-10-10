@@ -18,6 +18,10 @@ public static class EventHandler
     public static event Action<Card> E_OnFlipCard;
     public static void Call_OnFlipCard(Card card)=>E_OnFlipCard?.Invoke(card);
 
+    public static event Action E_OnPickUpDice;
+    public static void Call_OnPickUpDice()=>E_OnPickUpDice?.Invoke();
+    public static event Action E_OnDropDice;
+    public static void Call_OnDropDice()=>E_OnDropDice?.Invoke();
 
     public static event Action<LookableType> E_OnSpotLookable;
     public static void Call_OnSpotLookable(LookableType lookableType)=>E_OnSpotLookable?.Invoke(lookableType);
