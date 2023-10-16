@@ -94,7 +94,7 @@ public class TarotTriangleMark : MonoBehaviour
         if(!GameController.Instance.ReadingVision) triangleFormCondition.DetectUpdate(isMatched);
     }
     void OnConditionMeetHandler(){
-        AudioManager.Instance.FadeAudio(hintAudio, 1, 0.5f);
+        AudioManager.Instance.FadeAudio(hintAudio, 0.5f, 0.5f);
         EventHandler.Call_OnFoundVision(cardIndex);
     }
     void OnResetHandler(){
