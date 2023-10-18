@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTipTrans: {fileID: 1500056027}
-  raycastRadius: 0.015
+  raycastRadius: 0.25
   handController: {fileID: 535873606}
 --- !u!114 &535873606
 MonoBehaviour:
