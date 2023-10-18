@@ -23,13 +23,16 @@ public class VisionWordsController : MonoBehaviour
         textSphere.ExpandSphere(cardWords_SO.GetCardWords(card.m_cardType, card.upsideDown));
     }
     void PickUpDiceHandler(){
-        if(inVision) textSphere.FollowDice(dice.transform);
+        textSphere.FollowDice(dice.transform);
     }
     void DropDice(){
         if(inVision){
             inVision = false;
-            dice.OnBeenThrown();
             textSphere.DetectingWords();
+            dice.OnBeenThrown();
+        }
+        else{
+            textSphere.BackToDefault();
         }
     }
 }

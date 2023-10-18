@@ -48,6 +48,9 @@ public class TextSphere : MonoBehaviour
     public void DetectingWords(){
         sphereState = SphereState.DetectingWords;
     }
+    public void BackToDefault(){
+        sphereState = SphereState.Idle;
+    }
     public void FollowDice(Transform diceTrans){
         followRigid = diceTrans.GetComponent<Rigidbody>();
         sphereState = SphereState.Follow;
