@@ -1,0 +1,1893 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PutOutCandle
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.875, y: 0.098, z: -53.311}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -84.091, y: 133.753, z: 46.401}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 7.97, y: 3.469, z: -19.869}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -2.523, y: -4.772, z: 0.17}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 23.229, y: 152.755, z: 29.642}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -3.48, y: 5.217, z: -83.574}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.816, y: 3.766, z: -28.483}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -69.153, y: -21.521, z: -185.681}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -4.324, y: -5.488, z: -59.478}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -0.085, y: 0.632, z: -60.868}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -1.022, y: -2.061, z: 130.876}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -3.438, y: -6.443, z: -10.854}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.26, y: 0.89, z: -66.716}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -99.251, y: 167.234, z: -7.2960205}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: -2.669, y: -0.028, z: -93.396}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: -3.271}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.025, y: -0.0529, z: 0.0431}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 2372873979
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2372873979
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 34741639
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2742878699
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1988729276
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1686201083
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3027785433
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1264436163
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3399646622
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 449025396
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 71823326
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1826846385
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 32479027
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1192116879
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1678510875
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2194193831
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 945120771
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 4
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.025
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.0529
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.0431
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.875
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.098
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -53.311
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -84.091
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 133.753
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 46.401
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 7.97
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3.469
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -19.869
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.523
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.772
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.17
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 23.229
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 152.755
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 29.642
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -3.48
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5.217
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -83.574
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.816
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 3.766
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -28.483
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -69.153
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -21.521
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -185.681
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -4.324
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -5.488
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -59.478
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.085
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.632
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -60.868
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.022
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.061
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 130.876
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -3.438
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -6.443
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -10.854
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.26
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.89
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -66.716
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -99.251
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 167.234
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -7.2960205
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -2.669
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.028
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -93.396
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -3.271
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1/RightHand2:hands:b_r_thumb2/RightHand2:hands:b_r_thumb3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1/RightHand2:hands:b_r_index2/RightHand2:hands:b_r_index3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_index1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_thumb1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2/RightHand2:hands:b_r_ring3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_ring1/RightHand2:hands:b_r_ring2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_pinky0/RightHand2:hands:b_r_pinky1/RightHand2:hands:b_r_pinky2/RightHand2:hands:b_r_pinky3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2/RightHand2:hands:b_r_middle3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed/RightHand4:hands:r_hand_world/RightHand2:hands:b_r_hand/RightHand2:hands:b_r_middle1/RightHand2:hands:b_r_middle2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Joint_UpperArm/Joint_LowerArm/Joint_Hand/HandRoot/Hand_Bone_UVed
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

@@ -10,6 +10,8 @@ public static class EventHandler
     public static void Call_BeforeUnloadScene(){E_BeforeUnloadScene?.Invoke();}
     public static event Action E_AfterLoadScene;
     public static void Call_AfterLoadScene(){E_AfterLoadScene?.Invoke();}
+    public static event Action E_AfterSceneTransist;
+    public static void Call_AfterSceneTransist()=>E_AfterSceneTransist?.Invoke();
     
     public static event Action E_OnPlayerPickUpCard;
     public static void Call_OnPlayerPickUpCard()=>E_OnPlayerPickUpCard?.Invoke();

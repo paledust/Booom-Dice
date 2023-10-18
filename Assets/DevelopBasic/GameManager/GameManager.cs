@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using SimpleSaveSystem;
 using SimpleAudioSystem;
+using UnityEngine.Rendering;
 
 //Please make sure "GameManager" is excuted before every custom script
 public class GameManager : Singleton<GameManager>
@@ -81,9 +82,17 @@ public class GameManager : Singleton<GameManager>
         string currentLevel = SceneManager.GetActiveScene().name;
         StartCoroutine(EndGameCoroutine(currentLevel));
     }
-    public void RestartLevel(){
-        string currentLevel = SceneManager.GetActiveScene().name;
-        StartCoroutine(RestartLevel(currentLevel));
+    public void RestartGame(){
+        if(!isSwitchingScene){
+            string currentLevel = SceneManager.GetActiveScene().name;
+            SwitchingScene("Question", false);
+        }
+    }
+    public void RestartLevel(float exitTime, float pauseTime = 0){
+        if(!isSwitchingScene){
+            string currentLevel = SceneManager.GetActiveScene().name;
+            StartCoroutine(RestartLevel(currentLevel, exitTime, pauseTime));
+        }
     }
 
 #region Scene Transition
@@ -106,19 +115,22 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("EndGame");
         Application.Quit();
     }
-    IEnumerator RestartLevel(string level){
-        yield return FadeInScreen(3f);
+    IEnumerator RestartLevel(string level, float exitTime = 3f, float pauseTime = 0f){
         isSwitchingScene = true;
 
+        EventHandler.Call_BeforeUnloadScene();
+        yield return FadeInScreen(exitTime);
         //TO DO: do something before the last scene is unloaded. e.g: call event of saving 
         yield return SceneManager.UnloadSceneAsync(level);
         yield return null;
         //TO DO: do something after the last scene is unloaded.
         yield return SceneManager.LoadSceneAsync(level, LoadSceneMode.Additive);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(level));
+        EventHandler.Call_AfterLoadScene();
         //TO DO: do something after the next scene is loaded. e.g: call event of loading
+        yield return new WaitForSeconds(pauseTime); 
         yield return FadeOutScreen(transitionDuration);
-
+        EventHandler.Call_AfterSceneTransist();
         isSwitchingScene = false;
     }
     IEnumerator RestartLevelImmediatley(string level){
@@ -133,7 +145,7 @@ public class GameManager : Singleton<GameManager>
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(level));
 
         EventHandler.Call_AfterLoadScene();
-
+        EventHandler.Call_AfterSceneTransist();
         isSwitchingScene = false;        
     }
     IEnumerator SwitchSceneCoroutine(string from, string to, bool resume){
@@ -154,6 +166,7 @@ public class GameManager : Singleton<GameManager>
         if(resume) SaveManager.LoadGameState();
 
         yield return FadeOutScreen(transitionDuration);
+        EventHandler.Call_AfterSceneTransist();
 
         isSwitchingScene = false;
     }
@@ -176,7 +189,7 @@ public class GameManager : Singleton<GameManager>
     void Debug_RestartLevel(InputAction.CallbackContext callback){
         if(callback.ReadValueAsButton()){
             Debug.Log("Test Restart Level");
-            RestartLevel();
+            RestartLevel(1f);
         }
     }
     void Debug_Save(InputAction.CallbackContext callback)=>SaveManager.SaveGameState();

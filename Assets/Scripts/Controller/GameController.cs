@@ -155,6 +155,6 @@ public class GameController : Singleton<GameController>
         maskAnime.Play();
         yield return new WaitForSeconds(maskAnime.clip.length);
         yield return new WaitForSeconds(7f);
-        GameManager.Instance.EndGame();
+        GameManager.Instance.RestartGame();
     }
 }

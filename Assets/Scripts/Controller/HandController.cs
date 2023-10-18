@@ -84,6 +84,8 @@ public class HandController : MonoBehaviour
                     EndFlipCard();
                 }
                 break;
+            case HandState.Uncontrolled:
+                break;
             default:
                 handTarget.position = Vector3.Lerp(handTarget.position, targetPosition, Time.deltaTime*lerpSpeed);
                 pointClick_InteractableHandler.DetectInteractable();
@@ -150,6 +152,15 @@ public class HandController : MonoBehaviour
 
         handState = HandState.Default;
         EventHandler.Call_OnDropDice();
+    }
+    public void PutOutCandle(Interact_Candle candle){
+
+        Vector3 pos = candle.transform.parent.position;
+        pos.z = handTarget.position.z;
+        handTarget.position = pos;
+        
+        hand_animator.SetTrigger("PutOutCandle");
+        handState = HandState.Uncontrolled;
     }
     public void StartFlipCard(Card card){
         flipValue = 0;
