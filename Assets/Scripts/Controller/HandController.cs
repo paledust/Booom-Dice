@@ -61,6 +61,9 @@ public class HandController : MonoBehaviour
         initHandLocalPos = handRootTrans.localPosition;
         initHandLocalRot = handRootTrans.localRotation;
     }
+    void OnApplicationFocus(bool isFocus){
+        if(isFocus) Cursor.lockState = CursorLockMode.Confined;            
+    }
     public void Hand_Update(Vector3 pointer){
         pointerPos = pointer;
         pointerPos.z = depth;
