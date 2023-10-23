@@ -34,7 +34,7 @@ public class NameInput : MonoBehaviour
             for(int i=0; i<nameTexts.Length; i++){
                 pendingNameTexts.Add(nameTexts[i]);
                 nameTexts[i].order = i;
-                nameTexts[i].text.text  = string.Empty;
+                nameTexts[i].text.text  = "--";
             }
         }
     }

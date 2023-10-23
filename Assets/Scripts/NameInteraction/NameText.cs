@@ -5,14 +5,19 @@ using UnityEngine;
 
 public class NameText : MonoBehaviour
 {
+    public ParticleSystem puffParticle;
     public TextMeshProUGUI text;
     public int order;
     private CoroutineExcuter textFader;
     void Awake(){
         textFader = new CoroutineExcuter(this);
+        text.text = "--";
+        text.fontMaterial.SetFloat("_OutlineSoftness", 0.5f);
     }
     public void FadeInText(){
-        textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 1f, 1.5f, EasingFunc.Easing.FunctionType.QuadEaseOut));
+        puffParticle.transform.position = transform.position+Vector3.forward*0.1f;
+        puffParticle.Play();
+        textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 1f, 0.75f, EasingFunc.Easing.FunctionType.QuadEaseOut));
     }
     public void FadeOutText(){
         textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 0, 0.5f, EasingFunc.Easing.FunctionType.CubicEaseIn));

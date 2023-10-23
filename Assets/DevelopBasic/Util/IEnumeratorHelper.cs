@@ -20,6 +20,12 @@ public static class CommonCoroutine
             text.fontMaterial.SetFloat(outlineSoftnessName, Mathf.Lerp(initSoftness, targetSoftness, easeFunc(Mathf.Clamp01(t*5))));
             text.color = Color.Lerp(initColor, targetColor, easeFunc(t));
         });
+        if(targetAlpha == 0){
+            text.text = "--";
+            targetColor.a = 1f;
+            text.color = targetColor;
+            text.fontMaterial.SetFloat(outlineSoftnessName, 0.5f);
+        }
     }
     public static IEnumerator CoroutineFadeText(TextMeshPro text, float targetAlpha, float duration, Easing.FunctionType easeType=Easing.FunctionType.QuadEaseOut){
         Color initColor = text.color;
