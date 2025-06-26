@@ -17,7 +17,7 @@ public class NameText : MonoBehaviour
     public void FadeInText(){
         puffParticle.transform.position = transform.position+Vector3.forward*0.1f;
         puffParticle.Play();
-        textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 1f, 0.75f, EasingFunc.Easing.FunctionType.QuadEaseOut));
+        textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 1f, 2f, EasingFunc.Easing.FunctionType.QuadEaseOut));
     }
     public void FadeOutText(){
         textFader.Excute(CommonCoroutine.CoroutineFadeText(text, 0, 0.5f, EasingFunc.Easing.FunctionType.CubicEaseIn));
